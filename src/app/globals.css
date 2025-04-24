@@ -1,26 +1,77 @@
 @import "tailwindcss";
 
+/* 
+  Esquema de color basado en el logo "PYDAY" (versión intermedia):
+  - Verde (#3D8B37): Color principal, siempre presente.
+  - Amarillo intermedio (#FFE141): Un tono entre el amarillo vibrante y el pastel, que aporta energía sin ser demasiado intenso.
+  - Blanco (#FFFFFF): Para el texto principal.
+  - Rojo intermedio (#F23939): Menos agresivo que el rojo puro pero que ofrece el énfasis necesario.
+  - Fondo oscuro (#101010): Más suave que un negro absoluto para evitar contrastes excesivos.
+*/
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --primary-green: #3D8B37;    /* Cuerpo de la serpiente */
+  --accent-yellow: #FFE141;    /* Panza en tono intermedio */
+  --text-white: #FFFFFF;       /* Texto principal */
+  --outline-red: #F23939;      /* Contorno del texto en tono intermedio */
+  --bg-dark: #101010;          /* Fondo oscuro intermedio */
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-white);
 }
+
+/* Gradiente con tránsito moderado entre los colores */
+.gradient-bg {
+  background: linear-gradient(
+    135deg,
+    var(--primary-green) 0%,
+    var(--accent-yellow) 50%,
+    var(--outline-red) 100%
+  );
+  background-size: 400% 400%;
+  animation: gradient 18s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Estilo para el texto del logo con contorno que resalta de forma elegante */
+.logo-text {
+  font-family: sans-serif;
+  color: var(--text-white);
+  font-size: 2.5rem;
+  font-weight: bold;
+  -webkit-text-stroke: 1px var(--outline-red);
+  text-align: center;
+}
+
+/* Componentes reutilizables */
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-green-700 hover:bg-green-800 text-white font-bold rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 bg-transparent border-2 border-white hover:bg-white/20 text-white font-bold rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-6 text-center;
+  }
+  
+  .container-py {
+    @apply max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8;
+  }
+}
+
