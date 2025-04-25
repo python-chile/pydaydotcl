@@ -1,0 +1,27 @@
+{
+    "name": "PyDay Chile 2025",
+    "short_name": "PyDay CL",
+    "description": "Evento anual gratuito para promover y fomentar el lenguaje de programación Python en Chile",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#3775a9",
+    "icons": [
+      {
+        "src": "/android-chrome-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "/android-chrome-512x512.webp",
+        "sizes": "512x512",
+        "type": "image/webp"
+      },
+      {
+        "src": "/maskable-icon.webp",
+        "sizes": "512x512",
+        "type": "image/webp",
+        "purpose": "maskable"
+      }
+    ]
+  }
