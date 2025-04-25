@@ -45,7 +45,7 @@ export default function Header() {
             <Link href="/" className="text-white hover:text-green-400 transition">Inicio</Link>
             <Link href="/multimedia" className="text-white hover:text-green-400 transition">Multimedia</Link>
             <Link href="/previous-editions" className="text-white hover:text-green-400 transition">Ediciones Anteriores</Link>
-            <Link href="#registro" className="text-white bg-green-600 hover:bg-green-700 px-4 py-2 rounded-full transition">Registrarse</Link>
+            <Link href="/register" className="text-white bg-green-600 hover:bg-green-700 px-4 py-2 rounded-full transition">Registrarse</Link>
           </nav>
         </div>
         
@@ -56,7 +56,7 @@ export default function Header() {
               <Link href="/" className="text-white hover:text-green-400 transition">Inicio</Link>
               <Link href="/multimedia" className="text-white hover:text-green-400 transition">Multimedia</Link>
               <Link href="/previous-editions" className="text-white hover:text-green-400 transition">Ediciones Anteriores</Link>
-              <Link href="#registro" className="text-white bg-green-600 hover:bg-green-700 px-4 py-2 rounded-full transition text-center">Registrarse</Link>
+              <Link href="/register" className="text-white bg-green-600 hover:bg-green-700 px-4 py-2 rounded-full transition text-center">Registrarse</Link>
             </div>
           </div>
         )}
