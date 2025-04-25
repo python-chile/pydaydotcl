@@ -42,7 +42,7 @@ export default function Home() {
             src="/images/logo.webp"
             alt="PyDay Chile 2025 Logo"
             fill
-            className="object-contain animate-pulse"
+            className="object-contain"
           />
         </div>
       <HeroSection
