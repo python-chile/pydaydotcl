@@ -1,0 +1,33 @@
+# robots.txt para PyDay Chile
+# https://pyday.vercel.app/
+
+# Permitir a todos los robots de búsqueda
+User-agent: *
+Allow: /
+
+# Bloquear acceso a archivos internos/desarrollo
+Disallow: /firebase-config.js
+Disallow: /firebase.json
+Disallow: /docs/
+
+# Rutas específicas
+Allow: /[city]
+Allow: /multimedia
+Allow: /previous-editions
+Allow: /register
+Allow: /sponsors
+
+# Dirección del sitemap
+Sitemap: https://pyday.vercel.app//sitemap.xml
+
+# Velocidad de rastreo para Google
+User-agent: Googlebot
+Crawl-delay: 1
+
+# Velocidad de rastreo para Bing
+User-agent: Bingbot
+Crawl-delay: 2
+
+# Velocidad de rastreo para otros robots
+User-agent: *
+Crawl-delay: 3

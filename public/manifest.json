@@ -1,27 +1,27 @@
 {
-    "name": "PyDay Chile 2025",
-    "short_name": "PyDay CL",
-    "description": "Evento anual gratuito para promover y fomentar el lenguaje de programación Python en Chile",
-    "start_url": "/",
-    "display": "standalone",
-    "background_color": "#ffffff",
-    "theme_color": "#3775a9",
-    "icons": [
-      {
-        "src": "/android-chrome-192x192.webp",
-        "sizes": "192x192",
-        "type": "image/png"
-      },
-      {
-        "src": "/android-chrome-512x512.webp",
-        "sizes": "512x512",
-        "type": "image/webp"
-      },
-      {
-        "src": "/maskable-icon.webp",
-        "sizes": "512x512",
-        "type": "image/webp",
-        "purpose": "maskable"
-      }
-    ]
-  }
+  "name": "PyDay Chile 2025",
+  "short_name": "PyDay CL",
+  "description": "Evento anual gratuito para promover y fomentar el lenguaje de programación Python en Chile",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#101010",
+  "theme_color": "#3D8B37",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.webp",
+      "sizes": "192x192",
+      "type": "image/webp"
+    },
+    {
+      "src": "/android-chrome-512x512.webp",
+      "sizes": "512x512",
+      "type": "image/webp"
+    },
+    {
+      "src": "/maskable-icon.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "maskable"
+    }
+  ]
+}
