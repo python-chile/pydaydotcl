@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
 export default function RegistrationForm() {
   const [formData, setFormData] = useState({
     name: "",
@@ -7,55 +8,152 @@ export default function RegistrationForm() {
     role: "",
     sendCFP: false,
     city: "",
+    idType: "run",
+    idNumber: "",
   });
-
+  const [validationErrors, setValidationErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitResult, setSubmitResult] = useState({
     success: null,
     message: "",
   });
+
+  // Validación de RUN chileno (módulo 11)
+  const validateRUN = (run) => {
+    // Limpiar y formatear RUN
+    const cleanedRUN = run
+      .trim()
+      .toLowerCase()
+      .replace(/[^0-9k]/g, "");
+
+    // Validar formato básico
+    if (!/^(\d{7,8})(\d|k)$/.test(cleanedRUN)) return false;
+
+    // Separar número y dígito verificador
+    const [numberStr, verifier] = cleanedRUN.match(/(\d{7,8})(\d|k)$/).slice(1);
+    const runNumber = parseInt(numberStr, 10);
+    const calculatedVerifier = calculateRUNVerifier(runNumber);
+
+    return calculatedVerifier === verifier;
+  };
+
+  const calculateRUNVerifier = (number) => {
+    let m = 0;
+    let s = 1;
+    let tempNumber = number;
+
+    while (tempNumber > 0) {
+      s = (s + (tempNumber % 10) * (9 - (m++ % 6))) % 11;
+      tempNumber = Math.floor(tempNumber / 10);
+    }
+
+    const finalDigit = s > 0 ? s - 1 : 10;
+    return finalDigit === 10 ? "k" : finalDigit.toString();
+  };
+
+  // Validación de pasaporte (formato básico)
+  const validatePassport = (passport) => {
+    return /^[A-Za-z0-9]{6,12}$/.test(passport);
+  };
+
+  // Validación de email
+  const validateEmail = (email) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
+
+  const handleValidation = () => {
+    const errors = {};
+
+    // Validación del nombre
+    if (!formData.name.trim()) {
+      errors.name = "El nombre es obligatorio";
+    } else if (formData.name.trim().length < 3) {
+      errors.name = "El nombre debe tener al menos 3 caracteres";
+    }
+
+    // Validación del email
+    if (!formData.email.trim()) {
+      errors.email = "El email es obligatorio";
+    } else if (!validateEmail(formData.email)) {
+      errors.email = "Formato de email inválido";
+    }
+
+    // Validación de identificación
+    if (!formData.idNumber.trim()) {
+      errors.idNumber = "Este campo es obligatorio";
+    } else if (formData.idType === "run" && !validateRUN(formData.idNumber)) {
+      errors.idNumber = "RUN inválido. Formato: 12.345.678-9";
+    } else if (
+      formData.idType === "passport" &&
+      !validatePassport(formData.idNumber)
+    ) {
+      errors.idNumber = "Pasaporte inválido. Mínimo 6 caracteres alfanuméricos";
+    }
+
+    // Validación del rol
+    if (!formData.role) {
+      errors.role = "Selecciona un rol";
+    }
+
+    // Validación de la ciudad
+    if (!formData.city) {
+      errors.city = "Selecciona una ciudad";
+    }
+
+    setValidationErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
+
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
+
     setFormData((prev) => ({
       ...prev,
       [name]: type === "checkbox" ? checked : value,
     }));
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!handleValidation()) return;
+
     setIsSubmitting(true);
-
     try {
-      //FIXME:  Aquí iría la lógica para enviar los datos a tu backend
-      console.log("Enviando datos:", formData);
+      console.log("Datos enviados:", formData);
 
-      // Simulación de respuesta exitosa
+      // Simulación de envío
       setTimeout(() => {
         setSubmitResult({
           success: true,
-          message: "¡Registro exitoso! Te esperamos en PyDay 2025.",
+          message:
+            "¡Registro exitoso! Verifica tu correo para la confirmación.",
         });
         setIsSubmitting(false);
+
+        if (formData.sendCFP) {
+          window.open(
+            "https://sessionize.com/pyday-valparaiso-2025/",
+            "_blank"
+          );
+        }
       }, 1500);
     } catch (error) {
       setSubmitResult({
         success: false,
-        message:
-          "Ocurrió un error al procesar tu registro. Por favor intenta nuevamente.",
+        message: "Error en el registro. Intenta nuevamente.",
       });
       setIsSubmitting(false);
     }
   };
   return (
-    <div className="bg-black/20 backdrop-blur-md rounded-lg p-6">
+    <div className="max-w-md mx-auto bg-white/5 p-6 rounded-lg shadow-md">
       <h2 className="text-2xl font-bold mb-6 text-center">
         Regístrate para PyDay 2025
       </h2>
-
       {submitResult.success === null ? (
         <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label htmlFor="name" className="block text-sm font-medium mb-1">
+          <div className="space-y-2 relative pb-6">
+            <label htmlFor="name" className="block text-sm font-medium">
               Nombre completo
             </label>
             <input
@@ -65,13 +163,59 @@ export default function RegistrationForm() {
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full px-4 py-2 rounded-lg bg-white/10 backdrop-blur border border-white/20 focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500/50 text-white"
-              placeholder="Tu nombre"
+              className="w-full px-3 py-2 bg-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
+            {validationErrors.name && (
+              <p className="absolute text-xs text-red-500 mt-1">
+                {validationErrors.name}
+              </p>
+            )}
           </div>
 
-          <div>
-            <label htmlFor="email" className="block text-sm font-medium mb-1">
+          {/* Sección de identificación con estructura mejorada */}
+          <div className="space-y-2">
+            <label htmlFor="idType" className="block text-sm font-medium">
+              Identificación Oficial
+            </label>
+
+            {/* Contenedor para el select con altura fija */}
+            <div className="h-10">
+              <select
+                id="idType"
+                name="idType"
+                value={formData.idType}
+                onChange={handleChange}
+                className="w-full px-3 py-2 bg-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                <option value="run">RUN</option>
+                <option value="passport">Pasaporte</option>
+              </select>
+            </div>
+
+            {/* Contenedor para el input y mensaje de error */}
+            <div className="relative pb-6">
+              <input
+                type="text"
+                id="idNumber"
+                name="idNumber"
+                value={formData.idNumber}
+                onChange={handleChange}
+                placeholder={
+                  formData.idType === "run" ? "12.345.678-9" : "AA123456"
+                }
+                required
+                className="w-full px-3 py-2 bg-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              {validationErrors.idNumber && (
+                <p className="absolute text-xs text-red-500 mt-1">
+                  {validationErrors.idNumber}
+                </p>
+              )}
+            </div>
+          </div>
+
+          <div className="space-y-2 relative pb-6">
+            <label htmlFor="email" className="block text-sm font-medium">
               Correo electrónico
             </label>
             <input
@@ -81,13 +225,17 @@ export default function RegistrationForm() {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full px-4 py-2 rounded-lg bg-white/10 backdrop-blur border border-white/20 focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500/50 text-white"
-              placeholder="correo@ejemplo.com"
+              className="w-full px-3 py-2 bg-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
+            {validationErrors.email && (
+              <p className="absolute text-xs text-red-500 mt-1">
+                {validationErrors.email}
+              </p>
+            )}
           </div>
 
-          <div>
-            <label htmlFor="role" className="block text-sm font-medium mb-1">
+          <div className="space-y-2 relative pb-6">
+            <label htmlFor="role" className="block text-sm font-medium">
               Rol / Ocupación
             </label>
             <select
@@ -96,45 +244,23 @@ export default function RegistrationForm() {
               value={formData.role}
               onChange={handleChange}
               required
-              className="w-full px-4 py-2 rounded-lg bg-black/50 backdrop-blur border border-white/20 focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500/50 text-white appearance-none"
-              style={{ color: "white", backgroundColor: "rgba(0, 0, 0, 0.7)" }}
+              className="w-full px-3 py-2 bg-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
-              <option
-                value=""
-                disabled
-                style={{ backgroundColor: "#1a1a1a", color: "white" }}
-              >
-                Selecciona una opción
-              </option>
-              <option
-                value="estudiante"
-                style={{ backgroundColor: "#1a1a1a", color: "white" }}
-              >
-                Estudiante
-              </option>
-              <option
-                value="profesional"
-                style={{ backgroundColor: "#1a1a1a", color: "white" }}
-              >
-                Profesional
-              </option>
-              <option
-                value="academico"
-                style={{ backgroundColor: "#1a1a1a", color: "white" }}
-              >
-                Académico
-              </option>
-              <option
-                value="otro"
-                style={{ backgroundColor: "#1a1a1a", color: "white" }}
-              >
-                Otro
-              </option>
+              <option value="">Selecciona una opción</option>
+              <option value="student">Estudiante</option>
+              <option value="professional">Profesional</option>
+              <option value="academic">Académico</option>
+              <option value="other">Otro</option>
             </select>
+            {validationErrors.role && (
+              <p className="absolute text-xs text-red-500 mt-1">
+                {validationErrors.role}
+              </p>
+            )}
           </div>
 
-          <div>
-            <label htmlFor="city" className="block text-sm font-medium mb-1">
+          <div className="space-y-2 relative pb-6">
+            <label htmlFor="city" className="block text-sm font-medium">
               ¿A qué sede asistirás?
             </label>
             <select
@@ -143,72 +269,51 @@ export default function RegistrationForm() {
               value={formData.city}
               onChange={handleChange}
               required
-              className="w-full px-4 py-2 rounded-lg bg-black/50 backdrop-blur border border-white/20 focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500/50 text-white appearance-none"
-              style={{ color: "white", backgroundColor: "rgba(0, 0, 0, 0.7)" }}
+              className="w-full px-3 py-2 bg-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
-              <option
-                value=""
-                disabled
-                style={{ backgroundColor: "#1a1a1a", color: "white" }}
-              >
-                Selecciona una Ciudad
-              </option>
-              <option
-                value="copiapo"
-                style={{ backgroundColor: "#1a1a1a", color: "white" }}
-              >
-                Copiapó
-              </option>
-              <option
-                value="valparaiso"
-                style={{ backgroundColor: "#1a1a1a", color: "white" }}
-              >
-                Valparaíso
-              </option>
-              <option
-                value="santiago"
-                style={{ backgroundColor: "#1a1a1a", color: "white" }}
-              >
-                Santiago
-              </option>
+              <option value="">Selecciona una Ciudad</option>
+              <option value="copiapo">Copiapó</option>
+              <option value="valparaiso">Valparaíso</option>
+              <option value="santiago">Santiago</option>
             </select>
+            {validationErrors.city && (
+              <p className="absolute text-xs text-red-500 mt-1">
+                {validationErrors.city}
+              </p>
+            )}
           </div>
 
-          <div className="flex items-center">
+          <div className="flex items-center space-x-2">
             <input
               type="checkbox"
               id="sendCFP"
               name="sendCFP"
               checked={formData.sendCFP}
               onChange={handleChange}
-              className="h-4 w-4 rounded border-white/20 accent-green-600 focus:ring-green-500"
+              className="h-4 w-4 rounded  border-white/20 accent-green-600 focus:ring-green-500"
             />
-            <label htmlFor="sendCFP" className="ml-2 block text-sm">
-              Me interesa enviar una propuesta de charla (CFP)
+            <label htmlFor="sendCFP" className="text-sm font-medium">
+              Quiero proponer una charla
             </label>
           </div>
 
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full btn-primary flex justify-center items-center"
+            className="w-full btn-primary flex justify-center items-center disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSubmitting ? (
-              <span className="inline-block animate-spin rounded-full h-4 w-4 border-t-2 border-white"></span>
+              <div className="animate-spin h-5 w-5 border-2 border-white border-t-transparent rounded-full"></div>
             ) : (
               "Registrarme"
             )}
           </button>
         </form>
       ) : (
-        <div
-          className={`p-4 rounded-lg text-center ${
-            submitResult.success ? "bg-green-500/20" : "bg-red-500/20"
-          }`}
-        >
-          <p className="text-lg font-medium">{submitResult.message}</p>
+        <div className="text-center py-6">
+          <p className="text-xl font-medium mb-2">{submitResult.message}</p>
           {submitResult.success && (
-            <p className="mt-2 text-sm opacity-80">
+            <p className="text-sm text-gray-300">
               Recibirás un correo con tu confirmación e información adicional.
             </p>
           )}
