@@ -1,24 +1,31 @@
-import { cityData } from "@/data/cities";
-export const dynamic = 'force-static'; // Añadir esta línea
-export const revalidate = 3600
+import cityData from "@/data/cities"; 
+
+export const dynamic = 'force-static';
+export const revalidate = 3600;
 
 export async function GET() {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://pyday.vercel.app";
+  const baseUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://pyday.vercel.app").replace(/\/$/, '');
+
+  // Validación de datos
+  if (!cityData || typeof cityData !== 'object') {
+    throw new Error('Datos de ciudades no encontrados');
+  }
 
   // Generar URLs
   const urls = [
     ...['', '/multimedia', '/previous-editions', '/register', '/sponsors']
       .map(path => ({
-        url: `${baseUrl}${path}`,
+        url: new URL(path, baseUrl).href,
         lastModified: new Date().toISOString(),
         priority: path === '' ? 1.0 : 0.8,
       })),
     ...Object.keys(cityData).map(citySlug => ({
-      url: `${baseUrl}/${citySlug}`,
+      url: new URL(`/${citySlug}`, baseUrl).href,
       lastModified: new Date().toISOString(),
       priority: 0.9,
     }))
   ];
+
 
   // Generar XML
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
