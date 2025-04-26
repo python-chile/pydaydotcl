@@ -3,18 +3,28 @@ import Image from "next/image";
 import TalkCard from "@/components/TalkCard";
 import MapSection from "@/components/Maps";
 import HeroSection from "@/components/HeroSection";
-import FAQSection from '@/components/FAQSection';
+import FAQSection from "@/components/FAQSection";
 import CTAFinal from "@/components/CTAFinal";
 import cityData from "@/data/cities";
-import { generalFAQs } from '@/data/faqs';
+import { generalFAQs } from "@/data/faqs";
 
 export function generateStaticParams() {
-  return [{ city: "valparaiso" }, { city: "santiago" }, { city: "copiapo" }];
+  return Object.keys(cityData).map((city) => ({ city }));
 }
 
 async function getCityData(city) {
-  await Promise.resolve();
-  return cityData[city] || null;
+  const data = cityData[city];
+
+  if (!data) return null;
+
+  return {
+    ...data,
+    schedule: data.schedule.map((talk) => ({
+      ...talk,
+      city: data.name,
+      date: data.date,
+    })),
+  };
 }
 
 export default async function CityPage({ params }) {
@@ -47,52 +57,31 @@ export default async function CityPage({ params }) {
 
       {/* Mapa y dirección */}
       <section className="container-py">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 max-w-7xl mx-auto">
           {/* Mapa */}
-          <div className="bg-black/20 backdrop-blur rounded-lg overflow-hidden">
+          <div className="bg-black/20 backdrop-blur rounded-lg overflow-hidden h-[300px] md:h-auto">
             <MapSection city={data} />
-
-            {/* </div>
-            <div className="p-4">
-              <a
-                href={data.mapUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-green-400 hover:underline flex items-center justify-center space-x-2"
-              >
-                <span>Ver en Google Maps</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                  />
-                </svg>
-              </a>
-            </div> */}
           </div>
 
           {/* Información de transporte */}
-          <div>
-            <h2 className="text-2xl font-bold mb-4">Cómo llegar</h2>
-            <p className="text-lg font-medium mb-2">{data.address}</p>
+          <div className="p-4">
+            <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-4">
+              Cómo llegar
+            </h2>
+            <p className="text-base md:text-lg font-medium mb-2">
+              {data.address}
+            </p>
 
-            <h3 className="text-xl font-semibold mt-4 mb-2">
+            <h3 className="text-lg md:text-xl font-semibold mt-3 md:mt-4 mb-2">
               Opciones de transporte:
             </h3>
+
             <ul className="space-y-2">
               {data.transportation.map((option, index) => (
                 <li key={index} className="flex items-start space-x-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 mt-0.5 text-green-400"
+                    className="h-5 w-5 mt-0.5 text-green-400 flex-shrink-0"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -104,7 +93,7 @@ export default async function CityPage({ params }) {
                       d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
                     />
                   </svg>
-                  <span>{option}</span>
+                  <span className="text-sm md:text-base">{option}</span>
                 </li>
               ))}
             </ul>
@@ -115,13 +104,14 @@ export default async function CityPage({ params }) {
       {/* Agenda */}
       <section className="container-py">
         <h2 className="section-title">Agenda</h2>
-        <div className="space-y-6 mt-8">
+
+        <div className="space-y-4 md:space-y-6 mt-6 md:mt-8 max-w-4xl mx-auto">
           {data.schedule.map((talk, index) => (
-            <TalkCard key={index} talk={talk} />
+            <TalkCard key={talk.id} talk={talk} />
           ))}
         </div>
 
-        <div className="mt-12 text-center">
+        <div className="mt-8 md:mt-12 text-center">
           <Link
             href="/register"
             target="_blank"
@@ -146,45 +136,18 @@ export default async function CityPage({ params }) {
         </div>
       </section>
 
-      {/* Speakers destacados */}
-      <section className="container-py bg-black/20 backdrop-blur">
-        <h2 className="section-title">Ponentes destacados</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-          {data.schedule.map((talk, index) => (
-            <div
-              key={index}
-              className="bg-black/30 backdrop-blur rounded-lg overflow-hidden"
-            >
-              <div className="relative h-48">
-                <Image
-                  src={talk.speaker.image}
-                  alt={talk.speaker.name}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-4">
-                <h3 className="font-bold text-xl">{talk.speaker.name}</h3>
-                <p className="text-green-400 mb-2">{talk.title}</p>
-                <p className="opacity-80 text-sm">{talk.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
       <FAQSection faqs={generalFAQs} />
-      
+
       <CTAFinal
         title={`¡Únete a la comunidad Python en ${data.name}!`}
         subtitle="Aprende, comparte y conecta con desarrolladores y entusiastas de Python de toda la región y de Chile."
         buttonText="Registrarme ahora"
         href="https://docs.google.com/forms/d/e/1FAIpQLSdhHlnqwmYffl6JNzbAZ4IRRyM_8fcOB1QH0hyz6Vwi3VFOwg/viewform"
-        className="bg-gradient-to-br from-green-900/60 to-black/80 backdrop-blur rounded-lg my-8 mx-4 md:mx-8"
+        className="bg-gradient-to-br from-green-900/60 to-black/80 backdrop-blur rounded-lg my-4 md:my-8 mx-2 md:mx-8"
       />
 
       {/* Segundo enlace independiente para "Conocer la comunidad" */}
-      <div className="text-center max-w-2xl mx-auto mb-8">
+      <div className="text-center max-w-2xl mx-auto mb-6 md:mb-8">
         <Link
           href="https://pythonchile.cl/pages/coordinacion.html"
           target="_blank"
@@ -194,37 +157,8 @@ export default async function CityPage({ params }) {
         </Link>
       </div>
 
-      {/* Call to Action final */}
-      {/* <section className="container-py bg-gradient-to-br from-green-900/60 to-black/80 backdrop-blur rounded-lg my-8 mx-4 md:mx-8">
-        <div className="text-center max-w-2xl mx-auto">
-          <h2 className="text-3xl font-bold mb-4">
-            ¡Únete a la comunidad Python en {data.name}!
-          </h2>
-          <p className="mb-6 text-lg">
-            Aprende, comparte y conecta con desarrolladores y entusiastas de
-            Python de toda la región y de Chile.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="https://docs.google.com/forms/d/e/1FAIpQLSdhHlnqwmYffl6JNzbAZ4IRRyM_8fcOB1QH0hyz6Vwi3VFOwg/viewform"
-              target="_blank"
-              className="btn-primary"
-            >
-              Registrarme ahora
-            </Link>
-            <Link
-              href="https://pythonchile.cl/pages/coordinacion.html"
-              target="_blank"
-              className="btn-secondary"
-            >
-              Conocer la comunidad
-            </Link>
-          </div>
-        </div>
-      </section> */}
-
       {/* Footer específico de la ciudad */}
-      <footer className="container-py text-center text-sm opacity-60">
+      <footer className="py-6 md:py-8 text-center text-xs md:text-sm opacity-60">
         <p>PyDay {data.name} es organizado por la comunidad Python Chile.</p>
         <p className="mt-2">
           Si quieres ser patrocinador o colaborador,{" "}

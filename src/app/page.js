@@ -1,14 +1,14 @@
+import Link from "next/link";
+import Image from "next/image";
 import CountdownTimer from "@/components/CountdownTimer";
 import ChileMap from "@/components/ChileMap";
 import TalkCard from "@/components/TalkCard";
 import RegistrationForm from "@/components/RegistrationForm";
 import HeroSection from "@/components/HeroSection";
 import SponsorList from "./sponsors/components/SponsorList";
-import Link from "next/link";
-import Image from "next/image";
-import featuredTalks from "@/data/talks";
+import featuredTalks from "@/data/featuredTalks";
 
-// FIXME: Datos de ejemplo - Estos deberían venir de una base de datos o CMS
+// TODO: Datos de ejemplo - Estos deberían venir de una base de datos o CMS
 const cities = [
   {
     name: "Copiapó",
@@ -38,18 +38,17 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <div className="relative h-44 mt-8 mx-auto">
-          <Image
-            src="/images/logo.webp"
-            alt="PyDay Chile 2025 Logo"
-            fill
-            className="object-contain"
-          />
-        </div>
+        <Image
+          src="/images/logo.webp"
+          alt="PyDay Chile 2025 Logo"
+          fill
+          className="object-contain"
+        />
+      </div>
       <HeroSection
         title="PyDay Chile 2025"
         subtitle="El evento anual gratuito para la comunidad Python en Chile"
       >
-        
         <CountdownTimer targetDate={firstEventDate} />
         <div className="mt-8">
           <Link href="#ciudades" className="btn-primary">
@@ -67,16 +66,65 @@ export default function Home() {
       {/* Agenda / Charlas Section */}
       <section className="container-py">
         <h2 className="section-title">Charlas Destacadas</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-          {featuredTalks.map((talk, index) => (
-            <TalkCard key={index} talk={talk} />
-          ))}
-        </div>
-        <div className="flex justify-center mt-8">
-          <Link href="/" className="btn-primary">
-            Ver todas las charlas
-          </Link>
-        </div>
+        {featuredTalks && featuredTalks.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-2 gap-6 mt-8 max-w-5xl mx-auto">
+            {featuredTalks.map((talk, index) => (
+              <TalkCard key={index} talk={talk} />
+            ))}
+          </div>
+        ) : (
+          <div className="bg-black/20 backdrop-blur-sm rounded-lg p-6 md:p-8 max-w-2xl mx-auto mt-8 text-center">
+            <div className="w-16 h-16 md:w-20 md:h-20 bg-purple-700 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-8 w-8 md:h-10 md:w-10"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"
+                />
+              </svg>
+            </div>
+            <h3 className="text-lg md:text-xl font-bold mb-2">
+              ¡Próximamente charlas increíbles!
+            </h3>
+            <p className="text-white/80 mb-6 text-sm md:text-base">
+              Estamos preparando un programa lleno de contenido interesante para
+              la comunidad Python. ¡Mantente atento a las actualizaciones!
+            </p>
+            <Link
+              href="https://sessionize.com/pyday-valparaiso-2025/"
+              target="_blank"
+              className="btn-secondary inline-flex items-center text-sm md:text-base"
+            >
+              <span>Proponer una charla</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-4 w-4 md:h-5 md:w-5 ml-2"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </Link>
+          </div>
+        )}
+        {featuredTalks && featuredTalks.length > 0 && (
+          <div className="flex justify-center mt-8">
+            <Link href="/talks" className="btn-primary">
+              Ver todas las charlas
+            </Link>
+          </div>
+        )}
       </section>
 
       {/* Registro Section */}
@@ -109,13 +157,19 @@ export default function Home() {
 
       {/* Patrocinadores Section - Versión Simplificada */}
       <section id="patrocinadores" className="container-py">
-        <h2 className="section-title">Nuestros Patrocinadores</h2>
+        <h2
+          className="section-title text-transparent bg-clip-text 
+  bg-gradient-to-r from-green-400 to-white font-bold 
+  tracking-wider text-4xl mb-0"
+        >
+          Nuestros Patrocinadores
+        </h2>
         {/* FIXME: Escoger formato de Patrocinadores */}
         <SponsorList />
-        {/* Patrocinadores Gold */}
+        {/* Patrocinadores Premium */}
         {/* <div className="mt-8">
           <h3 className="text-2xl font-bold text-center mb-6 text-yellow-400">
-            Patrocinadores Gold
+            Patrocinadores Premium
           </h3>
           <div className="flex justify-center">
             <a
@@ -136,10 +190,10 @@ export default function Home() {
           </div>
         </div> */}
 
-        {/* Patrocinadores Silver */}
+        {/* Patrocinadores Básico */}
         {/* <div className="mt-12">
           <h3 className="text-2xl font-bold text-center mb-6 text-gray-300">
-            Patrocinadores Silver
+            Patrocinadores Básico
           </h3>
           <div className="flex justify-center">
             <a

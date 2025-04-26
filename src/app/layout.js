@@ -1,25 +1,41 @@
-import { Inter } from "next/font/google";
+import { Inter, Open_Sans, Open_Sans_Condensed } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
+// Configuración para versiones Open Sans
+const openSansRegular = Open_Sans({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-open-sans-regular",
+  display: "swap",
+});
+const openSansSemiBold = Open_Sans({
+  subsets: ["latin"],
+  weight: "600",
+  variable: "--font-open-sans-semibold",
+  display: "swap",
+});
+const openSansBold = Open_Sans({
+  subsets: ["latin"],
+  weight: "700",
+  variable: "--font-open-sans-bold",
+  display: "swap",
+});
 
+// Forzar modo oscuro 
 export const viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#3775a9" },
-    { media: "(prefers-color-scheme: dark)", color: "#306998" },
-  ],
-  colorScheme: "light dark",
+  themeColor: "#3D8B37", 
+  colorScheme: "dark", 
 };
 
 export const metadata = {
   title: "PyDay Chile 2025",
-  description:
-    "Evento anual gratuito para promover y fomentar el lenguaje de programación Python en Chile",
+  description: "Evento anual gratuito que reúne a la comunidad Python en distintas ciudades de Chile con charlas, talleres y networking para todos los niveles",
   keywords: [
     "Python",
     "Chile",
@@ -28,8 +44,11 @@ export const metadata = {
     "Desarrollo web",
     "Data Science",
     "Comunidad",
+    "Talleres",
+    "Charlas",
+    "Hackathon",
   ],
-  authors: [{ name: "Comunidad Python Chile", url: "https://pyday.cl" }],
+  authors: [{ name: "Comunidad Python Chile", url: "https://pyday.vercel.app/" }],
   creator: "Comunidad Python Chile",
   publisher: "Comunidad Python Chile",
   robots: {
@@ -60,10 +79,10 @@ export const metadata = {
         sizes: "512x512",
       },
     ],
-    shortcut: "/shortcut-icon.webp",
+    shortcut: "/favicon-32x32.webp", 
     apple: [{ url: "/apple-touch-icon.webp", sizes: "180x180" }],
     other: [
-      { rel: "mask-icon", url: "/safari-pinned-tab.svg", color: "#3775a9" },
+      { rel: "mask-icon", url: "/safari-pinned-tab.svg", color: "#3D8B37" },
     ],
   },
   manifest: "/manifest.json",
@@ -74,7 +93,7 @@ export const metadata = {
     statusBarStyle: "black-translucent",
   },
   category: "technology",
-  metadataBase: new URL("https://pyday.cl"),
+  metadataBase: new URL("https://pyday.vercel.app/"),
   alternates: {
     canonical: "/",
     languages: {
@@ -87,16 +106,15 @@ export const metadata = {
     locale: "es_CL",
     alternateLocale: ["en_US"],
     title: "PyDay Chile 2025",
-    description:
-      "¡El evento más importante de Python en Chile! Charlas, workshops y networking para todos los niveles",
+    description: "PyDay Chile es un evento anual gratuito que reúne a entusiastas, desarrolladores y académicos en un día lleno de Python con charlas inspiradoras, talleres prácticos y networking en diversas ciudades de Chile.",
     siteName: "PyDay Chile",
-    url: "https://pyday.cl",
+    url: "https://pyday.vercel.app/",
     images: [
       {
-        url: "/images/banner-og.jpg",
+        url: "/images/banner-og.webp",
         width: 1200,
         height: 630,
-        alt: "PyDay Chile 2025 Banner",
+        alt: "PyDay Chile 2025 - Un día de Python en tu ciudad",
       },
       {
         url: "/images/logo-pyday.webp",
@@ -108,15 +126,17 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "PyDay Chile 2025",
-    description: "Evento anual de Python más importante de Chile",
+    title: "PyDay Chile 2025 - Evento anual de Python en tu ciudad",
+    description: "Sumérgete en un día lleno de Python con charlas, talleres y networking en distintas ciudades de Chile. ¡Un evento gratuito impulsado por la comunidad!",
     siteId: "@pythonchile",
     creator: "@pythonchile",
     creatorId: "@pythonchile",
     images: [
       {
-        url: "/images/banner-twitter.jpg",
+        url: "/images/banner-og.webp",
         alt: "PyDay Chile 2025",
+        width: 1200,
+        height: 628,
       },
     ],
   },
@@ -124,16 +144,18 @@ export const metadata = {
     google: "google-site-verification-code",
     yandex: "yandex-verification-code",
     other: {
-      me: ["mailto:contacto@pyday.cl", "https://twitter.com/pythonchile"],
+      me: ["mailto:pyday@pythonchile.cl", "https://twitter.com/pythonchile"],
     },
   },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="es">
-      <body className={`${inter.className} min-h-screen flex flex-col`}>
-        <div className="gradient-bg fixed inset-0 -z-10" />
+    <html lang="es" className="dark">
+      <body
+        className={`${openSansRegular.variable} min-h-screen flex flex-col bg-py-dark text-white`}
+      >
+        <div className="fixed inset-0 -z-10 bg-py-dark" />
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />
