@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from "next/image";
 
 export default function TalkCard({ talk }) {
   return (
@@ -24,7 +24,10 @@ export default function TalkCard({ talk }) {
         <p className="text-sm opacity-80 line-clamp-2">{talk.description}</p>
         <div className="mt-4 flex flex-wrap gap-2">
           {talk.tags.map((tag, index) => (
-            <span key={index} className="text-xs bg-green-600/40 px-2 py-1 rounded-full">
+            <span
+              key={index}
+              className="text-xs bg-green-600/40 hover:bg-green-600/60 px-2 py-1 rounded-full transition-colors cursor-pointer"
+            >
               {tag}
             </span>
           ))}
