@@ -1,4 +1,6 @@
 import { cityData } from "@/data/cities";
+export const dynamic = 'force-static'; // Añadir esta línea
+export const revalidate = 3600
 
 export async function GET() {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://pyday.vercel.app";
