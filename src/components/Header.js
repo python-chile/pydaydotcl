@@ -1,32 +1,60 @@
 'use client';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const menuRef = useRef(null);
+  
+  // Manejador para cerrar el menú
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (menuRef.current && !menuRef.current.contains(event.target) && isMenuOpen) {
+        setIsMenuOpen(false);
+      }
+    }
+    
+    // Listener solo cuando el menú está abierto
+    if (isMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener('touchstart', handleClickOutside);
+    }
+    
+    // Limpieza al desmontar
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
+  }, [isMenuOpen]);
+  
+  // Manejador para cerrar el menú
+  const handleLinkClick = () => {
+    setIsMenuOpen(false);
+  };
+  
   return (
     <header className="bg-black/30 backdrop-blur-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <Link href="/" className="flex items-center space-x-2">
             <div className="w-12 h-12 relative">
-              <Image 
-                src="/images/logo.webp" 
-                alt="PyDay Chile Logo" 
-                fill 
-                className="object-contain" 
+              <Image
+                src="/images/logo.webp"
+                alt="PyDay Chile Logo"
+                fill
+                className="object-contain"
               />
             </div>
             <span className="text-xl font-bold">PyDay Chile 2025</span>
           </Link>
-          
+         
           {/* Menú para móvil */}
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-white p-2"
+              aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
             >
               {isMenuOpen ? (
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -39,24 +67,26 @@ export default function Header() {
               )}
             </button>
           </div>
-          
+         
           {/* Menú para desktop */}
           <nav className="hidden md:flex space-x-8">
             <Link href="/" className="text-white hover:text-green-400 transition">Inicio</Link>
+            <Link href="/talks" className="text-white hover:text-green-400 transition">Charlas</Link>
             <Link href="/multimedia" className="text-white hover:text-green-400 transition">Multimedia</Link>
             <Link href="/previous-editions" className="text-white hover:text-green-400 transition">Ediciones Anteriores</Link>
             <Link href="/register" className="text-white bg-green-600 hover:bg-green-700 px-4 py-2 rounded-full transition">Registrarse</Link>
           </nav>
         </div>
-        
+       
         {/* Menú móvil desplegable */}
         {isMenuOpen && (
-          <div className="md:hidden py-4">
+          <div className="md:hidden py-4" ref={menuRef}>
             <div className="flex flex-col space-y-4">
-              <Link href="/" className="text-white hover:text-green-400 transition">Inicio</Link>
-              <Link href="/multimedia" className="text-white hover:text-green-400 transition">Multimedia</Link>
-              <Link href="/previous-editions" className="text-white hover:text-green-400 transition">Ediciones Anteriores</Link>
-              <Link href="/register" className="text-white bg-green-600 hover:bg-green-700 px-4 py-2 rounded-full transition text-center">Registrarse</Link>
+              <Link href="/" onClick={handleLinkClick} className="text-white hover:text-green-400 transition">Inicio</Link>
+              <Link href="/talks" onClick={handleLinkClick} className="text-white hover:text-green-400 transition">Charlas</Link>
+              <Link href="/multimedia" onClick={handleLinkClick} className="text-white hover:text-green-400 transition">Multimedia</Link>
+              <Link href="/previous-editions" onClick={handleLinkClick} className="text-white hover:text-green-400 transition">Ediciones Anteriores</Link>
+              <Link href="/register" onClick={handleLinkClick} className="text-white bg-green-600 hover:bg-green-700 px-4 py-2 rounded-full transition text-center">Registrarse</Link>
             </div>
           </div>
         )}
