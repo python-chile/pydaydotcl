@@ -6,91 +6,77 @@ import SponsorForm from "@/components/SponsorForm";
 import CTAFinal from "@/components/CTAFinal";
 import FAQSection from "@/components/FAQSection";
 import { sponsorshipFAQs } from "@/data/faqs";
-
+import { sponsorshipData } from "@/data/sponsorshipData";
 
 export default function DynamicContent() {
+  const { intro, audience, eventStats2024, benefits, plans, contact } =
+    sponsorshipData;
+
   return (
     <>
+      {/* Introducción */}
+      <motion.section className="container mx-auto py-12 md:py-16 px-4 sm:px-6 relative">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="inline-block mb-4 md:mb-6">
+            <div className="text-4xl md:text-5xl font-bold text-[#4ADE80]">
+              “
+            </div>
+          </div>
+          <p className="text-lg md:text-2xl leading-relaxed text-gray-300 font-medium px-2 sm:px-0">
+            {intro}
+            <span className="block mt-4 md:mt-6 text-[#FFD43B] font-semibold text-base md:text-lg">
+              ¡Sé parte de la revolución Python 2025!
+            </span>
+          </p>
+          <div className="mt-6 md:mt-8 flex justify-center space-x-3 md:space-x-4">
+            <div className="w-8 h-1 md:w-12 bg-[#4ADE80] rounded-full" />
+            <div className="w-6 h-1 md:w-8 bg-[#FFD43B] rounded-full" />
+            <div className="w-4 h-1 bg-[#F87171] rounded-full" />
+          </div>
+        </div>
+      </motion.section>
+
       {/* Beneficios de patrocinio */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="container-py"
+        className="container mx-auto py-16 px-4"
       >
-        <h2 className="section-title">¿Por qué patrocinar PyDay Chile?</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-          <div className="bg-black/20 backdrop-blur p-6 rounded-lg text-center">
-            <div className="bg-green-600 rounded-full h-14 w-14 flex items-center justify-center mx-auto mb-4">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-8 w-8 text-white"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                />
-              </svg>
+        <h2 className="text-4xl font-bold text-center mb-16 text-white">
+          <span className="border-b-4 border-[#4ADE80] pb-2">
+            Ventajas Exclusivas
+          </span>
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {benefits.map((b, index) => (
+            <div
+              key={index}
+              className="group relative p-8 rounded-2xl bg-gradient-to-b from-gray-800/30 to-gray-900/50 backdrop-blur-sm border border-gray-700 hover:border-[#4ADE80] transition-all"
+            >
+              <div className="absolute inset-0 rounded-2xl border-2 border-[#4ADE80] opacity-0 group-hover:opacity-30 transition-opacity pointer-events-none" />
+
+              <div className="w-14 h-14 mb-6 bg-[#4ADE80]/10 rounded-xl flex items-center justify-center">
+                <svg
+                  className="w-8 h-8 text-[#4ADE80]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  />
+                </svg>
+              </div>
+
+              <h3 className="text-2xl font-bold text-white mb-4">{b.title}</h3>
+              <p className="text-gray-400 leading-relaxed">{b.description}</p>
             </div>
-            <h4 className="text-xl font-bold mb-2">Visibilidad</h4>
-            <p>
-              Conecta tu marca con la comunidad Python de Chile y Latinoamérica.
-              Más de 300 asistentes entre desarrolladores, profesionales y
-              estudiantes.
-            </p>
-          </div>
-          <div className="bg-black/20 backdrop-blur p-6 rounded-lg text-center">
-            <div className="bg-green-600 rounded-full h-14 w-14 flex items-center justify-center mx-auto mb-4">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-8 w-8 text-white"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                />
-              </svg>
-            </div>
-            <h4 className="text-xl font-bold mb-2">Reclutamiento</h4>
-            <p>
-              Acceso directo a talento especializado en Python, uno de los
-              lenguajes más demandados en la industria tecnológica.
-            </p>
-          </div>
-          <div className="bg-black/20 backdrop-blur p-6 rounded-lg text-center">
-            <div className="bg-green-600 rounded-full h-14 w-14 flex items-center justify-center mx-auto mb-4">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-8 w-8 text-white"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"
-                />
-              </svg>
-            </div>
-            <h4 className="text-xl font-bold mb-2">Comunidad</h4>
-            <p>
-              Contribuye al crecimiento de la comunidad open source y mejora tu
-              reputación como empresa que apoya el desarrollo tecnológico en
-              Chile.
-            </p>
-          </div>
+          ))}
         </div>
       </motion.section>
 
@@ -99,100 +85,99 @@ export default function DynamicContent() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="container-py bg-black/10 backdrop-blur"
+        className="py-12 md:py-16"
       >
-        <div className="max-w-5xl mx-auto">
-          <h2 className="section-title">Alcance del Evento</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-green-500 mb-2">300+</div>
-              <p className="text-xl">Asistentes por sede</p>
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                <span className="border-b-4 border-[#4ADE80] pb-2">
+                  Impacto y Alcance
+                </span>
+              </h2>
+              <p className="text-gray-400">Nuestra comunidad en números</p>
             </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-green-500 mb-2">3</div>
-              <p className="text-xl">Ciudades en Chile</p>
+
+            {/* Metricas principales */}
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 mb-8 md:mb-12">
+              {Object.entries(audience).map(([key, value]) => (
+                <div
+                  key={key}
+                  className="p-4 md:p-6 rounded-xl bg-gray-900/50 backdrop-blur-sm border border-gray-800 hover:border-[#4ADE80]/50 transition-colors"
+                >
+                  <p className="text-2xl md:text-3xl font-bold text-[#4ADE80] mb-1">
+                    {value.toLocaleString()}
+                    <span className="text-[#FFD43B]">+</span>
+                  </p>
+                  <p className="text-xs md:text-sm text-gray-400 font-medium">
+                    {key === "x"
+                      ? "Redes Sociales"
+                      : key.split(/(?=[A-Z])/).join(" ")}
+                  </p>
+                </div>
+              ))}
             </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-green-500 mb-2">20+</div>
-              <p className="text-xl">Charlas y talleres</p>
-            </div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-green-500 mb-2">70%</div>
-              <p className="text-xl">Profesionales del sector tecnológico</p>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-green-500 mb-2">2K+</div>
-              <p className="text-xl">Seguidores en redes sociales</p>
+
+            {/* Estadísticas 2024 */}
+            <div className="p-6 md:p-8 rounded-2xl bg-gray-900/30 backdrop-blur-sm">
+              <h3 className="text-xl md:text-2xl font-bold text-center text-white mb-6 md:mb-8">
+                Comparativa PyDay 2024
+              </h3>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {[
+                  { label: "Vistas en vivo", value: eventStats2024.liveViews },
+                  {
+                    label: "Asistentes presenciales",
+                    value: eventStats2024.inPersonAttendees,
+                  },
+                  {
+                    label: "Ponentes expertos",
+                    value: eventStats2024.expertSpeakers,
+                  },
+                ].map((stat, index) => (
+                  <div
+                    key={index}
+                    className="p-4 rounded-xl bg-gradient-to-b from-[#4ADE80]/10 to-transparent"
+                  >
+                    <p className="text-3xl md:text-4xl font-bold text-[#FFD43B] mb-1">
+                      {stat.value.toLocaleString()}
+                    </p>
+                    <p className="text-sm md:text-base text-gray-400">
+                      {stat.label}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </motion.section>
 
-      <SponsorshipPlans />
+      {/* Planes de Patrocinio */}
+      <SponsorshipPlans plans={plans} />
 
       {/* Patrocinadores anteriores */}
-      <SponsorList />
+      <SponsorList sponsors={sponsorshipData.sponsors} />
 
-      {/* Testimonios de patrocinadores */}
-      <section className="container-py">
-        <h2 className="section-title">Lo que dicen nuestros patrocinadores</h2>
-        <div className="max-w-4xl mx-auto mt-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-black/20 backdrop-blur rounded-lg p-6">
-              <p className="text-lg italic mb-4">
-                "Patrocinar PyDay nos permitió conectar con desarrolladores
-                talentosos y aumentar nuestra visibilidad en la comunidad Python
-                de Chile. Definitivamente repetiremos la experiencia."
-              </p>
-              <div className="flex items-center">
-                <div className="w-12 h-12 rounded-full bg-green-600 flex items-center justify-center mr-4">
-                  <span className="font-bold text-lg">AC</span>
-                </div>
-                <div>
-                  <p className="font-bold">Ana Contreras</p>
-                  <p className="text-sm opacity-80">CTO, TechSolutions Chile</p>
-                </div>
-              </div>
-            </div>
-            <div className="bg-black/20 backdrop-blur rounded-lg p-6">
-              <p className="text-lg italic mb-4">
-                "El retorno de inversión fue excelente. Logramos contactar con
-                varios perfiles interesantes para nuestro equipo y posicionar
-                nuestra marca entre profesionales del sector."
-              </p>
-              <div className="flex items-center">
-                <div className="w-12 h-12 rounded-full bg-green-600 flex items-center justify-center mr-4">
-                  <span className="font-bold text-lg">PM</span>
-                </div>
-                <div>
-                  <p className="font-bold">Pablo Muñoz</p>
-                  <p className="text-sm opacity-80">
-                    Director de RRHH, DataSoft
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="contacto" className="container-py bg-black/20 backdrop-blur">
-        <div className="max-w-xl mx-auto">
-          <h2 className="section-title">¿Interesado en patrocinar?</h2>
-          <div className="bg-black/20 backdrop-blur-md rounded-lg p-6">
-            <SponsorForm />
+      {/* Formulario de contacto */}
+      <section id="contact-form" className="container mx-auto py-16 px-4">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-8 text-white">
+            ¿Interesado en patrocinar?
+          </h2>
+          <div className="p-12">
+            <SponsorForm contactEmail={contact.email} />
           </div>
         </div>
       </section>
 
       <CTAFinal
-        title="¿Listo para formar parte de PyDay Chile 2025?"
-        subtitle="Conviértete en parte fundamental de este evento que impulsa el desarrollo tecnológico en Chile"
-        buttonText="Solicitar Información"
+        title="Contáctanos"
+        subtitle={`Escríbenos a ${contact.email} o visita ${contact.website}`}
+        buttonText="Enviar mensaje"
+        email={contact.email}
       />
-
       <FAQSection faqs={sponsorshipFAQs} />
     </>
   );
