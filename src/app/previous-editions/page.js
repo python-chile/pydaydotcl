@@ -68,7 +68,7 @@ export default function PreviousEditionsPage() {
                       <p className="text-py-text">{event.highlights}</p>
                     </div>
                   </div>
-                  //TODO: mejorar el acceso al año 
+                  {/* TODO: mejorar el acceso al año  */}
                   {/* Botón único para Fotos y Videos */}
                   {/* <div className="mt-6 flex justify-center">
                     {event.photosLink && (
