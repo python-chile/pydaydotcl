@@ -24,15 +24,16 @@ export default function TalksPage() {
   const filteredTalks = allTalks.filter((talk) => {
     const cityInfo = cityData[talk.city];
     const searchTerms = debouncedSearch.toLowerCase();
-    
+
     const cityMatch = !selectedCity || talk.city === selectedCity;
-    const categoryMatch = !selectedCategory || talk.category === selectedCategory;
+    const categoryMatch =
+      !selectedCategory || talk.category === selectedCategory;
     const dateMatch = selectedDay ? cityInfo.date === selectedDay : true;
-    
-    const searchMatch = 
+
+    const searchMatch =
       talk.title.toLowerCase().includes(searchTerms) ||
       talk.description.toLowerCase().includes(searchTerms) ||
-      talk.tags?.some(tag => tag.toLowerCase().includes(searchTerms)) ||
+      talk.tags?.some((tag) => tag.toLowerCase().includes(searchTerms)) ||
       talk.speaker.name.toLowerCase().includes(searchTerms);
 
     return cityMatch && categoryMatch && dateMatch && searchMatch;
@@ -48,34 +49,36 @@ export default function TalksPage() {
     <div className="container-py">
       {/* Breadcrumb */}
       <div className="mb-6">
-        <div className="flex items-center text-sm text-white/70">
-          <Link href="/" className="hover:text-white transition-colors">
+        <div className="flex items-center text-sm text-py-text/70">
+          <Link href="/" className="hover:text-py-text transition-colors">
             Inicio
           </Link>
           <span className="mx-2">/</span>
-          <span className="text-white">Charlas</span>
+          <span className="text-py-text">Charlas</span>
         </div>
       </div>
 
       {/* Hero Section */}
       <div className="mb-12 text-center max-w-4xl mx-auto">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-py-text">
           Charlas PyDay Chile 2025
         </h1>
-        <p className="text-lg text-white/80">
+        <p className="text-lg text-py-text/80">
           Explora todas las charlas programadas para los eventos de PyDay Chile
           2025. Desde principiantes hasta expertos, tenemos contenido para todos
           los niveles y áreas de interés.
         </p>
       </div>
 
-      {/* Tabs de días modificados */}
-      <div className="mb-8 flex overflow-x-auto scrollbar-hidden">
+      {/* Tabs de días */}
+      <div className="mb-8 flex overflow-x-auto scrollbar-hidden p-3">
         <div className="flex space-x-2 md:space-x-4 min-w-full pb-2">
           <button
             onClick={() => setSelectedDay("")}
             className={`px-4 py-2 rounded-lg text-sm md:text-base font-medium whitespace-nowrap ${
-              !selectedDay ? "bg-green-700" : "bg-black/20 hover:bg-black/30"
+              !selectedDay
+                ? "bg-py-green text-py-dark shadow-lg ring-2 ring-py-green ring-offset-2"
+                : "bg-py-dark/20 hover:bg-py-dark/30 text-py-text"
             }`}
           >
             Todos los días
@@ -86,8 +89,8 @@ export default function TalksPage() {
               onClick={() => setSelectedDay(city.date)}
               className={`px-4 py-2 rounded-lg text-sm md:text-base font-medium whitespace-nowrap ${
                 selectedDay === city.date
-                  ? "bg-green-700"
-                  : "bg-black/20 hover:bg-black/30"
+                  ? "bg-py-green text-py-dark shadow-lg ring-2 ring-py-green ring-offset-2"
+                  : "bg-py-dark/20 hover:bg-py-dark/30 text-py-text"
               }`}
             >
               {city.date.split(",")[0]} - {city.name}
@@ -95,15 +98,14 @@ export default function TalksPage() {
           ))}
         </div>
       </div>
-
       {/* Filtros de charlas */}
-      <div className="mb-8 bg-black/20 backdrop-blur-sm rounded-lg p-4 md:p-6">
+      <div className="mb-8 bg-py-dark/20 backdrop-blur-sm rounded-lg p-4 md:p-6">
         <div className="flex flex-col md:flex-row gap-4 md:items-center justify-between">
           <div className="flex items-center gap-2 flex-wrap">
             <select
               value={selectedCity}
               onChange={(e) => setSelectedCity(e.target.value)}
-              className="bg-black/30 text-white border border-white/20 rounded px-3 py-1.5 text-sm"
+              className="bg-py-dark/30 text-py-text border border-py-text/20 rounded px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-py-green"
             >
               <option value="">Todas las sedes</option>
               {Object.keys(cityData).map((cityKey) => (
@@ -116,7 +118,7 @@ export default function TalksPage() {
             <select
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
-              className="bg-black/30 text-white border border-white/20 rounded px-3 py-1.5 text-sm"
+              className="bg-py-dark/30 text-py-text border border-py-text/20 rounded px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-py-green"
             >
               <option value="">Todas las categorías</option>
               <option value="tecnica">Técnica</option>
@@ -131,11 +133,11 @@ export default function TalksPage() {
               placeholder="Buscar charlas..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="bg-black/30 text-white border border-white/20 rounded pl-9 pr-3 py-1.5 w-full md:w-64 text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="bg-py-dark/30 text-py-text border border-py-text/20 rounded pl-9 pr-3 py-1.5 w-full md:w-64 text-sm focus:outline-none focus:ring-2 focus:ring-py-green"
             />
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4 absolute left-3 top-2 text-white/60"
+              className="h-4 w-4 absolute left-3 top-2 text-py-text/60"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -170,8 +172,8 @@ export default function TalksPage() {
           })}
         </div>
       ) : (
-        <div className="bg-black/20 backdrop-blur-sm rounded-lg p-6 md:p-8 text-center">
-          <div className="w-16 h-16 md:w-20 md:h-20 bg-purple-600/30 rounded-full flex items-center justify-center mx-auto mb-4">
+        <div className="bg-py-dark/20 backdrop-blur-sm rounded-lg p-6 md:p-8 text-center">
+          <div className="w-16 h-16 md:w-20 md:h-20 bg-py-red/30 rounded-full flex items-center justify-center mx-auto mb-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-8 w-8 md:h-10 md:w-10"
@@ -187,10 +189,10 @@ export default function TalksPage() {
               />
             </svg>
           </div>
-          <h3 className="text-lg md:text-xl font-bold mb-2">
+          <h3 className="text-lg md:text-xl font-bold mb-2 text-py-text">
             No hay charlas disponibles aún
           </h3>
-          <p className="text-white/80 mb-6">
+          <p className="text-py-text/80 mb-6">
             Estamos finalizando el programa. ¡Vuelve pronto para ver las charlas
             confirmadas!
           </p>
@@ -216,8 +218,9 @@ export default function TalksPage() {
         </div>
       )}
 
+      {/* TODO: API para que funcione: */}
       {/* Subscribe for updates */}
-      <div className="mt-16 bg-green-800/30 backdrop-blur-sm rounded-lg p-6 md:p-8">
+      {/* <div className="mt-16 bg-green-800/30 backdrop-blur-sm rounded-lg p-6 md:p-8">
         <div className="max-w-4xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
             <div>
@@ -241,7 +244,7 @@ export default function TalksPage() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
