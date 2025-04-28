@@ -15,7 +15,7 @@ const pastEvents = [
   {
     year: "2023",
     cities: ["Valparaíso", "Puerto Montt", "Santiago"],
-    mainImage: "/images/gallery/valpo/PYDAY_2023_VALPO_03.webp",
+    mainImage: "/images/gallery/valpo/PYDAY_2023_VALPO_02.webp",
     attendees: "720",
     talks: 23,
     workshops: 6,
