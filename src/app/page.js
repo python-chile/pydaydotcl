@@ -58,7 +58,7 @@ export default function Home() {
       </HeroSection>
 
       {/* Ciudades / Mapa Section */}
-      <section id="ciudades" className="container-py">
+      <section id="ciudades" className="container-py mt-8">
         <h2 className="section-title">Sedes PyDay 2025</h2>
         <ChileMap cities={cities} />
       </section>
@@ -73,7 +73,7 @@ export default function Home() {
             ))}
           </div>
         ) : (
-          <div className="bg-black/20 backdrop-blur-sm rounded-lg p-6 md:p-8 max-w-2xl mx-auto mt-8 text-center">
+          <div className="backdrop-blur-sm rounded-lg p-6 md:p-8 max-w-2xl mx-auto mt-8 text-center">
             <div className="w-16 h-16 md:w-20 md:h-20 bg-purple-700 rounded-full flex items-center justify-center mx-auto mb-4">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -130,13 +130,13 @@ export default function Home() {
       {/* Registro Section */}
       <section id="registro" className="container-py">
         <h2 className="section-title">Regístrate</h2>
-        <div className="max-w-xl mx-auto">
+        <div className="max-w-xl mx-auto px-13">
           <RegistrationForm />
         </div>
       </section>
 
       {/* Acerca de PyDay */}
-      <section className="container-py bg-black/20 backdrop-blur">
+      <section className="container-py backdrop-blur">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="section-title">¿Qué es PyDay?</h2>
           <p className="text-lg leading-relaxed">
@@ -149,7 +149,7 @@ export default function Home() {
             charlas inspiradoras, talleres prácticos y hackatones, éste día es
             para colaborar y disfrutar de un ambiente lleno de entusiasmo.
           </p>
-          <div className="mt-8 inline-block px-8 py-3 border-2 border-white rounded-full font-bold text-lg">
+          <div className="mt-8 inline-block px-8 py-3 bg-transparent text-white font-bold text-xl cursor-default">
             Evento 100% Gratuito
           </div>
         </div>
@@ -158,8 +158,7 @@ export default function Home() {
       {/* Patrocinadores Section - Versión Simplificada */}
       <section id="patrocinadores" className="container-py">
         <h2
-          className="section-title text-transparent bg-clip-text 
-  bg-gradient-to-r from-green-400 to-white font-bold 
+          className="section-title font-bold 
   tracking-wider text-4xl mb-0"
         >
           Nuestros Patrocinadores

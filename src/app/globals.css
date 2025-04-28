@@ -10,11 +10,16 @@
 */
 
 :root {
-  --primary-green: #3D8B37;	/* Cuerpo de la serpiente */
-  --accent-yellow: #FFE141;	/* Panza en tono intermedio */
-  --text-white: #FFFFFF;   	/* Texto principal */
-  --outline-red: #F23939;  	/* Contorno del texto en tono intermedio */
-  --bg-dark: #101010;      	/* Fondo oscuro intermedio */
+  --primary-green: #3D8B37;
+  /* Cuerpo de la serpiente */
+  --accent-yellow: #FFE141;
+  /* Panza en tono intermedio */
+  --text-white: #FFFFFF;
+  /* Texto principal */
+  --outline-red: #F23939;
+  /* Contorno del texto en tono intermedio */
+  --bg-dark: #101010;
+  /* Fondo oscuro intermedio */
 }
 
 body {
@@ -24,25 +29,25 @@ body {
 
 /* Gradiente con tránsito moderado entre los colores */
 .gradient-bg {
-  background: linear-gradient(
-	135deg,
-	var(--primary-green) 0%,
-	var(--accent-yellow) 50%,
-	var(--outline-red) 100%
-  );
+  background: linear-gradient(135deg,
+      var(--primary-green) 0%,
+      var(--accent-yellow) 50%,
+      var(--outline-red) 100%);
   background-size: 400% 400%;
   animation: gradient 18s ease infinite;
 }
 
 @keyframes gradient {
   0% {
-	background-position: 0% 50%;
+    background-position: 0% 50%;
   }
+
   50% {
-	background-position: 100% 50%;
+    background-position: 100% 50%;
   }
+
   100% {
-	background-position: 0% 50%;
+    background-position: 0% 50%;
   }
 }
 
@@ -58,21 +63,30 @@ body {
 
 /* Componentes reutilizables */
 @layer components {
+
   .btn-primary {
-	@apply px-6 py-3 bg-green-700 hover:bg-green-800 text-white font-bold rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1;
+    @apply px-6 py-3 bg-transparent border-2 text-white font-bold rounded-full transition duration-300 ease-in-out shadow-lg hover:shadow-xl hover:-translate-y-1;
+    border-color: var(--primary-green);
   }
- 
+
+  .btn-primary:hover {
+    background-color: var(--primary-green);
+    color: var(--text-white);
+  }
+
   .btn-secondary {
-	@apply px-6 py-3 bg-transparent border-2 border-white hover:bg-white/20 text-white font-bold rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1;
+    @apply px-6 py-3 bg-transparent border-2 border-white text-white font-bold rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1;
   }
- 
+
+  .btn-secondary:hover {
+    @apply bg-white/20;
+  }
+
   .section-title {
-	@apply text-3xl md:text-4xl font-bold mb-6 text-center;
+    @apply text-3xl md:text-4xl font-bold mb-6 text-center;
   }
- 
+
   .container-py {
-	@apply max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8;
+    @apply max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8;
   }
 }
-
-

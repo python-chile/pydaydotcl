@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import SponsorLogo from "@/components/SponsorLogo";
+import SponsorLogo from "@/app/sponsors/components/SponsorLogo";
 import mockSponsors from "@/data/sponsors";
 
 export default function SponsorList() {

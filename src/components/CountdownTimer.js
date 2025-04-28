@@ -1,5 +1,4 @@
 'use client';
-
 import { useState, useEffect } from 'react';
 
 export default function CountdownTimer({ targetDate }) {
@@ -39,14 +38,17 @@ export default function CountdownTimer({ targetDate }) {
   ];
 
   return (
-    <div className="flex justify-center my-8">
-      <div className="grid grid-cols-4 gap-2 text-center">
+    <div className="w-full max-w-3xl mx-auto">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
         {timeUnits.map((unit, index) => (
-          <div key={index} className="flex flex-col">
-            <div className="text-4xl md:text-5xl lg:text-6xl font-bold bg-black/20 backdrop-blur rounded-lg p-4">
+          <div 
+            key={index} 
+            className="bg-gradient-to-b from-py-green/30 to-py-dark/60 backdrop-blur-sm p-3 sm:p-4 rounded-lg border border-py-green/30 flex flex-col items-center justify-center"
+          >
+            <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-py-yellow mb-1">
               {String(unit.value).padStart(2, '0')}
             </div>
-            <span className="text-sm mt-1">{unit.label}</span>
+            <div className="text-xs sm:text-sm text-py-text/80">{unit.label}</div>
           </div>
         ))}
       </div>

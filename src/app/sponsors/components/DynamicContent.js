@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import SponsorList from "./SponsorList";
 import SponsorshipPlans from "./SponsorshipPlans";
-import SponsorForm from "@/components/SponsorForm";
+import SponsorForm from "@/app/sponsors/components/SponsorForm";
 import CTAFinal from "@/components/CTAFinal";
 import FAQSection from "@/components/FAQSection";
 import { sponsorshipFAQs } from "@/data/faqs";
