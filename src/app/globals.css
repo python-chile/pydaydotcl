@@ -1,12 +1,8 @@
 @import "tailwindcss";
 
 /*
-  Esquema de color basado en el logo "PYDAY" (versión intermedia):
-  - Verde (#3D8B37): Color principal, siempre presente.
-  - Amarillo intermedio (#FFE141): Un tono entre el amarillo vibrante y el pastel, que aporta energía sin ser demasiado intenso.
-  - Blanco (#FFFFFF): Para el texto principal.
-  - Rojo intermedio (#F23939): Menos agresivo que el rojo puro pero que ofrece el énfasis necesario.
-  - Fondo oscuro (#101010): Más suave que un negro absoluto para evitar contrastes excesivos.
+  Esquema de color basado en el logo "PYDAY".
+
 */
 
 :root {
@@ -51,7 +47,7 @@ body {
   }
 }
 
-/* Estilo para el texto del logo con contorno que resalta de forma elegante */
+/* Estilo para el texto del logo */
 .logo-text {
   font-family: sans-serif;
   color: var(--text-white);

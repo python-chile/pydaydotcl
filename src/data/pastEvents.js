@@ -28,7 +28,7 @@ const pastEvents = [
   {
     year: "2022",
     cities: ["Valparaíso", "La Serena"],
-    mainImage: "/images/gallery/valpo/PYDAY_2022_VALPO_03.webp",
+    mainImage: "/images/gallery/valpo/PYDAY_2022_VALPO_01.webp",
     attendees: "500",
     talks: 15,
     workshops: 5,

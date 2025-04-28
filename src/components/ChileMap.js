@@ -6,32 +6,41 @@ export default function ChileMap({ cities }) {
   const [activeCity, setActiveCity] = useState(null);
 
   return (
-    // Cambiamos el ancho máximo a max-w-4xl para que el contenedor final sea más angosto.
-    <div className="mx-auto max-w-4xl px-4">
-      <div className="flex flex-col md:flex-row items-center gap-4">
-        {/* Contenedor del mapa */}
+    <div className="mx-auto max-w-4xl px-4 py-8">
+      <div className="flex flex-col md:flex-row items-center gap-6">
+        {/* Contenedor del mapa con mejor contraste y accesibilidad */}
         <div className="w-full md:w-1/2 lg:w-1/2">
-          <div className="aspect-[3/6] lg:aspect-auto lg:h-[400px] w-full bg-white/10 backdrop-blur-sm rounded-lg p-4 relative">
-            <svg viewBox="0 0 100 300" className="w-full h-full">
+          <div className="aspect-[3/6] sm:aspect-[3/5] lg:aspect-auto lg:h-[450px] w-full bg-white/5 backdrop-blur-sm rounded-lg p-4 relative shadow-lg border border-white/10">
+            <svg viewBox="0 0 100 300" className="w-full h-full" aria-label="Mapa de Chile con ciudades">
               <g transform="translate(-10,0) scale(1.2,1)">
                 <path
                   d="M50,20 Q60,50 55,100 Q50,150 60,200 Q70,250 50,280"
                   fill="none"
                   stroke="white"
                   strokeWidth="2"
-                  className="opacity-50"
+                  className="opacity-60"
                 />
                 {cities.map((city) => (
                   <g
                     key={city.slug}
                     onClick={() => setActiveCity(city.slug)}
                     className="cursor-pointer"
+                    role="button"
+                    aria-pressed={activeCity === city.slug}
+                    tabIndex="0"
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        setActiveCity(city.slug);
+                      }
+                    }}
                   >
                     <circle
                       cx={city.mapCoords.x}
                       cy={city.mapCoords.y}
                       r={activeCity === city.slug ? 6 : 4}
-                      fill={activeCity === city.slug ? "#FFD700" : "#8A2BE2"}
+                      fill={activeCity === city.slug ? "#FFE141" : "#3D8B37"}
+                      strokeWidth={activeCity === city.slug ? 2 : 1}
+                      stroke="#FFFFFF"
                       className="transition-all duration-300"
                     />
                     <text
@@ -39,7 +48,7 @@ export default function ChileMap({ cities }) {
                       y={city.mapCoords.y + 4}
                       fontSize="8"
                       fill="white"
-                      className="pointer-events-none"
+                      className="pointer-events-none font-medium"
                     >
                       {city.name}
                     </text>
@@ -50,29 +59,31 @@ export default function ChileMap({ cities }) {
           </div>
         </div>
 
-        {/* Lista de ciudades, centradas verticalmente */}
-        <div className="w-full md:w-1/2 lg:w-1/2 flex flex-col justify-center space-y-4">
+        {/* Lista de ciudades, centradas verticalmente con colores mejorados */}
+        <div className="w-full md:w-1/2 lg:w-1/2 flex flex-col justify-center space-y-3">
           {cities.map((city) => (
             <Link
               href={`/${city.slug}`}
               key={city.slug}
-              className={`block p-4 rounded-lg transition-all duration-300 
+              className={`block p-4 rounded-lg transition-all duration-300
                 ${
                   activeCity === city.slug
-                    ? "bg-purple-700 transform scale-105"
-                    : "bg-black/20 hover:bg-black/30"
+                    ? "bg-green-800/80 transform scale-102 border border-green-500/50"
+                    : "bg-black/30 hover:bg-black/40 border border-white/10"
                 }`}
               onMouseEnter={() => setActiveCity(city.slug)}
+              aria-current={activeCity === city.slug ? "true" : "false"}
             >
               <div className="flex items-center space-x-3">
                 <div
                   className={`w-3 h-3 rounded-full ${
-                    activeCity === city.slug ? "bg-yellow-400" : "bg-purple-500"
+                    activeCity === city.slug ? "bg-yellow-400" : "bg-green-500"
                   }`}
+                  aria-hidden="true"
                 ></div>
                 <div>
-                  <h3 className="font-bold">{city.name}</h3>
-                  <p className="text-sm opacity-80">{city.date}</p>
+                  <h3 className="font-bold text-lg">{city.name}</h3>
+                  <p className="text-sm opacity-90">{city.date}</p>
                 </div>
               </div>
             </Link>
