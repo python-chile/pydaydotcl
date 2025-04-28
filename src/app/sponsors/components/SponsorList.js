@@ -23,7 +23,7 @@ export default function SponsorList() {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="container-py bg-black/10 backdrop-blur relative"
+      className="container-py relative"
     >
       <h2 className="section-title">Patrocinadores 2024</h2>
       {/* Contenedor Principal */}
