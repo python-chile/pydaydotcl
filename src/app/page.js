@@ -74,7 +74,7 @@ export default function Home() {
           </div>
         ) : (
           <div className="backdrop-blur-sm rounded-lg p-6 md:p-8 max-w-2xl mx-auto mt-8 text-center">
-            <div className="w-16 h-16 md:w-20 md:h-20 bg-purple-700 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 md:w-20 md:h-20 bg-py-green rounded-full flex items-center justify-center mx-auto mb-4">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-8 w-8 md:h-10 md:w-10"

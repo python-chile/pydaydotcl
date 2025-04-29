@@ -18,7 +18,7 @@ export default function PreviousEditionsPage() {
       <div className="space-y-24 mb-12">
         {pastEvents.map((event, index) => (
           <div key={index} className="event-card">
-            <div className="relative bg-py-dark/30 backdrop-blur-sm rounded-xl overflow-hidden shadow-xl">
+            <div className="relative backdrop-blur-sm rounded-xl overflow-hidden shadow-xl">
               {/* Se fuerza que ambos lados ocupen al menos 20rem y se centran verticalmente */}
               <div className="grid md:grid-cols-2 gap-6 items-center min-h-[20rem]">
                 {/* Imagen del evento */}
