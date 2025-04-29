@@ -99,13 +99,13 @@ export const metadata = {
     url: "https://pyday.vercel.app/",
     images: [
       {
-        url: "/images/banner-og.webp",
+        url: "https://pyday.vercel.app/images/banner-og.jpg",
         width: 1200,
         height: 630,
         alt: "PyDay Chile 2025 - Un día de Python en tu ciudad",
       },
       {
-        url: "/images/logo-pyday.webp",
+        url: "https://pyday.vercel.app/images/logo_pyday.png",
         width: 800,
         height: 800,
         alt: "Logo PyDay Chile",
@@ -122,7 +122,7 @@ export const metadata = {
     creatorId: "@pythonchile",
     images: [
       {
-        url: "/images/banner-og.webp",
+        url: "https://pyday.vercel.app/images/banner-og.jpg",
         alt: "PyDay Chile 2025",
         width: 1200,
         height: 628,

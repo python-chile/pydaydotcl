@@ -162,7 +162,7 @@ export default async function CityPage({ params }) {
         <p>PyDay {data.name} es organizado por la comunidad Python Chile.</p>
         <p className="mt-2">
           Si quieres ser patrocinador o colaborador,{" "}
-          <Link href="/contacto" className="underline hover:text-white">
+          <Link href="/sponsors#contacto" className="underline hover:text-white">
             contáctanos
           </Link>
           .
