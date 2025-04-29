@@ -48,13 +48,16 @@ export default function PreviousEditionsPage() {
                     </h3>
                     <ul className="space-y-2 mb-6 text-py-text">
                       <li>
-                        <span className="font-medium">Asistentes:</span> {event.attendees}
+                        <span className="font-medium">Asistentes:</span>{" "}
+                        {event.attendees}
                       </li>
                       <li>
-                        <span className="font-medium">Charlas:</span> {event.talks}
+                        <span className="font-medium">Charlas:</span>{" "}
+                        {event.talks}
                       </li>
                       <li>
-                        <span className="font-medium">Talleres:</span> {event.workshops}
+                        <span className="font-medium">Talleres:</span>{" "}
+                        {event.workshops}
                       </li>
                       <li>
                         <span className="font-medium">Fecha:</span> {event.date}
@@ -68,15 +71,22 @@ export default function PreviousEditionsPage() {
                       <p className="text-py-text">{event.highlights}</p>
                     </div>
                   </div>
-                  {/* TODO: mejorar el acceso al año  */}
-                  {/* Botón único para Fotos y Videos */}
-                  {/* <div className="mt-6 flex justify-center">
-                    {event.photosLink && (
-                      <Link href={event.photosLink} className="btn-secondary">
-                        Ver Fotos y Videos
-                      </Link>
-                    )}
-                  </div> */}
+                  <div className="mt-6 flex justify-center gap-4">
+                    <Link
+                      href={`/multimedia#photos-${event.year}`}
+                      target="_blank"
+                      className="btn-secondary"
+                    >
+                      Fotos {event.year}
+                    </Link>
+                    <Link
+                      href={`/multimedia#videos-${event.year}`}
+                      target="_blank"
+                      className="btn-secondary"
+                    >
+                      Videos {event.year}
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
