@@ -197,6 +197,35 @@ export const images = [
     location: "Universidad de Valparaíso",
     year: "2024",
   },
+  // Santiago (STGO) 2023
+  {
+    src: "/images/gallery/stgo/PYDAY_2023_STGO_01.webp",
+    alt: "Participantes de la Hackatón de IA Generativa organizada por EY y Python Chile en 2023",
+    caption: "Grupo de participantes en la Hackatón de IA Generativa organizada por EY y Python Chile en Santiago 2023",
+    location: "Edificio EYU (Universidad Corporativa de EY),Las Condes",
+    year: "2023",
+  },
+  {
+    src: "/images/gallery/stgo/PYDAY_2023_STGO_02.webp",
+    alt: "Equipo compitiendo en la Hackatón de IA Generativa 2023 en Santiago",
+    caption: "Uno de los equipos compitiendo en la Hackatón de IA Generativa en Santiago 2023",
+    location: "Edificio EYU (Universidad Corporativa de EY),Las Condes",
+    year: "2023",
+  },
+  {
+    src: "/images/gallery/stgo/PYDAY_2023_STGO_03.webp",
+    alt: "Equipos trabajando en desafíos tecnológicos propuestos por Falabella, Scotiabank, Entel, Antofagasta Minerals y ACHS",
+    caption: "Participantes resolviendo desafíos de empresas líderes en la Hackatón de Santiago",
+    location: "Edificio EYU (Universidad Corporativa de EY),Las Condes",
+    year: "2023",
+  },
+  {
+    src: "/images/gallery/stgo/PYDAY_2023_STGO_04.webp",
+    alt: "Team Zord recibiendo el primer lugar de la Hackatón junto al Gerente de Antofagasta Minerals",
+    caption: "Integrantes del Team Zord celebrando su primer lugar en la Hackatón de Santiago 2023",
+    location: "Edificio EYU (Universidad Corporativa de EY),Las Condes",
+    year: "2023",
+  },
 ];
 
 export const videos = [
