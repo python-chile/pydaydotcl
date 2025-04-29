@@ -142,7 +142,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="es">
       <body className={`${openSans.variable} min-h-screen flex flex-col text-py-text`}>
-        <div className="fixed inset-0 -z-10 bg-py-dark gradient-bg" />
+        <div className="fixed inset-0 -z-10 gradient-bg" />
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />

@@ -77,8 +77,8 @@ export default function TalksPage() {
             onClick={() => setSelectedDay("")}
             className={`px-4 py-2 rounded-lg text-sm md:text-base font-medium whitespace-nowrap ${
               !selectedDay
-                ? "bg-py-green text-py-dark shadow-lg ring-2 ring-py-green ring-offset-2"
-                : "bg-py-dark/20 hover:bg-py-dark/30 text-py-text"
+                ? "shadow-lg ring-2 ring-py-green ring-offset-2"
+                : " text-py-text"
             }`}
           >
             Todos los días
@@ -89,8 +89,8 @@ export default function TalksPage() {
               onClick={() => setSelectedDay(city.date)}
               className={`px-4 py-2 rounded-lg text-sm md:text-base font-medium whitespace-nowrap ${
                 selectedDay === city.date
-                  ? "bg-py-green text-py-dark shadow-lg ring-2 ring-py-green ring-offset-2"
-                  : "bg-py-dark/20 hover:bg-py-dark/30 text-py-text"
+                  ? "text-py-dark shadow-lg ring-2 ring-offset-2"
+                  : "text-py-text"
               }`}
             >
               {city.date.split(",")[0]} - {city.name}
@@ -99,7 +99,7 @@ export default function TalksPage() {
         </div>
       </div>
       {/* Filtros de charlas */}
-      <div className="mb-8 bg-py-dark/20 backdrop-blur-sm rounded-lg p-4 md:p-6">
+      <div className="mb-8 backdrop-blur-sm rounded-lg p-4 md:p-6">
         <div className="flex flex-col md:flex-row gap-4 md:items-center justify-between">
           <div className="flex items-center gap-2 flex-wrap">
             <select
@@ -133,7 +133,7 @@ export default function TalksPage() {
               placeholder="Buscar charlas..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="bg-py-dark/30 text-py-text border border-py-text/20 rounded pl-9 pr-3 py-1.5 w-full md:w-64 text-sm focus:outline-none focus:ring-2 focus:ring-py-green"
+              className="text-py-text border border-py-text/20 rounded pl-9 pr-3 py-1.5 w-full md:w-64 text-sm focus:outline-none focus:ring-2 focus:ring-py-green"
             />
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -172,7 +172,7 @@ export default function TalksPage() {
           })}
         </div>
       ) : (
-        <div className="bg-py-dark/20 backdrop-blur-sm rounded-lg p-6 md:p-8 text-center">
+        <div className="backdrop-blur-sm rounded-lg p-6 md:p-8 text-center">
           <div className="w-16 h-16 md:w-20 md:h-20 bg-py-red/30 rounded-full flex items-center justify-center mx-auto mb-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
