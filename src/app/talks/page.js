@@ -105,7 +105,7 @@ export default function TalksPage() {
             <select
               value={selectedCity}
               onChange={(e) => setSelectedCity(e.target.value)}
-              className="bg-py-dark/30 text-py-text border border-py-text/20 rounded px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-py-green"
+              className="select-theme"
             >
               <option value="">Todas las sedes</option>
               {Object.keys(cityData).map((cityKey) => (
@@ -118,7 +118,7 @@ export default function TalksPage() {
             <select
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
-              className="bg-py-dark/30 text-py-text border border-py-text/20 rounded px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-py-green"
+              className="select-theme"
             >
               <option value="">Todas las categorías</option>
               <option value="tecnica">Técnica</option>
