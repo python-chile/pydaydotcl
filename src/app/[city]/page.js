@@ -54,7 +54,69 @@ export default async function CityPage({ params }) {
         <p className="text-xl md:text-2xl opacity-90">{data.date}</p>
         <p className="text-lg opacity-80">{data.venue}</p>
       </HeroSection>
-
+      {/* Sección de introducción - Solo se muestra si existe */}
+      {data.introduction && (
+        <section className="container-py">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
+              {/* Columna de texto */}
+              <div className="bg-black/20 backdrop-blur rounded-lg p-6 md:p-8">
+                <h2 className="text-xl md:text-2xl font-bold mb-4 text-yellow-300">
+                  {data.introduction.title}
+                </h2>
+                <p className="text-base md:text-lg mb-6">
+                  {data.introduction.description}
+                </p>
+                
+                <h3 className="text-lg md:text-xl font-semibold mb-3 text-yellow-300">
+                  ¿Cómo participar?
+                </h3>
+                <p className="text-base mb-5">
+                  {data.introduction.participationInfo}
+                </p>
+                
+                <p className="font-medium mb-5">
+                  Fecha: {data.date}
+                </p>
+                
+                <p className="mb-4">
+                  Puedes participar, sin costo.
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-3 mb-4">
+                  {/* Oculto porque no está abierto el registro de asistentes 
+                  <Link
+                    href="/register"
+                    className="btn-primary text-center"
+                  >
+                    Registrarme como asistente
+                  </Link>
+                  */}
+                  <Link
+                    href={data.talkProposalLink}
+                    className="btn-secondary text-center"
+                  >
+                    Postular charla/taller
+                  </Link>
+                </div>
+              </div>
+              
+              {/* Columna de imagen */}
+              {data.introduction.campusImage && (
+                <div className="rounded-lg overflow-hidden h-[300px] md:h-auto">
+                  <Image
+                    src={data.introduction.campusImage}
+                    alt={`Campus PyDay ${data.name}`}
+                    width={800}
+                    height={600}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
+      )}
       {/* Mapa y dirección */}
       <section className="container-py">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 max-w-7xl mx-auto">
@@ -101,22 +163,21 @@ export default async function CityPage({ params }) {
         </div>
       </section>
 
-      {/* Agenda */}
+      {/* Agenda*/}
       <section className="container-py">
         <h2 className="section-title">Agenda</h2>
-
         <div className="space-y-4 md:space-y-6 mt-6 md:mt-8 max-w-4xl mx-auto">
           {data.schedule.map((talk, index) => (
             <TalkCard key={talk.id} talk={talk} />
           ))}
         </div>
-
+        {/* registro oculto
         <div className="mt-8 md:mt-12 text-center">
           <Link
             href="/register"
             target="_blank"
             className="btn-primary inline-flex items-center space-x-2"
-          >
+          >          
             <span>Registrarme para este evento</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -133,9 +194,8 @@ export default async function CityPage({ params }) {
               />
             </svg>
           </Link>
-        </div>
+        </div>*/}
       </section>
-
       <FAQSection faqs={generalFAQs} />
 
       <CTAFinal
