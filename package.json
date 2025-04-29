@@ -7,7 +7,8 @@
     "build": "next build",
     "export": "next export",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "clean-build": "rd /s /q .next && npm run build && xcopy /E /I public\\images .next\\static\\images"
   },
   "dependencies": {
     "firebase": "^11.6.0",

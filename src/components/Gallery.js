@@ -4,82 +4,89 @@ import Image from "next/image";
 
 export default function Gallery({ images }) {
   const [activeImage, setActiveImage] = useState(null);
-  const [imageDimensions, setImageDimensions] = useState({
-    width: 0,
-    height: 0,
-  });
-  const imageRef = useRef(null);
+  const modalRef = useRef(null);
 
-  const openModal = (image) => {
-    setActiveImage(image);
-    document.body.style.overflow = "hidden";
-  };
+  // Navegación por teclado
+  const handleKeyNavigation = useCallback(
+    (e) => {
+      if (!activeImage) return;
+      const currentIndex = images.findIndex(
+        (img) => img.src === activeImage.src
+      );
 
-  const closeModal = () => {
-    setActiveImage(null);
-    document.body.style.overflow = "auto";
-  };
+      if (e.key === "ArrowLeft" && currentIndex > 0) {
+        setActiveImage(images[currentIndex - 1]);
+      }
+      if (e.key === "ArrowRight" && currentIndex < images.length - 1) {
+        setActiveImage(images[currentIndex + 1]);
+      }
+      if (e.key === "Escape") {
+        setActiveImage(null);
+        document.body.style.overflow = "auto";
+      }
+    },
+    [activeImage, images]
+  );
 
-  // Esta función calculará las dimensiones reales de la imagen renderizada
-  const updateImageDimensions = useCallback(() => {
-    if (imageRef.current && activeImage) {
-      const img = imageRef.current;
-      const rect = img.getBoundingClientRect();
-      setImageDimensions({
-        width: rect.width,
-        height: rect.height,
-        top: rect.top,
-        left: rect.left,
-      });
-    }
-  }, [activeImage]);
-
-  // Actualizar dimensiones cuando cambia la imagen activa o en resize
   useEffect(() => {
-    if (activeImage) {
-      const timer = setTimeout(updateImageDimensions, 100);
-      window.addEventListener("resize", updateImageDimensions);
+    window.addEventListener("keydown", handleKeyNavigation);
+    return () => window.removeEventListener("keydown", handleKeyNavigation);
+  }, [handleKeyNavigation]);
 
-      return () => {
-        clearTimeout(timer);
-        window.removeEventListener("resize", updateImageDimensions);
-      };
-    }
-  }, [activeImage, updateImageDimensions]);
+  // Cargar placeholder dinámico
+  const getBlurData = (width, height) =>
+    `data:image/svg+xml;base64,${btoa(
+      `<svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}" fill="#3D8B3720"/>`
+    )}`;
 
   return (
     <div>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {images.map((image, index) => (
-          <div
-            key={index}
-            className="aspect-square relative rounded-lg overflow-hidden cursor-pointer group"
-            onClick={() => openModal(image)}
-          >
-            <Image
-              src={image.src}
-              alt={image.alt || "Imagen de PyDay Chile"}
-              fill
-              className="object-cover transition-transform duration-300 group-hover:scale-110"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-              <span className="text-white text-sm font-medium">
-                {image.caption || `PyDay ${image.year || "2024"}`}
-              </span>
+        {images.map((image, index) => {
+          const isPriority = index < 6;
+          return (
+            <div
+              key={image.src}
+              className="aspect-square relative rounded-lg overflow-hidden cursor-pointer group"
+              onClick={() => {
+                setActiveImage(image);
+                document.body.style.overflow = "hidden";
+              }}
+            >
+              <Image
+                src={image.src}
+                alt={image.alt || `Imagen ${index + 1} de PyDay Chile`}
+                fill
+                sizes="(max-width: 768px) 50vw, 33vw"
+                className="object-cover transition-transform duration-300 group-hover:scale-105"
+                loading={isPriority ? "eager" : "lazy"}
+                priority={isPriority}
+                placeholder="blur"
+                blurDataURL={getBlurData(1600, 900)}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
+                <span className="text-white text-sm font-medium line-clamp-2">
+                  {image.caption}
+                </span>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
-      {/* Modal */}
       {activeImage && (
         <div
+          ref={modalRef}
           className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
-          onClick={closeModal}
+          onClick={(e) => e.target === modalRef.current && setActiveImage(null)}
         >
           <button
-            className="absolute top-4 right-4 text-white p-2 hover:bg-white/10 rounded-full transition z-50"
-            onClick={closeModal}
+            className="absolute top-4 right-4 text-white p-2 hover:bg-white/10 rounded-full z-50"
+            onClick={() => {
+              setActiveImage(null);
+              document.body.style.overflow = "auto";
+            }}
+            aria-label="Cerrar modal"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -97,47 +104,26 @@ export default function Gallery({ images }) {
             </svg>
           </button>
 
-          <div className="flex flex-col items-center justify-center relative max-w-3xl w-full">
-            {/* Contenedor de la imagen */}
-            <div className="relative flex items-center justify-center w-full h-[60vh] md:h-[70vh] lg:h-[80vh]">
-              <div className="relative h-full flex items-center justify-center">
-                <Image
-                  ref={imageRef}
-                  src={activeImage.src}
-                  alt={activeImage.alt || "Imagen de PyDay Chile"}
-                  width={1200}
-                  height={900}
-                  style={{
-                    maxHeight: "100%",
-                    width: "auto",
-                    maxWidth: "100%",
-                    objectFit: "contain",
-                  }}
-                  onLoad={updateImageDimensions}
-                  priority
-                />
+          <div className="relative max-w-5xl w-full">
+            <Image
+              src={activeImage.src}
+              alt={activeImage.alt}
+              width={1600}
+              height={900}
+              className="max-h-[90vh] w-auto mx-auto object-contain"
+              priority
+              quality={90}
+            />
 
-                {/* Caption*/}
-                {activeImage.caption && imageDimensions.width > 0 && (
-                  <div
-                    className="absolute bg-black/60 p-3 md:p-4 text-center"
-                    style={{
-                      bottom: 0,
-                      width: imageDimensions.width,
-                      maxWidth: "100%",
-                    }}
-                  >
-                    <p className="text-white text-sm md:text-base">
-                      {activeImage.caption}
-                    </p>
-                    {activeImage.location && (
-                      <p className="text-white text-xs md:text-sm opacity-70 mt-1">
-                        {activeImage.location}
-                      </p>
-                    )}
-                  </div>
-                )}
-              </div>
+            <div className="absolute bottom-0 left-0 right-0 bg-black/70 p-4 text-center backdrop-blur-md">
+              <p className="text-white text-lg font-medium">
+                {activeImage.caption}
+              </p>
+              {activeImage.location && (
+                <p className="text-gray-300 text-sm mt-1">
+                  {activeImage.location}
+                </p>
+              )}
             </div>
           </div>
         </div>
