@@ -104,12 +104,6 @@ export const metadata = {
         height: 630,
         alt: "PyDay Chile 2025 - Un día de Python en tu ciudad",
       },
-      {
-        url: "https://pyday.vercel.app/images/logo_pyday.png",
-        width: 800,
-        height: 800,
-        alt: "Logo PyDay Chile",
-      },
     ],
   },
   twitter: {
