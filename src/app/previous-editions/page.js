@@ -1,6 +1,14 @@
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import pastEvents from "@/data/pastEvents";
+import { images, videos } from "@/data/multimedia";
+import { SmartButton } from "@/components/SmartButton";
+
+const hasMediaForYear = (year, type) => {
+  if (type === "photos") return images.some((img) => img.year === year);
+  if (type === "videos") return videos.some((v) => v.date.startsWith(year));
+  return false;
+};
 
 export default function PreviousEditionsPage() {
   return (
@@ -75,29 +83,27 @@ export default function PreviousEditionsPage() {
                       <p className="text-py-text">{event.highlights}</p>
                     </div>
                   </div>
-                  <div className="mt-6 flex justify-center gap-4">
-                    <Link
+                  <div className="mt-6 flex justify-center gap-4 flex-wrap">
+                    <SmartButton
                       href={`/multimedia#photos-${event.year}`}
-                      target="_blank"
-                      className="btn-secondary"
+                      isAvailable={hasMediaForYear(event.year, "photos")}
                     >
                       Fotos {event.year}
-                    </Link>
-                    <Link
+                    </SmartButton>
+
+                    <SmartButton
                       href={event.webpageLink}
-                      target="_blank"
-                      className="btn-primary"
+                      isAvailable={!!event.webpageLink}
                     >
                       Sitio Web {event.year}
-                    </Link>
-                    <Link
+                    </SmartButton>
+
+                    <SmartButton
                       href={`/multimedia#videos-${event.year}`}
-                      target="_blank"
-                      className="btn-secondary"
+                      isAvailable={hasMediaForYear(event.year, "videos")}
                     >
                       Videos {event.year}
-                    </Link>
-                    
+                    </SmartButton>
                   </div>
                 </div>
               </div>
