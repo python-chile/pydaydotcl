@@ -54,7 +54,7 @@ export default function Header() {
           <div className="block md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-py-text p-2 hover:bg-py-green/20 rounded-md transition-colors"
+              className="text-py-text p-2 rounded-md transition-colors"
               aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
             >
               {isMenuOpen ? (
@@ -75,7 +75,7 @@ export default function Header() {
             <Link href="/talks" className="text-py-text hover:text-py-yellow transition-colors">Charlas</Link>
             <Link href="/multimedia" className="text-py-text hover:text-py-yellow transition-colors">Multimedia</Link>
             <Link href="/previous-editions" className="text-py-text hover:text-py-yellow transition-colors">Ediciones Anteriores</Link>
-            <Link href="/register" className="px-4 py-2 bg-py-green text-py-text hover:bg-py-green/80 transition-colors rounded-full font-medium">Registrarse</Link>
+            <Link href="/register" className="px-4 py-2 text-py-text transition-colors rounded-full font-medium">Registrarse</Link>
           </nav>
         </div>
         
@@ -83,14 +83,14 @@ export default function Header() {
         {isMenuOpen && (
           <div 
             ref={menuRef}
-            className="md:hidden absolute left-0 right-0 top-full bg-py-dark/95 backdrop-blur-lg border-t border-py-green/30 shadow-lg animate-fadeIn"
+            className="md:hidden absolute left-0 right-0 top-full backdrop-blur-lg border-t border-py-green/30 shadow-lg animate-fadeIn"
           >
             <nav className="flex flex-col py-3">
-              <Link href="/" onClick={handleLinkClick} className="px-6 py-3 text-py-text hover:bg-py-green/20 transition-colors">Inicio</Link>
-              <Link href="/talks" onClick={handleLinkClick} className="px-6 py-3 text-py-text hover:bg-py-green/20 transition-colors">Charlas</Link>
-              <Link href="/multimedia" onClick={handleLinkClick} className="px-6 py-3 text-py-text hover:bg-py-green/20 transition-colors">Multimedia</Link>
-              <Link href="/previous-editions" onClick={handleLinkClick} className="px-6 py-3 text-py-text hover:bg-py-green/20 transition-colors">Ediciones Anteriores</Link>
-              <Link href="/register" onClick={handleLinkClick} className="mx-6 my-3 px-4 py-2 bg-py-green text-py-text hover:bg-py-green/80 transition-colors rounded-full font-medium text-center">Registrarse</Link>
+              <Link href="/" onClick={handleLinkClick} className="px-6 py-3 text-py-text transition-colors">Inicio</Link>
+              <Link href="/talks" onClick={handleLinkClick} className="px-6 py-3 text-py-text transition-colors">Charlas</Link>
+              <Link href="/multimedia" onClick={handleLinkClick} className="px-6 py-3 text-py-text transition-colors">Multimedia</Link>
+              <Link href="/previous-editions" onClick={handleLinkClick} className="px-6 py-3 text-py-text transition-colors">Ediciones Anteriores</Link>
+              <Link href="/register" onClick={handleLinkClick} className="mx-6 my-3 px-4 py-2 text-py-text transition-colors rounded-full font-medium text-center">Registrarse</Link>
             </nav>
           </div>
         )}
