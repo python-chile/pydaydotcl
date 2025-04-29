@@ -143,7 +143,7 @@ export default async function CityPage({ params }) {
         subtitle="Aprende, comparte y conecta con desarrolladores y entusiastas de Python de toda la región y de Chile."
         buttonText="Registrarme ahora"
         href="https://docs.google.com/forms/d/e/1FAIpQLSdhHlnqwmYffl6JNzbAZ4IRRyM_8fcOB1QH0hyz6Vwi3VFOwg/viewform"
-        className="bg-gradient-to-br from-green-900/60 to-black/80 backdrop-blur rounded-lg my-4 md:my-8 mx-2 md:mx-8"
+        className="bg-gradient-to-br from-green-900/60 to-black/80 backdrop-blur rounded-lg my-4 md:my-8 mx-auto"
       />
 
       {/* Segundo enlace independiente para "Conocer la comunidad" */}

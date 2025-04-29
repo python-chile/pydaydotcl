@@ -163,7 +163,7 @@ export default function RegistrationForm() {
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full px-3 py-2 bg-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 bg-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-py-green-500"
             />
             {validationErrors.name && (
               <p className="absolute text-xs text-red-500 mt-1">
@@ -185,7 +185,7 @@ export default function RegistrationForm() {
                 name="idType"
                 value={formData.idType}
                 onChange={handleChange}
-                className="w-full px-3 py-2 bg-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="select-theme"
               >
                 <option value="run">RUN</option>
                 <option value="passport">Pasaporte</option>
@@ -204,7 +204,7 @@ export default function RegistrationForm() {
                   formData.idType === "run" ? "12.345.678-9" : "AA123456"
                 }
                 required
-                className="w-full px-3 py-2 bg-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 bg-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-py-green-500"
               />
               {validationErrors.idNumber && (
                 <p className="absolute text-xs text-red-500 mt-1">
@@ -225,7 +225,7 @@ export default function RegistrationForm() {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full px-3 py-2 bg-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 bg-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-py-green-500"
             />
             {validationErrors.email && (
               <p className="absolute text-xs text-red-500 mt-1">
@@ -244,7 +244,7 @@ export default function RegistrationForm() {
               value={formData.role}
               onChange={handleChange}
               required
-              className="w-full px-3 py-2 bg-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="select-theme"
             >
               <option value="">Selecciona una opción</option>
               <option value="student">Estudiante</option>
@@ -269,7 +269,7 @@ export default function RegistrationForm() {
               value={formData.city}
               onChange={handleChange}
               required
-              className="w-full px-3 py-2 bg-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="select-theme"
             >
               <option value="">Selecciona una Ciudad</option>
               <option value="copiapo">Copiapó</option>

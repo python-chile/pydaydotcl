@@ -89,7 +89,7 @@ export default function SponsorForm() {
           value={formData.sponsorLevel}
           onChange={handleChange}
           required
-          className="w-full px-4 py-2 rounded-lg bg-black/50 backdrop-blur border border-white/20 focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500/50 text-white appearance-none"
+          className="select-theme"
           style={{
             color: "white",
             backgroundColor: "rgba(0, 0, 0, 0.7)",
