@@ -10,7 +10,7 @@ export default function SponsorshipPlans({ plans }) {
             Planes de Patrocinio
           </span>
         </h2>
-        <p className="text-sm md:text-base text-gray-400 px-2 sm:px-0">
+        <p className="text-sm md:text-base text-text-white px-2 sm:px-0">
           Personaliza tu participación según tus objetivos
         </p>
       </div>
@@ -50,10 +50,10 @@ export default function SponsorshipPlans({ plans }) {
                   ${plan.priceCLP.toLocaleString()}
                 </span>
                 <div className="text-center md:text-left">
-                  <span className="text-sm md:text-base text-gray-400">
+                  <span className="text-sm md:text-base text-text-white">
                     CLP
                   </span>
-                  <div className="text-xs md:text-sm text-gray-400 mt-1">
+                  <div className="text-xs md:text-sm text-text-white mt-1">
                     ≈ ${plan.priceUSD.toLocaleString()} USD
                   </div>
                 </div>

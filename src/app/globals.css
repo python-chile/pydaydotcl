@@ -16,6 +16,11 @@
   /* Contorno del texto en tono intermedio */
   --bg-dark: #101010;
   /* Fondo oscuro intermedio */
+
+  --primary-green-rgb: 61, 139, 55;
+  --accent-yellow-rgb: 255, 225, 65;
+  --outline-red-rgb: 242, 57, 57;
+  --bg-dark-rgb: 16, 16, 16;
 }
 
 html {
@@ -27,12 +32,17 @@ body {
   color: var(--text-white);
 }
 
-.bg-primary-green\/20 { background-color: rgba(var(--primary-green-rgb),0.2); }
-.bg-accent-yellow\/20 { background-color: rgba(var(--accent-yellow-rgb),0.2); }
+.bg-primary-green\/20 {
+  background-color: rgba(var(--primary-green-rgb), 0.2);
+}
+
+.bg-accent-yellow\/20 {
+  background-color: rgba(var(--accent-yellow-rgb), 0.2);
+}
 
 .gradient-bg {
-  background: 
-    linear-gradient(rgba(0, 0, 0, 0.1), rgba(0,0,0,0.1)), 
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
     linear-gradient(135deg, var(--primary-green) 0%, var(--accent-yellow) 50%, var(--outline-red) 100%);
   background-size: 400% 400%;
   background-blend-mode: darken;
@@ -110,40 +120,55 @@ body {
     color: var(--text-white) !important;
   }
 
-  .sponsors-hero-bg {
-    background-color: var(--primary-green);
-    color: var(--text-white);
-  }
-  .sponsors-accent {
-    color: var(--accent-yellow);
-  }
-  .sponsors-border {
-    border-color: var(--primary-green);
-  }
-  .sponsors-card-bg {
-    background-color: rgba(16,16,16,0.4);
-  }
-  .sponsors-card-hover-bg {
-    background-color: rgba(61,139,55,0.1);
-  }
-  .sponsors-cta {
-    @apply bg-transparent border-2 font-bold rounded-full transition;
-    border-color: var(--accent-yellow);
-    color: var(--accent-yellow);
-  }
-  .sponsors-cta:hover {
-    background-color: var(--accent-yellow);
-    color: var(--bg-dark);
-  }
-  /* Form fields */
-  .sponsors-input {
-    @apply w-full px-4 py-2 rounded-lg backdrop-blur border text-white placeholder-gray-400;
-    background-color: rgba(16,16,16,0.5);
-    border-color: var(--primary-green);
-  }
-  .sponsors-input:focus {
-    @apply outline-none ring-2;
-    ring-color: var(--primary-green);
+  /* Tarjetas de sponsors con colores de marca */
+  .sponsors-card {
+    @apply relative p-4 md:p-6 transition-all duration-300 rounded-2xl backdrop-blur-lg border border-white/15 hover:border-[var(--accent-yellow)]/30 transform-gpu cursor-pointer;
+    background: linear-gradient(135deg, rgba(var(--primary-green-rgb), 0.08), rgba(var(--accent-yellow-rgb), 0.08));
   }
 
+  .sponsors-card:hover {
+    @apply shadow-lg -translate-y-1;
+    background: linear-gradient(135deg, rgba(var(--primary-green-rgb), 0.12), rgba(var(--accent-yellow-rgb), 0.12));
+    box-shadow: 0 0 25px rgba(var(--accent-yellow-rgb), 0.2);
+  }
+
+  /* Contenedor principal de sponsors */
+  .sponsors-container {
+    @apply max-w-6xl mx-auto rounded-3xl backdrop-blur-md border transition-shadow duration-500;
+    background: linear-gradient(135deg,
+        rgba(var(--primary-green-rgb), 0.15),
+        rgba(var(--accent-yellow-rgb), 0.1),
+        rgba(var(--outline-red-rgb), 0.15));
+    border-color: rgba(var(--primary-green-rgb), 0.3);
+    box-shadow: 0 0 60px -15px rgba(var(--primary-green-rgb), 0.35);
+  }
+
+  .sponsors-container:hover {
+    box-shadow: 0 0 80px -20px rgba(var(--primary-green-rgb), 0.45);
+  }
+
+  /* Efectos para los logos de sponsors */
+  .sponsor-logo-effect {
+    @apply relative;
+  }
+
+  .sponsor-logo-effect::before {
+    content: '';
+    @apply absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 z-0;
+    background: radial-gradient(circle at center, rgba(var(--accent-yellow-rgb), 0.3), transparent 70%);
+  }
+
+  .sponsor-logo-effect:hover::before {
+    @apply opacity-30;
+  }
+
+  /* Mejora de visibilidad para logos */
+  .sponsor-logo {
+    filter: brightness(115%) contrast(105%) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    transition: all 0.3s ease;
+  }
+
+  .sponsor-logo:hover {
+    filter: brightness(120%) contrast(110%) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.25));
+  }
 }

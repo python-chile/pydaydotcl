@@ -86,7 +86,7 @@ export default function PreviousEditionsPage() {
                     <Link
                       href={event.webpageLink}
                       target="_blank"
-                      className="btn-secondary"
+                      className="btn-primary"
                     >
                       Sitio Web {event.year}
                     </Link>

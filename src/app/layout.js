@@ -141,7 +141,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
-      <body className={`${openSans.variable} min-h-screen flex flex-col text-py-text`}>
+      <body className={`${openSans.variable} overflow-x-hidden min-h-screen flex flex-col text-py-text`}>
         <div className="fixed inset-0 -z-10 gradient-bg" />
         <Header />
         <main className="flex-grow">{children}</main>

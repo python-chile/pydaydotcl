@@ -12,140 +12,134 @@ export default function SponsorForm() {
   });
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    //FIXME: Lógica de envío a API
+    // FIXME: Lógica de envío a API
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
-      <div>
-        <label htmlFor="companyName" className="block text-sm font-medium mb-1">
-          Nombre de la empresa
-        </label>
-        <input
-          type="text"
-          id="companyName"
-          name="companyName"
-          required
-          className="w-full px-4 py-2 rounded-lg bg-black/50 backdrop-blur border border-white/20 focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500/50 text-white"
-          placeholder="Nombre de tu empresa"
-        />
-      </div>
-      <div>
-        <label htmlFor="contactName" className="block text-sm font-medium mb-1">
-          Nombre de contacto
-        </label>
-        <input
-          type="text"
-          id="contactName"
-          name="contactName"
-          required
-          className="w-full px-4 py-2 rounded-lg bg-black/50 backdrop-blur border border-white/20 focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500/50 text-white"
-          placeholder="Nombre completo"
-        />
-      </div>
-      <div>
-        <label htmlFor="email" className="block text-sm font-medium mb-1">
-          Correo electrónico
-        </label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          required
-          className="w-full px-4 py-2 rounded-lg bg-black/50 backdrop-blur border border-white/20 focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500/50 text-white"
-          placeholder="correo@empresa.com"
-        />
-      </div>
-      <div>
-        <label htmlFor="phone" className="block text-sm font-medium mb-1">
-          Teléfono
-        </label>
-        <input
-          type="tel"
-          id="phone"
-          name="phone"
-          className="w-full px-4 py-2 rounded-lg bg-black/50 backdrop-blur border border-white/20 focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500/50 text-white"
-          placeholder="+569 XXXXXXXX"
-        />
-      </div>
-      <div>
-        <label
-          htmlFor="sponsorLevel"
-          className="block text-sm font-medium mb-1"
+    <div className="max-w-md mx-auto bg-white/5 p-6 rounded-lg shadow-md">
+      <h2 className="text-2xl font-bold mb-6 text-center text-white">
+        Solicitud de Patrocinio
+      </h2>
+      <form onSubmit={handleSubmit} className="space-y-4">
+        {/** Empresa */}
+        <div className="space-y-1">
+          <label htmlFor="companyName" className="block text-sm font-medium text-white">
+            Nombre de la empresa
+          </label>
+          <input
+            type="text"
+            id="companyName"
+            name="companyName"
+            value={formData.companyName}
+            onChange={handleChange}
+            required
+            className="w-full px-3 py-2 bg-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-py-green-500"
+            placeholder="Nombre de tu empresa"
+          />
+        </div>
+
+        {/** Contacto */}
+        <div className="space-y-1">
+          <label htmlFor="contactName" className="block text-sm font-medium text-white">
+            Nombre de contacto
+          </label>
+          <input
+            type="text"
+            id="contactName"
+            name="contactName"
+            value={formData.contactName}
+            onChange={handleChange}
+            required
+            className="w-full px-3 py-2 bg-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-py-green-500"
+            placeholder="Nombre completo"
+          />
+        </div>
+
+        {/** Email */}
+        <div className="space-y-1">
+          <label htmlFor="email" className="block text-sm font-medium text-white">
+            Correo electrónico
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            className="w-full px-3 py-2 bg-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-py-green-500"
+            placeholder="correo@empresa.com"
+          />
+        </div>
+
+        {/** Teléfono */}
+        <div className="space-y-1">
+          <label htmlFor="phone" className="block text-sm font-medium text-white">
+            Teléfono
+          </label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
+            className="w-full px-3 py-2 bg-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-py-green-500"
+            placeholder="+569 XXXXXXXX"
+          />
+        </div>
+
+        {/** Nivel de patrocinio */}
+        <div className="space-y-1">
+          <label htmlFor="sponsorLevel" className="block text-sm font-medium text-white">
+            Nivel de patrocinio de interés
+          </label>
+          <select
+            id="sponsorLevel"
+            name="sponsorLevel"
+            value={formData.sponsorLevel}
+            onChange={handleChange}
+            required
+            className="w-full px-3 py-2 bg-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-py-green-500 appearance-none"
+          >
+            <option value="" disabled>
+              Selecciona una opción
+            </option>
+            <option value="bronze">Bronze</option>
+            <option value="silver">Silver</option>
+            <option value="gold">Gold</option>
+            <option value="custom">Otro (personalizado)</option>
+          </select>
+        </div>
+
+        {/** Mensaje */}
+        <div className="space-y-1">
+          <label htmlFor="message" className="block text-sm font-medium text-white">
+            Mensaje (opcional)
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            value={formData.message}
+            onChange={handleChange}
+            className="w-full px-3 py-2 bg-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-py-green-500"
+            placeholder="Cuéntanos más sobre tu interés en patrocinar PyDay Chile"
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          className="w-full px-4 py-2 btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          Nivel de patrocinio de interés
-        </label>
-        <select
-          id="sponsorLevel"
-          name="sponsorLevel"
-          value={formData.sponsorLevel}
-          onChange={handleChange}
-          required
-          className="select-theme"
-          style={{
-            color: "white",
-            backgroundColor: "rgba(0, 0, 0, 0.7)",
-          }}
-        >
-          <option
-            value=""
-            disabled
-            style={{ backgroundColor: "#1a1a1a", color: "white" }}
-          >
-            Selecciona una opción
-          </option>
-          <option
-            value="bronze"
-            style={{ backgroundColor: "#1a1a1a", color: "white" }}
-          >
-            Bronze
-          </option>
-          <option
-            value="silver"
-            style={{ backgroundColor: "#1a1a1a", color: "white" }}
-          >
-            Silver
-          </option>
-          <option
-            value="gold"
-            style={{ backgroundColor: "#1a1a1a", color: "white" }}
-          >
-            Gold
-          </option>
-          <option
-            value="custom"
-            style={{ backgroundColor: "#1a1a1a", color: "white" }}
-          >
-            Otro (personalizado)
-          </option>
-        </select>
-      </div>
-      <div>
-        <label htmlFor="message" className="block text-sm font-medium mb-1">
-          Mensaje (opcional)
-        </label>
-        <textarea
-          id="message"
-          name="message"
-          rows="4"
-          className="w-full px-4 py-2 rounded-lg bg-black/50 backdrop-blur border border-white/20 focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500/50 text-white"
-          placeholder="Cuéntanos más sobre tu interés en patrocinar PyDay Chile"
-        ></textarea>
-      </div>
-      <button
-        type="submit"
-        className="w-full btn-primary flex justify-center items-center"
-      >
-        Enviar solicitud de patrocinio
-      </button>
-    </form>
+          Enviar solicitud de patrocinio
+        </button>
+      </form>
+    </div>
   );
 }
