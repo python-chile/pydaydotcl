@@ -1,5 +1,5 @@
 # robots.txt para PyDay Chile
-# https://pyday.web.app/
+# https://pyday.vercel.app/
 
 # Permitir a todos los robots de búsqueda
 User-agent: *
@@ -18,7 +18,7 @@ Allow: /register
 Allow: /sponsors
 
 # Dirección del sitemap
-Sitemap: https://pyday.web.app//sitemap.xml
+Sitemap: https://pyday.vercel.app//sitemap.xml
 
 # Velocidad de rastreo para Google
 User-agent: Googlebot

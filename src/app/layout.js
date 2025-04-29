@@ -35,7 +35,7 @@ export const metadata = {
     "Charlas",
     "Hackathon",
   ],
-  authors: [{ name: "Comunidad Python Chile", url: "https://pyday.web.app/" }],
+  authors: [{ name: "Comunidad Python Chile", url: "https://pyday.vercel.app/" }],
   creator: "Comunidad Python Chile",
   publisher: "Comunidad Python Chile",
   robots: {
@@ -80,7 +80,7 @@ export const metadata = {
     statusBarStyle: "black-translucent",
   },
   category: "technology",
-  metadataBase: new URL("https://pyday.web.app/"),
+  metadataBase: new URL("https://pyday.vercel.app/"),
   alternates: {
     canonical: "/",
     languages: {
@@ -96,7 +96,7 @@ export const metadata = {
     description:
       "PyDay Chile es un evento anual gratuito que reúne a entusiastas, desarrolladores y académicos en un día lleno de Python con charlas inspiradoras, talleres prácticos y networking en diversas ciudades de Chile.",
     siteName: "PyDay Chile",
-    url: "https://pyday.web.app/",
+    url: "https://pyday.vercel.app/",
     images: [
       {
         url: "/images/banner-og.webp",
