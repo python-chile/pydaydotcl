@@ -162,6 +162,7 @@ export default function RegistrationForm() {
               name="name"
               value={formData.name}
               onChange={handleChange}
+              placeholder="Ada Lovelace"
               required
               className="w-full px-3 py-2 bg-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-py-green-500"
             />
@@ -224,6 +225,7 @@ export default function RegistrationForm() {
               name="email"
               value={formData.email}
               onChange={handleChange}
+              placeholder="ada.lovelace@pythonchile.cl"
               required
               className="w-full px-3 py-2 bg-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-py-green-500"
             />
