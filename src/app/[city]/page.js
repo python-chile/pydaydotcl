@@ -166,12 +166,59 @@ export default async function CityPage({ params }) {
       {/* Agenda*/}
       <section className="container-py">
         <h2 className="section-title">Agenda</h2>
-        <div className="space-y-4 md:space-y-6 mt-6 md:mt-8 max-w-4xl mx-auto">
-          {data.schedule.map((talk, index) => (
-            <TalkCard key={talk.id} talk={talk} />
-          ))}
-        </div>
-        {/* registro oculto
+        {data.length > 0 ? (
+          <div className="space-y-4 md:space-y-6 mt-6 md:mt-8 max-w-4xl mx-auto">
+            {data.schedule.map((talk, index) => (
+              <TalkCard key={talk.id} talk={talk} />
+            ))}
+          </div>
+        ) : (
+          <div className="backdrop-blur-sm rounded-lg p-6 md:p-8 text-center">
+            <div className="w-16 h-16 md:w-20 md:h-20 bg-py-red/30 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-8 w-8 md:h-10 md:w-10"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"
+                />
+              </svg>
+            </div>
+            <h3 className="text-lg md:text-xl font-bold mb-2 text-py-text">
+              No hay charlas disponibles aún
+            </h3>
+            <p className="text-py-text/80 mb-6">
+              Estamos finalizando el programa. ¡Vuelve pronto para ver las
+              charlas confirmadas!
+            </p>
+            <Link
+              href="https://sessionize.com/pyday-valparaiso-2025/"
+              target="_blank"
+              className="btn-secondary inline-flex items-center"
+            >
+              <span>Proponer una charla</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5 ml-2"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </Link>
+          </div>
+        )}
+
         <div className="mt-8 md:mt-12 text-center">
           <Link
             href="/register"
@@ -194,7 +241,7 @@ export default async function CityPage({ params }) {
               />
             </svg>
           </Link>
-        </div>*/}
+        </div>
       </section>
       <FAQSection faqs={generalFAQs} />
 
@@ -222,7 +269,10 @@ export default async function CityPage({ params }) {
         <p>PyDay {data.name} es organizado por la comunidad Python Chile.</p>
         <p className="mt-2">
           Si quieres ser patrocinador o colaborador,{" "}
-          <Link href="/sponsors#contacto" className="underline hover:text-white">
+          <Link
+            href="/sponsors#contacto"
+            className="underline hover:text-white"
+          >
             contáctanos
           </Link>
           .
