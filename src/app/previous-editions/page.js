@@ -52,6 +52,10 @@ export default function PreviousEditionsPage() {
                         {event.attendees}
                       </li>
                       <li>
+                        <span className="font-medium">Espectadores:</span>{" "}
+                        {event.viewers}
+                      </li>
+                      <li>
                         <span className="font-medium">Charlas:</span>{" "}
                         {event.talks}
                       </li>
@@ -80,12 +84,20 @@ export default function PreviousEditionsPage() {
                       Fotos {event.year}
                     </Link>
                     <Link
+                      href={event.webpageLink}
+                      target="_blank"
+                      className="btn-secondary"
+                    >
+                      Sitio Web {event.year}
+                    </Link>
+                    <Link
                       href={`/multimedia#videos-${event.year}`}
                       target="_blank"
                       className="btn-secondary"
                     >
                       Videos {event.year}
                     </Link>
+                    
                   </div>
                 </div>
               </div>
