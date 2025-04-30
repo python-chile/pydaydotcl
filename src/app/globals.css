@@ -42,7 +42,7 @@ body {
 
 .gradient-bg {
   background:
-    linear-gradient(rgba(0, 0, 0, 0.251), rgba(0, 0, 0, 0.1)),
+    linear-gradient(rgba(0, 0, 0, 0.178), rgba(0, 0, 0, 0.1)),
     linear-gradient(135deg, var(--primary-green) 0%, var(--accent-yellow) 50%, var(--outline-red) 100%);
   background-size: 400% 400%;
   background-blend-mode: darken;
