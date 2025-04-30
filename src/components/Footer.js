@@ -83,13 +83,40 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  href="/codigo-conducta"
+                  href="/conduct"
                   className="text-white/90 hover:text-accent-yellow transition-colors duration-200"
                 >
                   Código de conducta
                 </Link>
               </li>
-              {/* Otros enlaces */}
+              <li>
+                <Link
+                  href="/previous-editions"
+                  className="text-white/90 hover:text-accent-yellow transition-colors duration-200"
+                >
+                  Ediciones anteriores
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  href="/multimedia"
+                  className="text-white/90 hover:text-accent-yellow transition-colors duration-200"
+                >
+                  Multimedia
+                </Link>
+              </li>
+
+              <li>
+                <a
+                  href="https://pythonchile.cl/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/90 hover:text-accent-yellow transition-colors duration-200"
+                >
+                  Python Chile
+                </a>
+              </li>
             </ul>
           </div>
           {/* Redes sociales */}
