@@ -12,7 +12,7 @@ import featuredTalks from "@/data/featuredTalks";
 const cities = [
   {
     name: "Copiapó",
-    date: "6 de Junio, 2025",
+    date: "20 de Junio, 2025",
     slug: "copiapo",
     mapCoords: { x: 50, y: 90 },
   },
@@ -24,7 +24,7 @@ const cities = [
   },
   {
     name: "Santiago",
-    date: "20 de Junio, 2025",
+    date: "6 de Junio, 2025",
     slug: "santiago",
     mapCoords: { x: 58, y: 200 },
   },

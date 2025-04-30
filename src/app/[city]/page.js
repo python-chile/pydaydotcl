@@ -219,7 +219,7 @@ export default async function CityPage({ params }) {
           </div>
         )}
 
-        <div className="mt-8 md:mt-12 text-center">
+        <div className="mt-8 md:mt-12 text-center hidden">
           <Link
             href="/register"
             target="_blank"
