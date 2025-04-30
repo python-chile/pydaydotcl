@@ -1,6 +1,29 @@
 import allTalks from "./talks";
 
 const cityData = {
+  copiapo: {
+    name: "Copiapó",
+    date: "20 de Junio, 2025",
+    venue: "Universidad de Atacama",
+    address: "Av. Copayapu 485, Copiapó, Chile",
+    image: "/images/cities/copiapo.webp",
+    mapUrl: "https://maps.app.goo.gl/hy2BivXnuZznMPH4A",
+    embedMap:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3543.6087170536957!2d-70.3536574!3d-27.3566988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x969803eead8e720d%3A0x40055cd197fbccfc!2sAv.%20Copayapu%20485%2C%201531772%20Copiap%C3%B3%2C%20Atacama!5e0!3m2!1ses-419!2scl!4v1745379956808!5m2!1ses-419!2scl",
+    transportation: [
+      "Taxis colectivos: Líneas 21, 22 (Campus Universidad)",
+      "Microbuses: Líneas 1, 2, 3 desde el centro",
+      "Estacionamiento gratuito disponible en el campus",
+    ],
+    introduction: {
+      title: "",
+      description: "",
+      participationInfo: "",
+      campusImage: "/images/campus/Universidad_de_Atacama.webp",
+    },
+    talkProposalLink: "https://sessionize.com/pyday-copiapo-2025/",
+    schedule: allTalks.filter((talk) => talk.city === "copiapo"),
+  },
   valparaiso: {
     name: "Valparaíso",
     date: "13 de Junio, 2025, 10:00 AM - 17:00 PM",
@@ -14,7 +37,6 @@ const cityData = {
       "Metro Valparaíso: Estación Portales (10 min caminando)",
       "Micros 105, 106, 202, 215, 216",
     ],
-    // Nuevos campos para Valparaíso
     introduction: {
       title: "¡Aventúrate en el Mundo de Python en PyDay Valparaíso!",
       description: "Únete a la cuarta edición de este emocionante evento en la Casa Central de la Universidad Técnica Federico Santa María. Disfruta de talleres interactivos y charlas inspiradoras en un ambiente creativo y colaborativo. PyDay Valparaíso 2025 es tu oportunidad para conectar con otros entusiastas, expandir conocimientos y explorar las posibilidades de este poderoso lenguaje de programación.",
@@ -38,26 +60,16 @@ const cityData = {
       "Buses del Transantiago: 210, 213e",
       "Estacionamiento disponible en Pontificia Universidad Católica de Chile Campus San Joaquín, costo $10.000 app por día",
     ],
-    talkProposalLink: "",
+    introduction: {
+      title: "",
+      description: "",
+      participationInfo: "",
+      campusImage: "/images/campus/DuocUC__San_Joaquín.webp",
+    },
+    talkProposalLink: "https://sessionize.com/pyday-santiago-2025/",
     schedule: allTalks.filter((talk) => talk.city === "santiago"),
   },
-  copiapo: {
-    name: "Copiapó",
-    date: "20 de Junio, 2025",
-    venue: "Universidad de Atacama",
-    address: "Av. Copayapu 485, Copiapó, Chile",
-    image: "/images/cities/copiapo.webp",
-    mapUrl: "https://maps.app.goo.gl/hy2BivXnuZznMPH4A",
-    embedMap:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3543.6087170536957!2d-70.3536574!3d-27.3566988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x969803eead8e720d%3A0x40055cd197fbccfc!2sAv.%20Copayapu%20485%2C%201531772%20Copiap%C3%B3%2C%20Atacama!5e0!3m2!1ses-419!2scl!4v1745379956808!5m2!1ses-419!2scl",
-    transportation: [
-      "Taxis colectivos: Líneas 21, 22 (Campus Universidad)",
-      "Microbuses: Líneas 1, 2, 3 desde el centro",
-      "Estacionamiento gratuito disponible en el campus",
-    ],
-    talkProposalLink: "",
-    schedule: allTalks.filter((talk) => talk.city === "copiapo"),
-  },
+  
 };
 
 export default cityData;

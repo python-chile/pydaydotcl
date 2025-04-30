@@ -129,7 +129,7 @@ export default function RegistrationForm() {
             "¡Registro exitoso! Verifica tu correo para la confirmación.",
         });
         setIsSubmitting(false);
-
+        // FIXME: Corregir lo de este link:
         if (formData.sendCFP) {
           window.open(
             "https://sessionize.com/pyday-valparaiso-2025/",

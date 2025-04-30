@@ -5,6 +5,9 @@ import MapSection from "@/components/Maps";
 import HeroSection from "@/components/HeroSection";
 import FAQSection from "@/components/FAQSection";
 import CTAFinal from "@/components/CTAFinal";
+import EmptyState from "@/components/EmptyState";
+import RegistrationForm from "@/components/RegistrationForm";
+import { FeatureGuard } from "@/components/FeatureManagement/FeatureGuard";
 import cityData from "@/data/cities";
 import { generalFAQs } from "@/data/faqs";
 
@@ -67,40 +70,19 @@ export default async function CityPage({ params }) {
                 <p className="text-base md:text-lg mb-6">
                   {data.introduction.description}
                 </p>
-                
+
                 <h3 className="text-lg md:text-xl font-semibold mb-3 text-yellow-300">
                   ¿Cómo participar?
                 </h3>
                 <p className="text-base mb-5">
                   {data.introduction.participationInfo}
                 </p>
-                
-                <p className="font-medium mb-5">
-                  Fecha: {data.date}
-                </p>
-                
-                <p className="mb-4">
-                  Puedes participar, sin costo.
-                </p>
-                
-                <div className="flex flex-col sm:flex-row gap-3 mb-4">
-                  {/* Oculto porque no está abierto el registro de asistentes 
-                  <Link
-                    href="/register"
-                    className="btn-primary text-center"
-                  >
-                    Registrarme como asistente
-                  </Link>
-                  */}
-                  <Link
-                    href={data.talkProposalLink}
-                    className="btn-secondary text-center"
-                  >
-                    Postular charla/taller
-                  </Link>
-                </div>
+
+                <p className="font-medium mb-5">Fecha: {data.date}</p>
+
+                <p className="mb-4">Puedes participar, sin costo.</p>
               </div>
-              
+
               {/* Columna de imagen */}
               {data.introduction.campusImage && (
                 <div className="rounded-lg overflow-hidden h-[300px] md:h-auto">
@@ -117,6 +99,17 @@ export default async function CityPage({ params }) {
           </div>
         </section>
       )}
+
+      {/* Registro Section */}
+      <section id="registro" className="container-py">
+        <FeatureGuard featureName="registration">
+          <h2 className="section-title">Regístrate</h2>
+          <div className="max-w-xl mx-auto px-13">
+            <RegistrationForm />
+          </div>
+        </FeatureGuard>
+      </section>
+
       {/* Mapa y dirección */}
       <section className="container-py">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 max-w-7xl mx-auto">
@@ -173,50 +166,7 @@ export default async function CityPage({ params }) {
             ))}
           </div>
         ) : (
-          <div className="backdrop-blur-sm rounded-lg p-6 md:p-8 text-center">
-            <div className="w-16 h-16 md:w-20 md:h-20 bg-py-red/30 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-8 w-8 md:h-10 md:w-10"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"
-                />
-              </svg>
-            </div>
-            <h3 className="text-lg md:text-xl font-bold mb-2 text-py-text">
-              No hay charlas disponibles aún
-            </h3>
-            <p className="text-py-text/80 mb-6">
-              Estamos finalizando el programa. ¡Vuelve pronto para ver las
-              charlas confirmadas!
-            </p>
-            <Link
-              href="https://sessionize.com/pyday-valparaiso-2025/"
-              target="_blank"
-              className="btn-secondary inline-flex items-center"
-            >
-              <span>Proponer una charla</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 ml-2"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </Link>
-          </div>
+          <EmptyState cityId={params.city} />
         )}
 
         <div className="mt-8 md:mt-12 text-center hidden">
@@ -224,7 +174,7 @@ export default async function CityPage({ params }) {
             href="/register"
             target="_blank"
             className="btn-primary inline-flex items-center space-x-2"
-          >          
+          >
             <span>Registrarme para este evento</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
