@@ -33,17 +33,17 @@ async function getCityData(city) {
 export default async function CityPage({ params }) {
   const data = await getCityData(params.city);
 
-  if (!data) {
-    return (
-      <div className="container-py text-center">
-        <h1 className="text-3xl font-bold mb-6">Sede no encontrada</h1>
-        <p className="mb-6">La sede que buscas no está disponible.</p>
-        <Link href="/" className="btn-primary">
-          Volver al inicio
-        </Link>
-      </div>
-    );
-  }
+  // if (!data) {
+  //   return (
+  //     <div className="container-py text-center">
+  //       <h1 className="text-3xl font-bold mb-6">Sede no encontrada</h1>
+  //       <p className="mb-6">La sede que buscas no está disponible.</p>
+  //       <Link href="/" className="btn-primary">
+  //         Volver al inicio
+  //       </Link>
+  //     </div>
+  //   );
+  // }
 
   return (
     <>
