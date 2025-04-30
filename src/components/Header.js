@@ -72,6 +72,7 @@ export default function Header() {
           {/* Menú para desktop */}
           <nav className="hidden md:flex space-x-6 items-center">
             <Link href="/" className="text-py-text hover:text-py-yellow transition-colors">Inicio</Link>
+            <Link href="/sponsors" className="text-py-text hover:text-py-yellow transition-colors">Patrocinio</Link>
             <Link href="/talks" className="text-py-text hover:text-py-yellow transition-colors">Charlas</Link>
             <Link href="/multimedia" className="text-py-text hover:text-py-yellow transition-colors">Multimedia</Link>
             <Link href="/previous-editions" className="text-py-text hover:text-py-yellow transition-colors">Ediciones Anteriores</Link>
@@ -83,10 +84,11 @@ export default function Header() {
         {isMenuOpen && (
           <div 
             ref={menuRef}
-            className="md:hidden absolute left-0 right-0 top-full backdrop-blur-lg border-t border-py-green/30 shadow-lg animate-fadeIn"
+            className="md:hidden absolute left-0 right-0 top-full bg-black/50 backdrop-blur-lg supports-[backdrop-filter]:bg-black/30 border-t border-py-green/30 shadow-lg animate-fadeIn"
           >
             <nav className="flex flex-col py-3">
               <Link href="/" onClick={handleLinkClick} className="px-6 py-3 text-py-text transition-colors">Inicio</Link>
+              <Link href="/sponsors"onClick={handleLinkClick} className="px-6 py-3 text-py-text transition-colors">Patrocinio</Link>
               <Link href="/talks" onClick={handleLinkClick} className="px-6 py-3 text-py-text transition-colors">Charlas</Link>
               <Link href="/multimedia" onClick={handleLinkClick} className="px-6 py-3 text-py-text transition-colors">Multimedia</Link>
               <Link href="/previous-editions" onClick={handleLinkClick} className="px-6 py-3 text-py-text transition-colors">Ediciones Anteriores</Link>
