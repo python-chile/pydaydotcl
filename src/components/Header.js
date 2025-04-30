@@ -69,7 +69,7 @@ export default function Header() {
             </button>
           </div>
           
-          {/* Menú para desktop */}
+          {/* Menú para desktop  */}
           <nav className="hidden md:flex space-x-6 items-center">
             <Link href="/" className="text-py-text hover:text-py-yellow transition-colors">Inicio</Link>
             <Link href="/sponsors" className="text-py-text hover:text-py-yellow transition-colors">Patrocinio</Link>
