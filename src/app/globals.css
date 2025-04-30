@@ -42,7 +42,7 @@ body {
 
 .gradient-bg {
   background:
-    linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    linear-gradient(rgba(0, 0, 0, 0.251), rgba(0, 0, 0, 0.1)),
     linear-gradient(135deg, var(--primary-green) 0%, var(--accent-yellow) 50%, var(--outline-red) 100%);
   background-size: 400% 400%;
   background-blend-mode: darken;
@@ -171,4 +171,20 @@ body {
   .sponsor-logo:hover {
     filter: brightness(120%) contrast(110%) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.25));
   }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out forwards;
 }

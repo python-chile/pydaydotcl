@@ -7,12 +7,13 @@ import RegistrationForm from "@/components/RegistrationForm";
 import HeroSection from "@/components/HeroSection";
 import SponsorList from "./sponsors/components/SponsorList";
 import featuredTalks from "@/data/featuredTalks";
+import { FeatureGuard } from "@/components/FeatureManagement/FeatureGuard";
 
 // TODO: Datos de ejemplo - Estos deberían venir de una base de datos o CMS
 const cities = [
   {
     name: "Copiapó",
-    date: "6 de Junio, 2025",
+    date: "20 de Junio, 2025",
     slug: "copiapo",
     mapCoords: { x: 50, y: 90 },
   },
@@ -24,7 +25,7 @@ const cities = [
   },
   {
     name: "Santiago",
-    date: "20 de Junio, 2025",
+    date: "6 de Junio, 2025",
     slug: "santiago",
     mapCoords: { x: 58, y: 200 },
   },
@@ -129,10 +130,12 @@ export default function Home() {
 
       {/* Registro Section */}
       <section id="registro" className="container-py">
-        <h2 className="section-title">Regístrate</h2>
-        <div className="max-w-xl mx-auto px-13">
-          <RegistrationForm />
-        </div>
+        <FeatureGuard featureName="registration">
+          <h2 className="section-title">Regístrate</h2>
+          <div className="max-w-xl mx-auto px-13">
+            <RegistrationForm /> 
+          </div>
+        </FeatureGuard>
       </section>
 
       {/* Acerca de PyDay */}

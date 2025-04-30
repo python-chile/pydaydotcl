@@ -7,6 +7,7 @@ import CTAFinal from "@/components/CTAFinal";
 import FAQSection from "@/components/FAQSection";
 import { sponsorshipFAQs } from "@/data/faqs";
 import { sponsorshipData } from "@/data/sponsorshipData";
+import { FeatureGuard } from "@/components/FeatureManagement/FeatureGuard";
 
 export default function DynamicContent() {
   const { intro, audience, eventStats2024, benefits, plans, contact } =
@@ -35,7 +36,6 @@ export default function DynamicContent() {
           </div>
         </div>
       </motion.section>
-
       {/* Beneficios de patrocinio */}
       <motion.section
         initial={{ opacity: 0 }}
@@ -73,13 +73,14 @@ export default function DynamicContent() {
                 </svg>
               </div>
 
-              <h3 className="text-2xl font-bold text-[var(--text-white)] mb-4">{b.title}</h3>
+              <h3 className="text-2xl font-bold text-[var(--text-white)] mb-4">
+                {b.title}
+              </h3>
               <p className="text-text-white leading-relaxed">{b.description}</p>
             </div>
           ))}
         </div>
       </motion.section>
-
       {/* Alcance del evento */}
       <motion.section
         initial={{ opacity: 0 }}
@@ -153,31 +154,31 @@ export default function DynamicContent() {
           </div>
         </div>
       </motion.section>
-
       {/* Planes de Patrocinio */}
       <SponsorshipPlans plans={plans} />
-
       {/* Patrocinadores anteriores */}
       <SponsorList sponsors={sponsorshipData.sponsors} />
-
       {/* Formulario de contacto */}
-      <section id="contact-form" className="container mx-auto py-16 px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-8 text-[var(--text-white)]">
-            ¿Interesado en patrocinar?
-          </h2>
-          <div className="p-8 sm:p-12">
-            <SponsorForm contactEmail={contact.email} />
+      <FeatureGuard featureName="sponsorForm">
+        <section id="contact-form" className="container mx-auto py-16 px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-8 text-[var(--text-white)]">
+              ¿Interesado en patrocinar?
+            </h2>
+            <div className="p-8 sm:p-12">
+              <SponsorForm contactEmail={contact.email} />
+            </div>
           </div>
-        </div>
-      </section>
-
+        </section>
+      </FeatureGuard>
+      {/* FIXME: Escondido mientras no haya formulario. */}
+      {/* 
       <CTAFinal
         title="Contáctanos"
         subtitle={`Escríbenos a ${contact.email} o visita ${contact.website}`}
         buttonText="Enviar mensaje"
         email={contact.email}
-      />
+      /> */}
       <FAQSection faqs={sponsorshipFAQs} />
     </>
   );
