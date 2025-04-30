@@ -11,9 +11,8 @@ const cityData = {
     embedMap:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3344.8395004588306!2d-71.59466189999999!3d-33.0343587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9689e0b59627236d%3A0x86499de0392a795!2sAv.%20Espa%C3%B1a%201680%2C%202580816%20Valpara%C3%ADso!5e0!3m2!1ses-419!2scl!4v1745384901539!5m2!1ses-419!2scl",
     transportation: [
-      "Metro Valparaíso: Estación Barón (15 min caminando)",
+      "Metro Valparaíso: Estación Portales (10 min caminando)",
       "Micros 105, 106, 202, 215, 216",
-      "Estacionamiento disponible en el campus",
     ],
     // Nuevos campos para Valparaíso
     introduction: {
