@@ -78,7 +78,7 @@ export default function Header() {
             <Link href="/register" className="px-4 py-2 text-py-text transition-colors rounded-full font-medium">Registrarse</Link>
           </nav>
         </div>
-        
+        {/* FIXME: Esto @LiliGC */}
         {/* Menú móvil desplegable */}
         {isMenuOpen && (
           <div 
