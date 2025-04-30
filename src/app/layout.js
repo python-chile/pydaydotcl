@@ -1,4 +1,5 @@
 import { Inter, Open_Sans, Open_Sans_Condensed } from "next/font/google";
+import { Suspense } from "react";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -142,19 +143,20 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-
   return (
     <html lang="es">
       <body
         className={`${openSans.variable} overflow-x-hidden min-h-screen flex flex-col text-py-text`}
       >
-        <div className="fixed inset-0 -z-10 gradient-bg" />
-        <Header />
-        <main className="flex-grow">
-          <MaintenanceBanner />
-          {children}
-        </main>
-        <Footer />
+        <Suspense fallback={<div>Cargando...</div>}>
+          <div className="fixed inset-0 -z-10 gradient-bg" />
+          <Header />
+          <main className="flex-grow">
+            <MaintenanceBanner />
+            {children}
+          </main>
+          <Footer />
+        </Suspense>
       </body>
     </html>
   );
