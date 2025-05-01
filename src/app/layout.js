@@ -103,7 +103,7 @@ export const metadata = {
     url: "https://pyday.vercel.app/",
     images: [
       {
-        url: "/images/banner-og.webp",
+        url: "/images/banner-og.jpg",
         width: 1200,
         height: 630,
         alt: "PyDay Chile 2025 - Un día de Python en tu ciudad",
