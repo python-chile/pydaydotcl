@@ -30,7 +30,7 @@ export default function MultimediaPage() {
       <section id="photos">
         <h2 className="text-2xl font-bold mb-6 text-center">Fotos</h2>
         {getYears(images).map((year) => (
-          <div key={year} className="mb-12">
+          <div key={year} id={`photos-${year}`} className="mb-12 scroll-mt-24">
             <h3 className="text-xl font-semibold mb-4">PyDay {year}</h3>
             <Suspense fallback={<GallerySkeleton />}>
               <Gallery images={images.filter((img) => img.year === year)} />
@@ -42,7 +42,7 @@ export default function MultimediaPage() {
       <section id="videos">
         <h2 className="text-2xl font-bold mb-6 text-center">Videos</h2>
         {videoYears.map((year) => (
-          <div key={year} className="mb-12">
+          <div key={year} id={`videos-${year}`} className="mb-12 scroll-mt-24">
             <h3 className="text-xl font-semibold mb-4">PyDay {year}</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {videos
