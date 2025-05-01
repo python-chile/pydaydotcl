@@ -20,7 +20,7 @@ const cityData = {
       participationInfo: "Participar te permitirá: adquirir nuevas habilidades, conectar con la comunidad tecnológica y descubrir cómo Python puede transformar tu futuro. ¡Te esperamos!",
       campusImage: "/images/campus/Inacap_Copiapo.webp",
     },
-    talkProposalLink: "https://sessionize.com/pyday-copiapo-2025/",
+    talkProposalLink: "",
     schedule: allTalks.filter((talk) => talk.city === "copiapo"),
   },
   valparaiso: {

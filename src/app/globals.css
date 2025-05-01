@@ -1,8 +1,8 @@
 @import "tailwindcss";
+@config "../../tailwind.config.js";
 
 /*
   Esquema de color basado en el logo "PYDAY".
-
 */
 
 :root {
@@ -19,6 +19,7 @@
 
   --primary-green-rgb: 61, 139, 55;
   --accent-yellow-rgb: 255, 225, 65;
+  --text-white-rgb: 255, 255, 255;
   --outline-red-rgb: 242, 57, 57;
   --bg-dark-rgb: 16, 16, 16;
 }
@@ -74,6 +75,15 @@ body {
 
 /* Componentes reutilizables */
 @layer components {
+
+  /* Menú */
+  /* Para otros navegadores (no Firefox) */
+  @supports not (-moz-appearance: none) {
+    .mobile-menu-container {
+      background: rgba(var(--text-white-rgb), 0%);
+      position: relative;
+    }
+  }
 
   .btn-primary {
     @apply px-6 py-3 bg-transparent border-2 text-white font-bold rounded-full transition duration-300 ease-in-out shadow-lg hover:shadow-xl hover:-translate-y-1;

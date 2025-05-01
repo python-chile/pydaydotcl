@@ -90,7 +90,7 @@ export default function TalksPage() {
               onClick={() => setSelectedDay(city.date)}
               className={`px-4 py-2 rounded-lg text-sm md:text-base font-medium whitespace-nowrap ${
                 selectedDay === city.date
-                  ? "text-py-dark shadow-lg ring-2 ring-offset-2"
+                  ? "shadow-lg ring-2 ring-offset-2"
                   : "text-py-text"
               }`}
             >

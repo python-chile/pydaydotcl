@@ -37,9 +37,9 @@ export default function PreviousEditionsPage() {
                     fill
                     className="object-cover object-center"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-py-dark/70 to-transparent" />
+                  <div className="absolute inset-0" />
                   <div className="absolute bottom-4 inset-x-0 text-center">
-                    <h2 className="text-3xl font-bold text-py-text">
+                    <h2 className="text-3xl font-bold">
                       PyDay {event.year}
                     </h2>
                     <p className="text-lg text-py-yellow">
@@ -51,10 +51,10 @@ export default function PreviousEditionsPage() {
                 {/* Información del evento */}
                 <div className="p-6 flex flex-col justify-between">
                   <div>
-                    <h3 className="text-2xl font-semibold mb-4 text-py-text">
+                    <h3 className="text-2xl font-semibold mb-4">
                       Estadísticas
                     </h3>
-                    <ul className="space-y-2 mb-6 text-py-text">
+                    <ul className="space-y-2 mb-6">
                       <li>
                         <span className="font-medium">Asistentes:</span>{" "}
                         {event.attendees}
@@ -77,7 +77,7 @@ export default function PreviousEditionsPage() {
                     </ul>
 
                     <div className="mt-4">
-                      <h3 className="text-2xl font-semibold mb-2 text-py-text">
+                      <h3 className="text-2xl font-semibold mb-2">
                         Highlights
                       </h3>
                       <p className="text-py-text">{event.highlights}</p>

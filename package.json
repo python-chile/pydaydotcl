@@ -1,7 +1,31 @@
 {
-  "name": "pyday2-2025",
+  "name": "pydaydotcl",
   "version": "0.1.0",
+  "description": "PyDay Chile 2025 - Evento anual gratuito que reúne a la comunidad Python en distintas ciudades de Chile.",
   "private": true,
+  "author": "María-Fernanda marifer.villalobos@pythonchile.cl",
+  "contributors": [
+    "Liliana Garmendia liliana.garmendia@pythonchile.cl"
+  ],
+  "keywords": [
+    "Python",
+    "Chile",
+    "PyDay",
+    "evento",
+    "comunidad",
+    "talleres",
+    "charlas",
+    "networking"
+  ],
+  "homepage": "https://pyday.cl",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/python-chile/PyDay"
+  },
+  "bugs": {
+    "url": "https://github.com/python-chile/PyDay/issues"
+  },
+  "license": "MIT",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",

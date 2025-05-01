@@ -146,7 +146,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="es">
       <body
-        className={`${openSans.variable} overflow-x-hidden min-h-screen flex flex-col text-py-text`}
+        className={`${openSans.variable} overflow-x-hidden min-h-screen flex flex-col text-text-white`}
       >
         <Suspense fallback={<div>Cargando...</div>}>
           <div className="fixed inset-0 -z-10 gradient-bg" />

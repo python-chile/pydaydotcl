@@ -43,7 +43,7 @@ export default function CountdownTimer({ targetDate }) {
         {timeUnits.map((unit, index) => (
           <div 
             key={index} 
-            className="bg-gradient-to-b from-py-green/30 to-py-dark/60 backdrop-blur-sm p-3 sm:p-4 rounded-lg border border-py-green/30 flex flex-col items-center justify-center"
+            className="backdrop-blur-sm p-3 sm:p-4 rounded-lg border border-py-green/30 flex flex-col items-center justify-center"
           >
             <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-py-yellow mb-1">
               {String(unit.value).padStart(2, '0')}

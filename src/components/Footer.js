@@ -91,7 +91,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/previous-editions"
+                  href="/previous"
                   className="text-white/90 hover:text-accent-yellow transition-colors duration-200"
                 >
                   Ediciones anteriores

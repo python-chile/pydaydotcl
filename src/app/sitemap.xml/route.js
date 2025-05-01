@@ -13,7 +13,7 @@ export async function GET() {
 
   // Generar URLs
   const urls = [
-    ...['', '/multimedia', '/previous-editions', '/register', '/sponsors']
+    ...['', '/multimedia', '/previous', '/register', '/sponsors']
       .map(path => ({
         url: new URL(path, baseUrl).href,
         lastModified: new Date().toISOString(),
