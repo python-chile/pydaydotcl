@@ -17,7 +17,7 @@
     "charlas",
     "networking"
   ],
-  "homepage": "https://pyday.cl",
+  "homepage": "https://pyday.vercel.app/",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/python-chile/PyDay"
