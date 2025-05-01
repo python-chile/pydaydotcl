@@ -1,4 +1,4 @@
-import { Inter, Open_Sans, Open_Sans_Condensed } from "next/font/google";
+import { Inter, Open_Sans } from "next/font/google";
 import { Suspense } from "react";
 import "./globals.css";
 import Header from "@/components/Header";
@@ -6,7 +6,6 @@ import Footer from "@/components/Footer";
 import { MaintenanceBanner } from "@/components/FeatureManagement/MaintenanceBanner";
 
 const inter = Inter({ subsets: ["latin"] });
-
 // Configuración para versiones Open Sans
 const openSans = Open_Sans({
   subsets: ["latin"],
@@ -20,6 +19,9 @@ export const viewport = {
   maximumScale: 5,
   themeColor: "#21b702",
 };
+
+// URL base para metadatos
+const baseUrl = "https://pyday.vercel.app";
 
 export const metadata = {
   title: "PyDay Chile 2025",
@@ -38,10 +40,10 @@ export const metadata = {
     "Hackathon",
   ],
   authors: [
-    { name: "Comunidad Python Chile", url: "https://pyday.vercel.app/" },
+    { name: "MariferVL", url: "https://github.com/MariferVL" },
   ],
-  creator: "Comunidad Python Chile",
-  publisher: "Comunidad Python Chile",
+  creator: "María-Fernanda Villalobos López", 
+  publisher: "Python Chile",
   robots: {
     index: true,
     follow: true,
@@ -84,7 +86,7 @@ export const metadata = {
     statusBarStyle: "black-translucent",
   },
   category: "technology",
-  metadataBase: new URL("https://pyday.vercel.app/"),
+  metadataBase: new URL(baseUrl),
   alternates: {
     canonical: "/",
     languages: {
@@ -100,20 +102,14 @@ export const metadata = {
     description:
       "PyDay Chile es un evento anual gratuito que reúne a entusiastas, desarrolladores y académicos en un día lleno de Python con charlas inspiradoras, talleres prácticos y networking en diversas ciudades de Chile.",
     siteName: "PyDay Chile",
-    url: "https://pyday.vercel.app/",
+    url: baseUrl,
     images: [
       {
-        url: "/images/banner-og.jpg",
+        url: `${baseUrl}/images/banner-og.jpg`, 
         width: 1200,
         height: 630,
         alt: "PyDay Chile 2025 - Un día de Python en tu ciudad",
       },
-      // {
-      //   url: "https://pyday.vercel.app/images/logo_bg.png",
-      //   width: 500,
-      //   height: 500,
-      //   alt: "Logo PyDay Chile",
-      // },
     ],
   },
   twitter: {
@@ -126,7 +122,7 @@ export const metadata = {
     creatorId: "@pythonchile",
     images: [
       {
-        url: "https://pyday.vercel.app/images/banner-og.jpg",
+        url: `${baseUrl}/images/banner-og.jpg`, 
         alt: "PyDay Chile 2025",
         width: 1200,
         height: 628,
@@ -145,6 +141,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
+      <head>
+        {/* Enlaces adicionales que estaban en head..js */}
+        <link rel="preconnect" href="https://www.youtube.com" />
+        <link rel="dns-prefetch" href="https://www.youtube.com" />
+      </head>
       <body
         className={`${openSans.variable} overflow-x-hidden min-h-screen flex flex-col text-text-white`}
       >
