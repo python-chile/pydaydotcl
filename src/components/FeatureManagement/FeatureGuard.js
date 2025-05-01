@@ -22,7 +22,7 @@ export const FeatureGuard = ({ children, featureName }) => {
       enabled: process.env.NEXT_PUBLIC_FEATURE_SPONSOR_FORM === "true",
       title: "Formulario de Patrocinio",
       subtitle:
-        "Actualmente estamos actualizando nuestro sistema de registro. Por favor contáctanos directamente o visita https://pythonchile.cl:",
+        "Actualmente estamos actualizando nuestro sistema de registro. Por favor contáctanos directamente o visita https://pythonchile.cl :",
       showCTA: true,
       buttonText: "Enviar mensaje",
       email: "pyday@pythonchile.cl",

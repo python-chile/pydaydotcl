@@ -16,7 +16,7 @@ export default function DynamicContent() {
   return (
     <>
       {/* Introducción */}
-      <motion.section className="container mx-auto py-12 md:py-16 px-4 sm:px-6 relative">
+      <motion.section className="container mx-auto px-4 sm:px-6 relative">
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-block mb-4 md:mb-6">
             <div className="text-4xl md:text-5xl font-bold text-[var(--primary-green)]">
@@ -36,6 +36,7 @@ export default function DynamicContent() {
           </div>
         </div>
       </motion.section>
+
       {/* Beneficios de patrocinio */}
       <motion.section
         initial={{ opacity: 0 }}
@@ -53,11 +54,11 @@ export default function DynamicContent() {
           {benefits.map((b, index) => (
             <div
               key={index}
-              className="group relative p-8 rounded-2xl bg-gradient-to-b from-gray-600/30 to-gray-800/50 backdrop-blur-sm hover:border-[var(--primary-green)] transition-all"
+              className="group relative p-8 rounded-2xl bg-gradient-to-br from-[var(--primary-green)]/10 via-[var(--accent-yellow)]/5 to-[var(--outline-red)]/10 backdrop-blur-lg hover:backdrop-blur-xl border-2 border-transparent hover:border-[var(--primary-green)]/30 transition-all duration-300"
             >
-              <div className="absolute inset-0 rounded-2xl border-2 border-[var(--primary-green)] opacity-0 group-hover:opacity-30 transition-opacity pointer-events-none" />
+              <div className="absolute inset-0 rounded-2xl bg-[radial-gradient(circle_at_75%_30%,rgba(var(--accent-yellow-rgb),0.08),transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-              <div className="w-14 h-14 mb-6 bg-[var(--accent-yellow)]/10 rounded-xl flex items-center justify-center">
+              <div className="w-14 h-14 mb-6 bg-[var(--accent-yellow)]/15 rounded-xl flex items-center justify-center backdrop-blur-sm border border-[var(--accent-yellow)]/20">
                 <svg
                   className="w-8 h-8 text-[var(--accent-yellow)]"
                   fill="none"
@@ -70,13 +71,15 @@ export default function DynamicContent() {
                     strokeWidth="2"
                     d="M13 10V3L4 14h7v7l9-11h-7z"
                   />
-                </svg>
+                </svg>{" "}
               </div>
 
-              <h3 className="text-2xl font-bold text-[var(--text-white)] mb-4">
+              <h3 className="text-2xl font-bold text-[var(--text-white)] mb-4 [text-shadow:_0_2px_4px_rgba(0,0,0,0.3)]">
                 {b.title}
               </h3>
-              <p className="text-text-white leading-relaxed">{b.description}</p>
+              <p className="text-text-white leading-relaxed [text-shadow:_0_1px_2px_rgba(0,0,0,0.2)]">
+                {b.description}
+              </p>
             </div>
           ))}
         </div>
@@ -104,9 +107,10 @@ export default function DynamicContent() {
               {Object.entries(audience).map(([key, value]) => (
                 <div
                   key={key}
-                  className="p-4 md:p-6 rounded-xl bg-gray-900/50 backdrop-blur-sm border border-gray-800 hover:border-[var(--primary-green)]/50 transition-colors"
+                  className="p-4 md:p-6 rounded-xl bg-gradient-to-br from-[var(--primary-green)]/10 to-[var(--accent-yellow)]/10 backdrop-blur-sm border border-[var(--primary-green)]/20 hover:border-[var(--accent-yellow)]/40 transition-colors relative overflow-hidden"
                 >
-                  <p className="text-2xl md:text-3xl font-bold text-[var(--primary-green)] mb-1">
+                  <div className="absolute inset-0 bg-[conic-gradient(from_90deg_at_50%_50%,var(--primary-green)_0%,transparent_50%)] opacity-0 hover:opacity-10 transition-opacity" />
+                  <p className="text-2xl md:text-3xl font-bold text-[var(--primary-green)] mb-1 drop-shadow-[0_0_10px_rgba(61,139,55,0.3)]">
                     {value.toLocaleString()}
                     <span className="text-[var(--accent-yellow)]">+</span>
                   </p>
@@ -120,10 +124,16 @@ export default function DynamicContent() {
             </div>
 
             {/* Estadísticas 2024 */}
-            <div className="p-6 md:p-8 rounded-2xl bg-gray-900/30 backdrop-blur-sm">
-              <h3 className="text-xl md:text-2xl font-bold text-center text-[var(--text-white)] mb-6 md:mb-8">
-                Comparativa PyDay 2024
-              </h3>
+
+            <div className="p-6 md:p-8 rounded-2xl">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-white)] mb-4">
+                  <span className="border-b-4 border-[var(--primary-green)] pb-2">
+                    Comparativa
+                  </span>
+                </h2>
+                <p className="text-text-white">PyDay 2024</p>
+              </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {[
@@ -139,14 +149,25 @@ export default function DynamicContent() {
                 ].map((stat, index) => (
                   <div
                     key={index}
-                    className="p-4 rounded-xl bg-gradient-to-b from-[var(--primary-green)]/10 to-transparent"
+                    className="group relative p-4 md:p-5 rounded-xl min-h-[130px] flex flex-col justify-center"
                   >
-                    <p className="text-3xl md:text-4xl font-bold text-[var(--accent-yellow)] mb-1">
-                      {stat.value.toLocaleString()}
-                    </p>
-                    <p className="text-sm md:text-base text-text-white">
-                      {stat.label}
-                    </p>
+                    {/* Efecto de fondo dinámico */}
+                    <div
+                      className="absolute inset-0 bg-[linear-gradient(130deg,transparent_60%,rgba(var(--accent-yellow-rgb),0.1)_100%)] 
+          opacity-0 group-hover:opacity-30 transition-opacity duration-500"
+                    />
+
+                    <div className="relative z-10 space-y-2 text-center w-full">
+                      {/* Número */}
+                      <p className="text-3xl md:text-4xl font-bold text-[var(--accent-yellow)] mb-2 px-1">
+                        {stat.value.toLocaleString()}
+                      </p>
+
+                      {/* Label ajustado */}
+                      <p className="text-[clamp(0.75rem,1.25vw+0.5rem,1.1rem)] md:text-[1.05rem] text-text-white leading-tight px-1">
+                        {stat.label}
+                      </p>
+                    </div>
                   </div>
                 ))}
               </div>

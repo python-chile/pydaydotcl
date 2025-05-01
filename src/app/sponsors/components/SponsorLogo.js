@@ -9,11 +9,11 @@ export default function SponsorLogo({ src, alt, className }) {
       whileHover={{ scale: 1.05 }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
     >
-      {/* Efecto de resplandor al hacer hover */}
+      {/* Hover: Efecto de resplandor */}
       <div className="absolute inset-0 bg-gradient-to-r from-[var(--primary-green)]/10 via-[var(--accent-yellow)]/15 to-[var(--primary-green)]/10 
         rounded-2xl opacity-0 group-hover:opacity-40 transition-opacity duration-300 z-0" />
       
-      {/* Contenedor de imagen con mejor visibilidad */}
+      {/* Contenedor de imagen */}
       <div className="relative z-10 p-2">
         <Image
           src={src}

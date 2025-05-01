@@ -4,22 +4,22 @@ import { motion } from "framer-motion";
 export default function SponsorshipPlans({ plans }) {
   return (
     <motion.section className="container mx-auto py-12 md:py-16 px-4 sm:px-6">
-      <div className="max-w-4xl mx-auto text-center mb-12 md:mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-3 md:mb-4">
-          <span className="bg-gradient-to-r from-[#4ADE80] to-[#FFD43B] bg-clip-text text-transparent">
-            Planes de Patrocinio
+      <div className="text-center mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-white)] mb-4">
+          <span className="border-b-4 border-[var(--primary-green)] pb-2">
+            Planes de Patrocinios
           </span>
         </h2>
-        <p className="text-sm md:text-base text-text-white px-2 sm:px-0">
+        <p className="text-text-white">
           Personaliza tu participación según tus objetivos
         </p>
       </div>
 
-      <div className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 items-end">
         {plans.map((plan, index) => (
           <div
             key={index}
-            className={`relative p-6 md:p-8 rounded-xl md:rounded-2xl transition-all max-w-[400px] md:max-w-none mx-auto ${
+            className={`relative flex flex-col h-full p-6 md:p-8 rounded-xl md:rounded-2xl transition-all max-w-[400px] md:max-w-none mx-auto ${
               index === 0
                 ? "border-2 border-[#FFD43B] md:transform md:scale-[1.02]"
                 : "border border-gray-700"
@@ -86,8 +86,9 @@ export default function SponsorshipPlans({ plans }) {
             </ul>
 
             <a
-              href="#contact-form"
-              className={`w-full block text-center py-2 md:py-3 px-4 md:px-6 rounded-lg font-medium text-sm md:text-base ${
+              // TODO: Reemplazar por #contact-form cuando se active el Form.
+              href="mailto:pyday@pythonchile.cl"
+              className={`w-full block text-center mt-auto py-2 md:py-3 px-4 md:px-6 rounded-lg font-medium text-sm md:text-base ${
                 index === 0
                   ? "bg-[#FFD43B] hover:bg-[#FFD43B]/90 text-gray-900"
                   : "bg-[#4ADE80]/10 hover:bg-[#4ADE80]/20 text-[#4ADE80] hover:text-white"
