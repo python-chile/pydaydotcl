@@ -141,11 +141,6 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
-      <head>
-        {/* Enlaces adicionales que estaban en head..js */}
-        <link rel="preconnect" href="https://www.youtube.com" />
-        <link rel="dns-prefetch" href="https://www.youtube.com" />
-      </head>
       <body
         className={`${openSans.variable} overflow-x-hidden min-h-screen flex flex-col text-text-white`}
       >
