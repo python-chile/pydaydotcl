@@ -3,7 +3,9 @@ import allTalks from "./talks";
 const cityData = {
   copiapo: {
     name: "Copiapó",
-    date: "20 de Junio, 2025",
+    date: "Fecha por confirmar.",
+    slug: "copiapo",
+    mapCoords: { x: 50, y: 90 },
     venue: "Inacap sede Copiapó",
     address: "Yumbel 650, Auditorio Edificio B, Copiapó, Chile",
     image: "/images/cities/copiapo.webp",
@@ -25,7 +27,9 @@ const cityData = {
   },
   valparaiso: {
     name: "Valparaíso",
-    date: "13 de Junio, 2025, 10:00 AM - 17:00 PM",
+    date: "13 de junio, 2025, 10:00 - 17:00.",
+    slug: "valparaiso",
+    mapCoords: { x: 52, y: 180 },
     venue: "Casa Central, Universidad Técnica Federico Santa María",
     address: "Avenida España 1680, Valparaíso, Chile",
     image: "/images/cities/valparaiso.webp",
@@ -47,7 +51,9 @@ const cityData = {
   },
   santiago: {
     name: "Santiago",
-    date: "6 de Junio, 2025",
+    date: "6 de junio, 2025, 14:00 - 19:00.",
+    slug: "santiago",
+    mapCoords: { x: 58, y: 200 },
     venue: "DUOC UC, Sede San Joaquín",
     address: "Av. Vicuña Mackenna 4917, San Joaquín, Chile",
     image: "/images/cities/santiago.webp",

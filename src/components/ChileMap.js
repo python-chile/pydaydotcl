@@ -8,7 +8,7 @@ export default function ChileMap({ cities }) {
   return (
     <div className="mx-auto max-w-4xl px-4 py-8">
       <div className="flex flex-col md:flex-row items-center gap-6">
-        {/* Contenedor del mapa con mejor contraste y accesibilidad */}
+        {/* Contenedor del mapa */}
         <div className="w-full md:w-1/2 lg:w-1/2">
           <div className="aspect-[3/6] sm:aspect-[3/5] lg:aspect-auto lg:h-[450px] w-full bg-white/5 backdrop-blur-sm rounded-lg p-4 relative shadow-lg border border-white/10">
             <svg viewBox="0 0 100 300" className="w-full h-full" aria-label="Mapa de Chile con ciudades">
@@ -59,7 +59,7 @@ export default function ChileMap({ cities }) {
           </div>
         </div>
 
-        {/* Lista de ciudades, centradas verticalmente con colores mejorados */}
+        {/* Lista de ciudades */}
         <div className="w-full md:w-1/2 lg:w-1/2 flex flex-col justify-center space-y-3">
           {cities.map((city) => (
             <Link

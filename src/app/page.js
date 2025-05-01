@@ -9,32 +9,12 @@ import SponsorList from "./sponsors/components/SponsorList";
 import featuredTalks from "@/data/featuredTalks";
 import { FeatureGuard } from "@/components/FeatureManagement/FeatureGuard";
 import EmptyState from "@/components/EmptyState";
-
-// TODO: Datos de ejemplo - Estos deberían venir de una base de datos o CMS
-const cities = [
-  {
-    name: "Copiapó",
-    date: "20 de Junio, 2025",
-    slug: "copiapo",
-    mapCoords: { x: 50, y: 90 },
-  },
-  {
-    name: "Valparaíso",
-    date: "13 de Junio, 2025",
-    slug: "valparaiso",
-    mapCoords: { x: 52, y: 180 },
-  },
-  {
-    name: "Santiago",
-    date: "6 de Junio, 2025",
-    slug: "santiago",
-    mapCoords: { x: 58, y: 200 },
-  },
-];
+import cityData from "@/data/cities";
 
 export default function Home() {
-  //FIXME: Fecha del primer evento de PyDay 2025
-  const firstEventDate = "2025-06-06T09:00:00";
+  // Fecha y hora del próximo evento confirmado de PyDay 2025
+  const firstEventDate = "2025-06-06T14:00:00";
+  const citiesArray = Object.values(cityData);
 
   return (
     <>
@@ -62,7 +42,7 @@ export default function Home() {
       {/* Ciudades / Mapa Section */}
       <section id="ciudades" className="container-py mt-8">
         <h2 className="section-title">Sedes PyDay 2025</h2>
-        <ChileMap cities={cities} />
+        <ChileMap cities={citiesArray} />
       </section>
 
       {/* Agenda / Charlas Section */}
