@@ -27,22 +27,22 @@ export default function PreviousEditionsPage() {
         {pastEvents.map((event, index) => (
           <div key={index} className="event-card">
             <div className="relative backdrop-blur-sm rounded-xl overflow-hidden shadow-xl">
-              {/* Se fuerza que ambos lados ocupen al menos 20rem y se centran verticalmente */}
-              <div className="grid md:grid-cols-2 gap-6 items-center min-h-[20rem]">
+              <div className="grid grid-rows-[minmax(300px,auto)_min-content] md:grid-cols-2 md:grid-rows-1 gap-6 items-stretch min-h-[auto] md:min-h-[20rem]">
                 {/* Imagen del evento */}
-                <div className="relative h-full overflow-hidden">
+                <div className="relative w-full h-full min-h-[200px] md:min-h-0 overflow-hidden aspect-[4/3] md:aspect-auto">
                   <Image
                     src={event.mainImage}
                     alt={`PyDay Chile ${event.year}`}
                     fill
-                    className="object-cover object-center"
+                    className="object-contain md:object-cover object-center"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
-                  <div className="absolute inset-0" />
-                  <div className="absolute bottom-4 inset-x-0 text-center">
-                    <h2 className="text-3xl font-bold">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-4 text-center">
+                    <h2 className="text-2xl md:text-3xl font-bold text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
                       PyDay {event.year}
                     </h2>
-                    <p className="text-lg text-py-yellow">
+                    <p className="text-base md:text-lg text-py-yellow mt-1 drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">
                       {event.cities.join(" • ")}
                     </p>
                   </div>
