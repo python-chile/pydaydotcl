@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { notFound } from 'next/navigation';
+import { notFound } from "next/navigation";
 import TalkCard from "@/components/TalkCard";
 import MapSection from "@/components/Maps";
 import HeroSection from "@/components/HeroSection";
@@ -103,6 +103,44 @@ export default async function CityPage({ params }) {
         </FeatureGuard>
       </section>
 
+      {/* Agenda*/}
+      <section className="container-py">
+        <h2 className="section-title">Agenda</h2>
+        {data.length > 0 ? (
+          <div className="space-y-4 md:space-y-6 mt-6 md:mt-8 max-w-4xl mx-auto">
+            {data.schedule.map((talk, index) => (
+              <TalkCard key={talk.id} talk={talk} />
+            ))}
+          </div>
+        ) : (
+          <EmptyState cityId={params.city} />
+        )}
+
+        <div className="mt-8 md:mt-12 text-center hidden">
+          <Link
+            href="/register"
+            target="_blank"
+            className="btn-primary inline-flex items-center space-x-2"
+          >
+            <span>Registrarme para este evento</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M14 5l7 7m0 0l-7 7m7-7H3"
+              />
+            </svg>
+          </Link>
+        </div>
+      </section>
+
       {/* Mapa y dirección */}
       <section className="container-py">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 max-w-7xl mx-auto">
@@ -149,43 +187,6 @@ export default async function CityPage({ params }) {
         </div>
       </section>
 
-      {/* Agenda*/}
-      <section className="container-py">
-        <h2 className="section-title">Agenda</h2>
-        {data.length > 0 ? (
-          <div className="space-y-4 md:space-y-6 mt-6 md:mt-8 max-w-4xl mx-auto">
-            {data.schedule.map((talk, index) => (
-              <TalkCard key={talk.id} talk={talk} />
-            ))}
-          </div>
-        ) : (
-          <EmptyState cityId={params.city} />
-        )}
-
-        <div className="mt-8 md:mt-12 text-center hidden">
-          <Link
-            href="/register"
-            target="_blank"
-            className="btn-primary inline-flex items-center space-x-2"
-          >
-            <span>Registrarme para este evento</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M14 5l7 7m0 0l-7 7m7-7H3"
-              />
-            </svg>
-          </Link>
-        </div>
-      </section>
       <FAQSection faqs={generalFAQs} />
 
       <CTAFinal
