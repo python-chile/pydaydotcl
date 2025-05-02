@@ -36,10 +36,6 @@ const nextConfig = {
             key: 'X-XSS-Protection',
             value: '1; mode=block',
           },
-          {
-            key: 'Access-Control-Allow-Origin',
-            value: '*', 
-          },
         ],
       },
     ];
