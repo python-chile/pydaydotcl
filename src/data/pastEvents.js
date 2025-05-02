@@ -13,7 +13,7 @@ const pastEvents = [
       "En la edición 2024 de PyDay Chile, la comunidad organizó con éxito un evento en Copiapó en conjunto con Inacap. Con actividades presenciales y participación online, el PyDay Copiapó 2024 reforzó el compromiso de Python Chile de expandir el alcance del lenguaje a más regiones del país.",
     photosLink: "/multimedia?year=2024",
     videosLink: "/multimedia?videos=2024",
-    webpageLink: "https://pyday.vercel.app//2024",
+    webpageLink: "https://pyday.cl/2024",
   },
   {
     year: "2023",
@@ -28,7 +28,7 @@ const pastEvents = [
       "PyDay 2023 introdujo por primera vez una Hackatón en Santiago con más de 100 participantes, enfocada en IA generativa. Las charlas sobre ciencia de datos y desarrollo web fueron las más populares, y se estableció una mesa redonda sobre la comunidad Python en Chile.",
     photosLink: "/multimedia?year=2023",
     videosLink: "/multimedia?videos=2023",
-    webpageLink: "https://pyday.vercel.app//2023",
+    webpageLink: "https://pyday.cl/2023",
   },
   {
     year: "2022",
@@ -43,7 +43,7 @@ const pastEvents = [
       "La primera edición presencial después de la pandemia reunió a entusiastas de Python de todo el país. Se celebraron talleres prácticos de Django, Data Science y automatización. El networking post-evento estableció colaboraciones entre empresas y desarrolladores.",
     photosLink: "/multimedia?year=2022",
     videosLink: "/multimedia?videos=2022",
-    webpageLink: "https://pyday.vercel.app//2022",
+    webpageLink: "https://pyday.cl/2022",
   },
   {
     year: "2020",
@@ -57,7 +57,7 @@ const pastEvents = [
     highlights:"La primera edición nacional de PyDay Chile, realizada de manera online debido a la pandemia, fue el inicio de un sueño hecho realidad para la comunidad. Transmitido en YouTube, con participación activa en Discord y la presencia de speakers nacionales e internacionales, este evento marcó un hito para Python Chile, consolidándose como un espacio de encuentro, aprendizaje y colaboración para entusiastas de Python en el país.",
     photosLink: "/multimedia?year=2020",
     videosLink: "/multimedia?videos=2020",
-    webpageLink: "https://pyday.vercel.app//2020",
+    webpageLink: "https://pyday.cl/2020",
   },
 ];
 
