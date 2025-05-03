@@ -9,7 +9,7 @@ const cityData = {
     venue: "Inacap sede Copiapó",
     address: "Yumbel 650, Auditorio Edificio B, Copiapó, Chile",
     image: "/images/cities/copiapo.webp",
-    logo: "/images/logos/pyday_copiapo.png",
+    logo: "/images/logos/pyday_copiapo.webp",
     mapUrl: "https://maps.app.goo.gl/gYxNT6EVaSFsDBT99",
     embedMap:
       "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2579.0365694907086!2d-70.33317677653373!3d-27.360827873691527!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9698047547c01749%3A0xb972b1fd182ecc29!2sINACAP%20Sede%20B!5e0!3m2!1ses!2scl!4v1746042745132!5m2!1ses!2scl",
@@ -34,7 +34,7 @@ const cityData = {
     venue: "Casa Central, Universidad Técnica Federico Santa María",
     address: "Avenida España 1680, Valparaíso, Chile",
     image: "/images/cities/valparaiso.webp",
-    logo: "/images/logos/pyday_valparaiso.png",
+    logo: "/images/logos/pyday_valparaiso.webp",
     mapUrl: "https://maps.app.goo.gl/Hmdu1bGLDcpBuXk46",
     embedMap:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3344.8395004588306!2d-71.59466189999999!3d-33.0343587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9689e0b59627236d%3A0x86499de0392a795!2sAv.%20Espa%C3%B1a%201680%2C%202580816%20Valpara%C3%ADso!5e0!3m2!1ses-419!2scl!4v1745384901539!5m2!1ses-419!2scl",
@@ -59,7 +59,7 @@ const cityData = {
     venue: "DUOC UC, Sede San Joaquín",
     address: "Av. Vicuña Mackenna 4917, San Joaquín, Chile",
     image: "/images/cities/santiago.webp",
-    logo: "/images/logos/pyday_santiago.png",
+    logo: "/images/logos/pyday_santiago.webp",
     mapUrl: "https://maps.app.goo.gl/VurFsaQhfD2hivrSA",
     embedMap:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3327.049828297318!2d-70.61886772390879!3d-33.50008070005618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662d00be4a5fa81%3A0xcd8eaf5b1d547f64!2sDuoc%20UC%3A%20Sede%20San%20Joaqu%C3%ADn!5e0!3m2!1ses-419!2scl!4v1721433553127!5m2!1ses-419!2scl",

@@ -52,7 +52,7 @@ export default async function CityPage({ params }) {
         <div className="mb-4 flex justify-center">
           <CityLogo
             cityName={data.name}
-            logoPath={data.logo || `/images/logos/pyday_${params.city}.png`}
+            logoPath={data.logo || `/images/logos/pyday_${params.city}.webp`}
             size="md"
           />
         </div>
