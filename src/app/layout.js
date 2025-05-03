@@ -39,10 +39,8 @@ export const metadata = {
     "Charlas",
     "Hackathon",
   ],
-  authors: [
-    { name: "MariferVL", url: "https://github.com/MariferVL" },
-  ],
-  creator: "María-Fernanda Villalobos López", 
+  authors: [{ name: "MariferVL", url: "https://github.com/MariferVL" }],
+  creator: "María-Fernanda Villalobos López",
   publisher: "Python Chile",
   robots: {
     index: true,
@@ -59,16 +57,16 @@ export const metadata = {
   icons: {
     icon: [
       { url: "/icon.svg", type: "image/svg+xml" },
-      { url: "/favicon-16x16.webp", type: "image/png", sizes: "16x16" },
-      { url: "/favicon-32x32.webp", type: "image/png", sizes: "32x32" },
+      { url: "/favicon-16x16.webp", type: "image/webp", sizes: "16x16" },
+      { url: "/favicon-32x32.webp", type: "image/webp", sizes: "32x32" },
       {
         url: "/android-chrome-192x192.webp",
-        type: "image/png",
+        type: "image/webp",
         sizes: "192x192",
       },
       {
         url: "/android-chrome-512x512.webp",
-        type: "image/png",
+        type: "image/webp",
         sizes: "512x512",
       },
     ],
@@ -105,7 +103,7 @@ export const metadata = {
     url: baseUrl,
     images: [
       {
-        url: `${baseUrl}/images/banner-og.jpg`, 
+        url: `${baseUrl}/images/banner-og.jpg`,
         width: 1200,
         height: 630,
         alt: "PyDay Chile 2025 - Un día de Python en tu ciudad",
@@ -122,7 +120,7 @@ export const metadata = {
     creatorId: "@pythonchile",
     images: [
       {
-        url: `${baseUrl}/images/banner-og.jpg`, 
+        url: `${baseUrl}/images/banner-og.jpg`,
         alt: "PyDay Chile 2025",
         width: 1200,
         height: 628,
@@ -144,15 +142,13 @@ export default function RootLayout({ children }) {
       <body
         className={`${openSans.variable} overflow-x-hidden min-h-screen flex flex-col text-text-white`}
       >
-        <Suspense fallback={<div>Cargando...</div>}>
-          <div className="fixed inset-0 -z-10 gradient-bg" />
-          <Header />
-          <main className="flex-grow">
-            <MaintenanceBanner />
-            {children}
-          </main>
-          <Footer />
-        </Suspense>
+        <div className="fixed inset-0 -z-10 gradient-bg" />
+        <Header />
+        <main className="flex-grow">
+          <MaintenanceBanner />
+          <Suspense fallback={<div>Cargando...</div>}>{children}</Suspense>
+        </main>
+        <Footer />
       </body>
     </html>
   );

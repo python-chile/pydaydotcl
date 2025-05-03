@@ -42,8 +42,7 @@ export default function SponsorLogo({ src, alt, className }) {
           transition-opacity duration-500 pointer-events-none rounded-2xl z-0"
       >
         <div
-          className="absolute w-full h-full bg-[url('/noise.png')]
-          mix-blend-overlay opacity-40 rounded-2xl"
+          className="absolute w-full h-full mix-blend-overlay opacity-40 rounded-2xl"
         />
       </div>
     </motion.div>
