@@ -1,4 +1,4 @@
-import CTAFinal from '@/components/CTAFinal';
+import CTAFinal from "@/components/CTAFinal";
 
 export const FeatureGuard = ({ children, featureName }) => {
   const features = {
@@ -37,9 +37,7 @@ export const FeatureGuard = ({ children, featureName }) => {
     <CTAFinal {...ctaProps} />
   ) : (
     <div className="text-center py-12">
-      <h2 className="section-title">
-        {ctaProps.title}
-      </h2>
+      <h2 className="section-title">{ctaProps.title}</h2>
       <p className="text-white/80">{ctaProps.subtitle}</p>
     </div>
   );

@@ -6,24 +6,32 @@ export function middleware(request) {
     userAgent.toLowerCase()
   );
   const path = request.nextUrl.pathname;
-  const searchParams = new URLSearchParams(request.nextUrl.searchParams);
-
+  
+  // Rutas protegidas basadas en variables de entorno
   const blockedPaths = {
     "/register": process.env.NEXT_PUBLIC_FEATURE_REGISTRATION !== "true",
     "/sponsors": process.env.NEXT_PUBLIC_FEATURE_SPONSORS !== "true",
   };
 
+  // Permitir que los bots accedan para SEO
   if (isBot) return NextResponse.next();
 
+  // Comprobar si la ruta actual está bloqueada
   for (const [route, isBlocked] of Object.entries(blockedPaths)) {
     if (path.startsWith(route) && isBlocked) {
-      searchParams.set(
+      const url = new URL('/', request.url);
+      url.searchParams.set(
         "maintenance",
         encodeURIComponent(`Acceso temporalmente deshabilitado: ${route}`)
       );
-      return NextResponse.redirect(new URL(`/?${searchParams}`, request.url));
+      return NextResponse.redirect(url);
     }
   }
 
   return NextResponse.next();
 }
+
+// Configuración para que el middleware se ejecute solo en las rutas necesarias
+export const config = {
+  matcher: ['/register/:path*', '/sponsors/:path*'],
+};

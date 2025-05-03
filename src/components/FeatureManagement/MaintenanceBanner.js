@@ -1,10 +1,9 @@
 'use client';
+
 import { useSearchParams } from 'next/navigation';
 
-export const MaintenanceBanner = () => {
-  const searchParams = useSearchParams();
-  const message = searchParams.get('maintenance');
-
+// Componente de cliente que maneja la lógica de cliente
+function MaintenanceBannerClient({ message }) {
   if (!message) return null;
 
   return (
@@ -14,4 +13,12 @@ export const MaintenanceBanner = () => {
       </p>
     </div>
   );
-};
+}
+
+// Componente principal que utiliza client boundary
+export function MaintenanceBanner() {
+  const searchParams = useSearchParams();
+  const message = searchParams.get('maintenance');
+  
+  return <MaintenanceBannerClient message={message} />;
+}
