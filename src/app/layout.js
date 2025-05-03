@@ -1,4 +1,5 @@
 import { Inter, Open_Sans, Open_Sans_Condensed } from "next/font/google";
+import { Suspense } from "react";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
