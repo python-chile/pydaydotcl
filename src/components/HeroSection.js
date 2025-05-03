@@ -1,24 +1,25 @@
-'use client';
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import Link from 'next/link';
+"use client";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function HeroSection({
   title,
   subtitle,
-  background = 'bg-gradient-to-b from-green-900/40 to-black/60',
+  background = "bg-gradient-to-b from-green-900/40 to-black/60",
   backButton = false,
   image,
   motionConfig = { initial: { opacity: 1 }, animate: { opacity: 1 } },
-  children
+  children,
 }) {
   const Container = backButton || image ? motion.div : motion.section;
 
   return (
     <Container
       {...motionConfig}
-      className={`relative min-h-[40vh] flex flex-col justify-center items-center text-center mt-8 px-4 backdrop-blur`}
+      className={`relative min-h-[40vh] flex flex-col justify-center items-center text-center mt-8 px-4`}
     >
+      {/* Botón de regreso parte superior */}
       {backButton && (
         <div className="absolute top-4 left-4 z-10">
           <Link
@@ -32,15 +33,21 @@ export default function HeroSection({
               viewBox="0 0 24 24"
               stroke="currentColor"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M10 19l-7-7m0 0l7-7m-7 7h18"
+              />
             </svg>
             <span>Volver</span>
           </Link>
         </div>
       )}
 
+      {/* Contenedor para imagen de fondo */}
       {image && (
-        <div className="relative h-[50vh] w-full overflow-hidden">
+        <div className="absolute inset-0 w-full h-full">
           <Image
             src={image.src}
             alt={image.alt}
@@ -48,20 +55,32 @@ export default function HeroSection({
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6 md:p-8">
-            <h1 className="text-3xl md:text-5xl font-bold mb-2">{title}</h1>
-            {children}
-          </div>
+          {/* Capa de gradiente para mejorar legibilidad */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/11 to-black/33"></div>
         </div>
       )}
 
-      {!image && (
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">{title}</h1>
-          <p className="text-xl md:text-2xl mb-8 opacity-90">{subtitle}</p>
-          {children}
-        </div>
-      )}
+      {/* Contenido principal */}
+      <div className="relative z-10 w-full max-w-4xl mx-auto py-8 flex flex-col items-center justify-center">
+        {/* Título */}
+        {title && (
+          <div className="mb-4">
+            <h1 className="text-3xl md:text-5xl font-bold text-white">
+              {title}
+            </h1>
+          </div>
+        )}
+
+        {/* Subtítulo */}
+        {subtitle && (
+          <div className="mb-6">
+            <p className="text-xl md:text-2xl opacity-90">{subtitle}</p>
+          </div>
+        )}
+
+        {/* Contenido hijo (children) - Logo de ciudad, fechas, etc. */}
+        <div className="mt-4">{children}</div>
+      </div>
     </Container>
   );
 }

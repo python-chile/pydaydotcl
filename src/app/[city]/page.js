@@ -7,6 +7,7 @@ import HeroSection from "@/components/HeroSection";
 import FAQSection from "@/components/FAQSection";
 import CTAFinal from "@/components/CTAFinal";
 import EmptyState from "@/components/EmptyState";
+import CityLogo from "@/components/CityLogo";
 import RegistrationForm from "@/components/RegistrationForm";
 import { FeatureGuard } from "@/components/FeatureManagement/FeatureGuard";
 import cityData from "@/data/cities";
@@ -47,6 +48,14 @@ export default async function CityPage({ params }) {
         title={`PyDay ${data.name}`}
         background=""
       >
+        {/* Logo de la ciudad */}
+        <div className="mb-4 flex justify-center">
+          <CityLogo
+            cityName={data.name}
+            logoPath={data.logo || `/images/logos/pyday_${params.city}.png`}
+            size="md"
+          />
+        </div>
         <p className="text-xl md:text-2xl opacity-90">{data.date}</p>
         <p className="text-lg opacity-80">{data.venue}</p>
       </HeroSection>
