@@ -21,7 +21,7 @@ export default function Home() {
       {/* Hero Section */}
       <div className="relative h-44 mt-8 mx-auto">
         <Image
-          src="/images/logo.webp"
+          src="/images/logos/logo.webp"
           alt="PyDay Chile 2025 Logo"
           fill
           className="object-contain"
@@ -120,7 +120,7 @@ export default function Home() {
             >
               <div className="relative h-32 w-64">
                 <Image
-                  src="/images/logos/psf-logo.webp"
+                  src="/images/logos/logos/psf-logo.webp"
                   alt="Python Software Foundation"
                   fill
                   className="object-contain"
@@ -144,7 +144,7 @@ export default function Home() {
             >
               <div className="relative h-24 w-48">
                 <Image
-                  src="/images/logos/aws.webp"
+                  src="/images/logos/logos/aws.webp"
                   alt="Amazon Web Services"
                   fill
                   className="object-contain"

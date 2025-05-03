@@ -44,7 +44,7 @@ export default function Header() {
           <Link href="/" className="flex items-center space-x-2">
             <div className="relative w-10 h-10">
               <Image
-                src="/images/logo.webp"
+                src="/images/logos/logo.webp"
                 alt="PyDay Logo"
                 width={32}
                 height={32}
