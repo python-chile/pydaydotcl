@@ -54,16 +54,16 @@ export const metadata = {
   icons: {
     icon: [
       { url: "/icon.svg", type: "image/svg+xml" },
-      { url: "/favicon-16x16.webp", type: "image/png", sizes: "16x16" },
-      { url: "/favicon-32x32.webp", type: "image/png", sizes: "32x32" },
+      { url: "/favicon-16x16.webp", type: "image/webp", sizes: "16x16" },
+      { url: "/favicon-32x32.webp", type: "image/webp", sizes: "32x32" },
       {
         url: "/android-chrome-192x192.webp",
-        type: "image/png",
+        type: "image/webp",
         sizes: "192x192",
       },
       {
         url: "/android-chrome-512x512.webp",
-        type: "image/png",
+        type: "image/webp",
         sizes: "512x512",
       },
     ],
