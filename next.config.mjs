@@ -1,59 +1,24 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   transpilePackages: ["framer-motion"],
-  // output: "export",
   trailingSlash: true,
   images: {
-    unoptimized: true, 
-    remotePatterns: []
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**",
+      },
+      {
+        protocol: "http",
+        hostname: "localhost",
+        port: "3000",
+      },
+    ],
+    formats: ["image/webp"],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    minimumCacheTTL: 86400,
+    unoptimized: false,
   },
-  trailingSlash: true,
-  skipTrailingSlashRedirect: true
 };
 
 export default nextConfig;
-// /** @type {import('next').NextConfig} */
-// const nextConfig = {
-//   transpilePackages: ["framer-motion"],
-//   trailingSlash: true,
-//   images: {
-//     remotePatterns: [
-//       {
-//         protocol: "https",
-//         hostname: "**",
-//       },
-//       {
-//         protocol: "http",
-//         hostname: "localhost",
-//         port: "3000",
-//       },
-//     ],
-//     formats: ["image/webp"],
-//     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-//     minimumCacheTTL: 86400,
-//     unoptimized: false,
-//   },
-//   async headers() {
-//     return [
-//       {
-//         source: '/(.*)',
-//         headers: [
-//           {
-//             key: 'X-Content-Type-Options',
-//             value: 'nosniff',
-//           },
-//           {
-//             key: 'X-Frame-Options',
-//             value: 'DENY',
-//           },
-//           {
-//             key: 'X-XSS-Protection',
-//             value: '1; mode=block',
-//           },
-//         ],
-//       },
-//     ];
-//   },
-// };
-
-// export default nextConfig;
