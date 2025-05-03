@@ -64,12 +64,14 @@ export default function Gallery({ images }) {
                 placeholder="blur"
                 blurDataURL={getBlurData(1600, 900)}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
-                <span className="text-white text-sm font-medium line-clamp-2">
-                  {image.caption}
-                </span>
-              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end hidden md:flex">
+                <div className="p-3 w-full">
+                  <span className="text-xs md:text-sm font-medium line-clamp-1 md:line-clamp-3">
+                    {image.caption}
+                  </span>
+                </div>
             </div>
+          </div>
           );
         })}
       </div>
@@ -78,7 +80,12 @@ export default function Gallery({ images }) {
         <div
           ref={modalRef}
           className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
-          onClick={(e) => e.target === modalRef.current && setActiveImage(null)}
+          onClick={(e) => {
+            if (e.target === modalRef.current) {
+              setActiveImage(null);
+              document.body.style.overflow = "auto"; // Restaura el scroll
+            }
+          }}
         >
           <button
             className="absolute top-4 right-4 text-white p-2 hover:bg-white/10 rounded-full z-50"
@@ -115,12 +122,12 @@ export default function Gallery({ images }) {
               quality={90}
             />
 
-            <div className="absolute bottom-0 left-0 right-0 bg-black/70 p-4 text-center backdrop-blur-md">
-              <p className="text-white text-lg font-medium">
+            <div className="absolute bottom-0 left-0 right-0 bg-black/80 py-3 px-4 text-center backdrop-blur-md">
+              <p className="text-white text-sm md:text-lg font-medium truncate">
                 {activeImage.caption}
               </p>
               {activeImage.location && (
-                <p className="text-gray-300 text-sm mt-1">
+                <p className="text-gray-300 text-xs md:text-sm mt-1">
                   {activeImage.location}
                 </p>
               )}
