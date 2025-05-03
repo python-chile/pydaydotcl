@@ -140,10 +140,6 @@ export const metadata = {
   },
 };
 
-function MaintenanceBannerFallback() {
-  return <div className="h-8"></div>;
-}
-
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
@@ -153,7 +149,7 @@ export default function RootLayout({ children }) {
         <div className="fixed inset-0 -z-10 gradient-bg" />
         <Header />
         <main className="flex-grow">
-          <Suspense fallback={<MaintenanceBannerFallback />}>
+          <Suspense fallback={null}>
             <MaintenanceBanner />
           </Suspense>
           {children}
