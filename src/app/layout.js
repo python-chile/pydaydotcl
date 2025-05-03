@@ -1,18 +1,9 @@
-import { Inter, Open_Sans, Open_Sans_Condensed } from "next/font/google";
 import { Suspense } from "react";
 import "./globals.css";
+import { openSans } from "./fonts";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { MaintenanceBanner } from "@/components/FeatureManagement/MaintenanceBanner";
-
-const inter = Inter({ subsets: ["latin"] });
-
-// Configuración para versiones Open Sans
-const openSans = Open_Sans({
-  subsets: ["latin"],
-  weight: ["400", "600", "700"],
-  variable: "--font-open-sans",
-});
 
 export const viewport = {
   width: "device-width",
@@ -144,7 +135,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="es">
       <body
-        className={`${openSans.variable} overflow-x-hidden min-h-screen flex flex-col text-py-text`}
+        className={`${openSans.className} overflow-x-hidden min-h-screen flex flex-col text-py-text`}
       >
         <div className="fixed inset-0 -z-10 gradient-bg" />
         <Header />
