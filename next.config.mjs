@@ -2,7 +2,8 @@
 const nextConfig = {
   transpilePackages: ["framer-motion"],
   trailingSlash: true,
-  htmlLimitedBots: 'facebookexternalhit|twitterbot|discordbot|whatsapp',
+  htmlLimitedBots:
+    "facebookexternalhit|twitterbot|linkedinbot|Discordbot|WhatsApp",
   images: {
     remotePatterns: [
       {
