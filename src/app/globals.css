@@ -201,4 +201,112 @@ body {
   .scroll-mt-24 {
     scroll-margin-top: 6rem;
   }
+
+  /* En tu globals.css */
+.not-found-active {
+  overflow: hidden !important;
+}
+
+.not-found-container {
+  contain: strict;
+  height: 100vh;
+  height: 100dvh;
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+  .logo-container {
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .logo-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+
+  .logo-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse {
+
+    0%,
+    100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0.7;
+    }
+  }
+
+  .logo-entrance {
+    animation: entranceAnimation 0.5s ease-out forwards;
+  }
+
+  @keyframes entranceAnimation {
+    0% {
+      opacity: 0;
+      transform: scale(0.8) translateY(20px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  .logo-spin {
+    animation: spin 10s linear infinite;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Añadir este estilo global para mejorar la sección del logo */
+  .hero-section-with-logo {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-section-with-logo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(255, 212, 59, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Estilos para los logos en layouts pequeños (móviles) */
+  @media (max-width: 768px) {
+    .logo-container {
+      margin-bottom: 0.5rem;
+    }
+  }
+  
 }

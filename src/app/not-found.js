@@ -1,42 +1,50 @@
+'use client';
+
+import { useEffect, useRef } from "react";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function NotFound() {
-  return (
-    <div className="min-h-screen flex flex-col">
-      {/* Contenedor de imagen full screen */}
-      <div className="flex-1 relative w-full h-[calc(100vh-160px)]">
-        <Image
-          src="/images/404status_transp.svg"
-          alt="Error 404 - Página no encontrada"
-          fill
-          className="object-contain object-center"
-          priority
-          sizes="(max-width: 768px) 100vw, 80vw"
-        />
-      </div>
+  const videoRef = useRef(null);
 
-      {/* Botón posicionado absolutamente */}
-      <div className="absolute bottom-8 left-0 right-0 text-center z-10">
-        <Link
-          href="/"
-          className="btn-primary inline-flex items-center px-8 py-3 text-lg transition-transform hover:scale-105"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5 mr-2"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-          >
-            <path
-              fillRule="evenodd"
-              d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z"
-              clipRule="evenodd"
-            />
-          </svg>
-          Volver al Inicio
-        </Link>
-      </div>
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      video.addEventListener("ended", () => {
+        video.pause();
+        video.currentTime = video.duration - 0.1;
+      });
+      video.play().catch(() => {
+        video.muted = true;
+        video.play();
+      });
+    }
+  }, []);
+
+  return (
+    <div className="relative w-full h-full bg-transparent overflow-hidden flex items-center justify-center">
+      <video
+        ref={videoRef}
+        src="/videos/404status.webm"
+        className="block w-full max-w-full h-auto lg:h-130 lg:w-auto mx-auto object-cover"
+        muted
+        playsInline
+        disablePictureInPicture
+        disableRemotePlayback
+      />
+
+      <Link
+        href="/"
+        className="absolute bottom-[10%] left-1/2 transform -translate-x-1/2 z-50 
+                   pixel-font text-xl border-4 border-[var(--accent-yellow)] 
+                   px-8 py-3 bg-[var(--bg-dark)] hover:bg-[var(--primary-green)] 
+                   transition-all duration-300 hover:scale-110 hover:glow"
+        style={{
+          textShadow: "3px 3px 0 var(--outline-red)",
+          boxShadow: "0 0 25px rgba(var(--accent-yellow-rgb), 0.5)",
+        }}
+      >
+        ▶ REINICIAR
+      </Link>
     </div>
   );
 }
