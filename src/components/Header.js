@@ -6,26 +6,27 @@ import Image from "next/image";
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef(null);
+  const buttonRef = useRef(null);
 
-  // Manejador para cerrar el menú
   useEffect(() => {
     function handleClickOutside(event) {
+      const isToggleButton = buttonRef.current?.contains(event.target);
+
       if (
         menuRef.current &&
         !menuRef.current.contains(event.target) &&
+        !isToggleButton &&
         isMenuOpen
       ) {
         setIsMenuOpen(false);
       }
     }
 
-    // Listener solo cuando el menú está abierto
     if (isMenuOpen) {
       document.addEventListener("mousedown", handleClickOutside);
       document.addEventListener("touchstart", handleClickOutside);
     }
 
-    // Limpieza al desmontar
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
       document.removeEventListener("touchstart", handleClickOutside);
@@ -59,6 +60,7 @@ export default function Header() {
           {/* Menú para móvil */}
           <div className="block md:hidden">
             <button
+              ref={buttonRef}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-py-text p-2 rounded-md transition-colors"
               aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
