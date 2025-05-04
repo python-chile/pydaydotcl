@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { pressStart2P } from "./fonts";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Error({ error, reset }) {
   useEffect(() => {
@@ -75,9 +76,9 @@ export default function Error({ error, reset }) {
         {/* Footer específico */}
         <p className="text-center text-sm mt-8 text-py-text/70">
           ¿Quieres volver a la página principal de PyDay 2025?
-          <a href="/" className="text-py-yellow hover:underline ml-1">
+          <Link href="/" className="text-py-yellow hover:underline ml-1">
             Haz clic aquí
-          </a>
+          </Link>
         </p>
       </div>
     </div>

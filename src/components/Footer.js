@@ -108,14 +108,14 @@ export default function Footer() {
               </li>
 
               <li>
-                <a
+                <Link
                   href="https://pythonchile.cl/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white/90 hover:text-accent-yellow transition-colors duration-200"
                 >
                   Python Chile
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -124,7 +124,7 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4 text-white">Síguenos</h3>
             <div className="flex flex-wrap gap-4">
               {socialLinks.map((link) => (
-                <a
+                <Link
                   key={link.name}
                   href={link.url}
                   target="_blank"
@@ -133,7 +133,7 @@ export default function Footer() {
                   aria-label={`Visitar ${link.name}`}
                 >
                   {link.icon}
-                </a>
+                </Link>
               ))}
             </div>
           </div>

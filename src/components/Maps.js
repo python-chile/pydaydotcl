@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 const MapSection = ({ city }) => {
   const [mapLoaded, setMapLoaded] = useState(false);
@@ -55,7 +56,7 @@ const MapSection = ({ city }) => {
         )}
       </div>
       <div className="p-4">
-        <a
+        <Link
           href={city.mapUrl}
           target="_blank"
           rel="noopener noreferrer"
@@ -76,7 +77,7 @@ const MapSection = ({ city }) => {
               d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
             />
           </svg>
-        </a>
+        </Link>
       </div>
     </div>
   );

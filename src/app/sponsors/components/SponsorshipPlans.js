@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function SponsorshipPlans({ plans }) {
   return (
@@ -85,7 +86,7 @@ export default function SponsorshipPlans({ plans }) {
               ))}
             </ul>
 
-            <a
+            <Link
               // TODO: Reemplazar por #contact-form cuando se active el Form.
               href="mailto:pyday@pythonchile.cl"
               className={`w-full block text-center mt-auto py-2 md:py-3 px-4 md:px-6 rounded-lg font-medium text-sm md:text-base ${
@@ -95,7 +96,7 @@ export default function SponsorshipPlans({ plans }) {
               }`}
             >
               {index === 0 ? "Comenzar Ahora" : "Seleccionar Plan"}
-            </a>
+            </Link>
           </div>
         ))}
       </div>

@@ -112,7 +112,7 @@ export default function Home() {
             Patrocinadores Premium
           </h3>
           <div className="flex justify-center">
-            <a
+            <Link>
               href="https://www.python.org/psf-landing/"
               target="_blank"
               rel="noopener noreferrer"
@@ -126,7 +126,7 @@ export default function Home() {
                   className="object-contain"
                 />
               </div>
-            </a>
+            </Link>
           </div>
         </div> */}
 
@@ -136,7 +136,7 @@ export default function Home() {
             Patrocinadores Básico
           </h3>
           <div className="flex justify-center">
-            <a
+            <Link>
               href="https://aws.amazon.com/es/"
               target="_blank"
               rel="noopener noreferrer"
@@ -150,7 +150,7 @@ export default function Home() {
                   className="object-contain"
                 />
               </div>
-            </a>
+            </Link>
           </div>
         </div> */}
 

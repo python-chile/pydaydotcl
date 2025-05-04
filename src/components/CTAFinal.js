@@ -26,7 +26,7 @@ export default function CTAFinal({
         {parts.map((part, i) => {
           if (part.match(urlRegex)) {
             return (
-              <a
+              <Link
                 key={i}
                 href={part}
                 target="_blank"
@@ -34,7 +34,7 @@ export default function CTAFinal({
                 className="text-[var(--accent-yellow)] underline hover:opacity-80 transition-opacity"
               >
                 {part.replace(/(https?:\/\/)/, "")}
-              </a>
+              </Link>
             );
           }
           return part;
