@@ -73,7 +73,7 @@ export const metadata = {
     statusBarStyle: "black-translucent",
   },
   category: "technology",
-  metadataBase: new URL("https://pyday.vercel.app/"),
+  metadataBase: new URL("https://pyday.cl/"),
   alternates: {
     canonical: "/",
     languages: {
@@ -89,16 +89,16 @@ export const metadata = {
     description:
       "PyDay Chile es un evento anual gratuito que reúne a entusiastas, desarrolladores y académicos en un día lleno de Python con charlas inspiradoras, talleres prácticos y networking en diversas ciudades de Chile.",
     siteName: "PyDay Chile",
-    url: "https://pyday.vercel.app/",
+    url: "https://pyday.cl/",
     images: [
       {
-        url: "https://pyday.vercel.app/images/banner-og.jpg",
+        url: "https://pyday.cl/images/banner-og.jpg",
         width: 1200,
         height: 630,
         alt: "PyDay Chile 2025 - Un día de Python en tu ciudad",
       },
       // {
-      //   url: "https://pyday.vercel.app/images/logos/logo_bg.png",
+      //   url: "https://pyday.cl/images/logos/logo_bg.png",
       //   width: 500,
       //   height: 500,
       //   alt: "Logo PyDay Chile",
@@ -115,7 +115,7 @@ export const metadata = {
     creatorId: "@pythonchile",
     images: [
       {
-        url: "https://pyday.vercel.app/images/banner-og.jpg",
+        url: "https://pyday.cl/images/banner-og.jpg",
         alt: "PyDay Chile 2025",
         width: 1200,
         height: 628,
