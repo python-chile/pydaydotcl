@@ -94,7 +94,7 @@ export default function TalksPage() {
                   : "text-py-text"
               }`}
             >
-              {city.date.split(",")[0]} - {city.name}
+              {city.name} - {city.date.split(",")[0]}
             </button>
           ))}
         </div>
