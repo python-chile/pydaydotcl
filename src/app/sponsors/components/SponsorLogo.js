@@ -1,18 +1,21 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
-export default function SponsorLogo({ src, alt, className }) {
-  return (
+export default function SponsorLogo({ src, alt, className, url }) {
+  const content = (
     <motion.div
       className={className}
       whileHover={{ scale: 1.05 }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
     >
       {/* Hover: Efecto de resplandor */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[var(--primary-green)]/10 via-[var(--accent-yellow)]/15 to-[var(--primary-green)]/10 
-        rounded-2xl opacity-0 group-hover:opacity-40 transition-opacity duration-300 z-0" />
-      
+      <div
+        className="absolute inset-0 bg-gradient-to-r from-[var(--primary-green)]/10 via-[var(--accent-yellow)]/15 to-[var(--primary-green)]/10
+        rounded-2xl opacity-0 group-hover:opacity-40 transition-opacity duration-300 z-0"
+      />
+
       {/* Contenedor de imagen */}
       <div className="relative z-10 p-2">
         <Image
@@ -31,20 +34,30 @@ export default function SponsorLogo({ src, alt, className }) {
           }}
         />
       </div>
-      
+
       {/* Halo sutil alrededor del logo */}
-      <div className="absolute inset-0 -z-10 opacity-0 group-hover:opacity-20 transition-all duration-300
-        bg-[radial-gradient(circle_at_center,var(--accent-yellow),transparent_70%)]" />
-      
+      <div
+        className="absolute inset-0 -z-10 opacity-0 group-hover:opacity-20 transition-all duration-300
+        bg-[radial-gradient(circle_at_center,var(--accent-yellow),transparent_70%)]"
+      />
+
       {/* Efecto de partículas sutil */}
       <div
         className="absolute inset-0 opacity-10 group-hover:opacity-20
           transition-opacity duration-500 pointer-events-none rounded-2xl z-0"
       >
-        <div
-          className="absolute w-full h-full mix-blend-overlay opacity-40 rounded-2xl"
-        />
+        <div className="absolute w-full h-full mix-blend-overlay opacity-40 rounded-2xl" />
       </div>
     </motion.div>
   );
+
+  if (url && url !== "") {
+    return (
+      <Link href={url} target="_blank" rel="noopener noreferrer">
+        {content}
+      </Link>
+    );
+  }
+
+  return content;
 }

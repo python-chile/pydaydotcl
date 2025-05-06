@@ -3,7 +3,7 @@ import allTalks from "./talks";
 const cityData = {
   copiapo: {
     name: "Copiapó",
-    date: "Fecha por confirmar.",
+    date: "Fecha por confirmar",
     slug: "copiapo",
     mapCoords: { x: 50, y: 90 },
     venue: "Inacap sede Copiapó",
