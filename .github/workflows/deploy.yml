@@ -44,4 +44,4 @@ jobs:
           cd ${{ secrets.PYDAY_PATH }}
           npm install --omit=dev
           pm2 delete pydaydotcl || true
-          pm2 start npm --name "pyday" -- start
+          pm2 start npm --name "pydaydotcl" -- start
