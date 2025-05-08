@@ -30,7 +30,7 @@ jobs:
         username: ${{ secrets.PYDAY_USER }}
         password: ${{ secrets.PYDAY_PASS }}
         port: ${{ secrets.PYDAY_PORT }}
-        source: ".next,public,next.config.js,package.json,package-lock.json"
+        source: ".next,public,next.config.mjs,package.json,package-lock.json"
         target: "pydaydotcl"
         
     - name: Iniciar app con PM2 en el servidor
