@@ -31,7 +31,7 @@ jobs:
         password: ${{ secrets.PYDAY_PASS }}
         port: ${{ secrets.PYDAY_PORT }}
         source: ".next,public,next.config.js,package.json,package-lock.json"
-        target: ${{ secrets.PYDAY_PATH }}
+        target: "pydaydotcl"
         
     - name: Iniciar app con PM2 en el servidor
       uses: appleboy/ssh-action@v1
@@ -41,7 +41,7 @@ jobs:
         password: ${{ secrets.PYDAY_PASS }}
         port: ${{ secrets.PYDAY_PORT }}
         script: |
-          cd ${{ secrets.PYDAY_PATH }}
+          cd pydaydotcl
           npm install --omit=dev
           pm2 delete pydaydotcl || true
           pm2 start npm --name "pydaydotcl" -- start
