@@ -21,7 +21,7 @@ export default function HeroSection({
     >
       {/* Botón de regreso parte superior */}
       {backButton && (
-        <div className="absolute top-4 left-4 z-10">
+        <div className="absolute top-4 left-4 z-50 sm:top-4 sm:left-4 xs:top-6 xs:left-2">
           <Link
             href="/"
             className="flex items-center space-x-2 bg-black/50 backdrop-blur px-4 py-2 rounded-full text-white hover:bg-black/70 transition"
@@ -61,7 +61,7 @@ export default function HeroSection({
       )}
 
       {/* Contenido principal */}
-      <div className="relative z-10 w-full max-w-4xl mx-auto py-8 flex flex-col items-center justify-center">
+      <div className="relative z-10 w-full max-w-4xl mx-auto py-20 flex flex-col items-center justify-center">
         {/* Título */}
         {title && (
           <div className="mb-4">
