@@ -18,6 +18,14 @@ jobs:
         node-version: '22'
         cache: 'npm'
         
+    - name: Creacion variables de entorno
+      run: |
+        touch .env.local
+        echo "DB_USER=${{ secrets.NEXT_PUBLIC_FEATURE_REGISTRATION }}" >> .env.local
+        echo "DB_PASS=${{ secrets.NEXT_PUBLIC_FEATURE_SPONSORS }}" >> .env.local
+        echo "API_URL=${{ secrets.NEXT_PUBLIC_FEATURE_SPONSOR_FORM }}" >> .env.local
+        echo "APP_SECRET=${{ secrets.NEXT_PUBLIC_SITE_URL }}" >> .env.local
+    
     - name: Instalar dependencias y build
       run: |
         npm ci
@@ -30,7 +38,7 @@ jobs:
         username: ${{ secrets.PYDAY_USER }}
         password: ${{ secrets.PYDAY_PASS }}
         port: ${{ secrets.PYDAY_PORT }}
-        source: ".next,public,next.config.mjs,package.json,package-lock.json"
+        source: ".next,public,next.config.mjs,package.json,package-lock.json,.env.local"
         target: "pydaydotcl"
         
     - name: Iniciar app con PM2 en el servidor
