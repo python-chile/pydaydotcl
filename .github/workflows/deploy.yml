@@ -21,7 +21,7 @@ jobs:
     - name: Creacion variables de entorno
       run: |
         touch .env.local
-        echo "NEXT_PUBLIC_FEATURE_REGISTRATION=${{ NEXT_PUBLIC_FEATURE_REGISTRATION }}" >> .env.local
+        echo "NEXT_PUBLIC_FEATURE_REGISTRATION=${{ env.NEXT_PUBLIC_FEATURE_REGISTRATION }}" >> .env.local
         echo "NEXT_PUBLIC_FEATURE_SPONSORS=${{ env.NEXT_PUBLIC_FEATURE_SPONSORS }}" >> .env.local
         echo "NEXT_PUBLIC_FEATURE_SPONSOR_FORM=${{ secrets.NEXT_PUBLIC_FEATURE_SPONSOR_FORM }}" >> .env.local
         echo "NEXT_PUBLIC_SITE_URL=${{ secrets.NEXT_PUBLIC_SITE_URL }}" >> .env.local
