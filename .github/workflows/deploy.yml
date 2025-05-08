@@ -1,46 +1,47 @@
 name: Deploy PyDay to VPS
-on: [ push: { branches: [ main ] } ]
+
+on:
+  push:
+    branches:
+      - main
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
       name: Checkout código
+      
     - uses: actions/setup-node@v4
       name: Setup Node.js 22.x
       with:
-        node-version: '22.x'
+        node-version: '22'
         cache: 'npm'
+        
     - name: Instalar dependencias y build
       run: |
         npm ci
         npm run build
-    - name: Configure SSH
-      run: |
-        mkdir -p ~/.ssh
-        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
-        echo "${{ secrets.SSH_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
-      shell: bash
-    - name: Copiar artefactos al servidor
+        
+    - name: Copia archivos hacia servidor
       uses: appleboy/scp-action@v1
       with:
-        host: ${{ secrets.VPS_HOST }}
-        username: ${{ secrets.VPS_USER }}
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
-        port: ${{ secrets.VPS_PORT }}
-        source: ".next/,public,next.config.js,package.json,package-lock.json"
-        target: ${{ secrets.TARGET_PATH }}
-    - name: Instalar PM2 y lanzar en VPS
+        host: ${{ secrets.PYDAY_SERVER }}
+        username: ${{ secrets.PYDAY_USER }}
+        password: ${{ secrets.PYDAY_PASS }}
+        port: ${{ secrets.PYDAY_PORT }}
+        source: ".next,public,next.config.js,package.json,package-lock.json"
+        target: ${{ secrets.PYDAY_PATH }}
+        
+    - name: Iniciar app con PM2 en el servidor
       uses: appleboy/ssh-action@v1
       with:
-        host: ${{ secrets.VPS_HOST }}
-        username: ${{ secrets.VPS_USER }}
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
-        port: ${{ secrets.VPS_PORT }}
+        host: ${{ secrets.PYDAY_SERVER }}
+        username: ${{ secrets.PYDAY_USER }}
+        password: ${{ secrets.PYDAY_PASS }}
+        port: ${{ secrets.PYDAY_PORT }}
         script: |
-          cd ${{ secrets.TARGET_PATH }}
+          cd ${{ secrets.PYDAY_PATH }}
           npm install --omit=dev
           pm2 delete pyday || true
-          pm2 start npm --name "pyday" -- run start
-          pm2 save
+          pm2 start npm --name "pyday" -- start
