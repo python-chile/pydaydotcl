@@ -42,6 +42,6 @@ jobs:
         port: ${{ secrets.PYDAY_PORT }}
         script: |
           cd pydaydotcl
-          npm install --omit=dev
+          /home/pyday/.nvm/versions/node/v22.15.0/bin/npm install --omit=dev
           pm2 delete pydaydotcl || true
           pm2 start npm --name "pydaydotcl" -- start
