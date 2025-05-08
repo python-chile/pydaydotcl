@@ -43,5 +43,5 @@ jobs:
         script: |
           cd pydaydotcl
           /home/pyday/.nvm/versions/node/v22.15.0/bin/npm install --omit=dev
-          pm2 delete pydaydotcl || true
-          pm2 start npm --name "pydaydotcl" -- start
+          /home/pyday/.nvm/versions/node/v22.15.0/bin/pm2 delete pydaydotcl || true
+          /home/pyday/.nvm/versions/node/v22.15.0/bin/pm2 start npm --name "pydaydotcl" -- start
