@@ -6,9 +6,9 @@ export const FeatureGuard = ({ children, featureName }) => {
       enabled: process.env.NEXT_PUBLIC_FEATURE_REGISTRATION === "true",
       title: "Registro PyDay 2025",
       subtitle: "El formulario de registro estará disponible próximamente",
-      showCTA: false,
+      showCTA: true,
       buttonText: "Acceder al registro externo",
-      href: "https://registro.externo.com/pyday",
+      href: "https://www.eventbrite.cl/o/python-chile-31449960387",
     },
     sponsors: {
       enabled: process.env.NEXT_PUBLIC_FEATURE_SPONSORS === "true",
