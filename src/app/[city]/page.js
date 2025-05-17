@@ -66,14 +66,14 @@ export default async function CityPage({ params }) {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
               {/* Columna de texto */}
               <div className="bg-black/20 backdrop-blur rounded-lg p-6 md:p-8">
-                <h2 className="text-xl md:text-2xl font-bold mb-4 text-yellow-300">
+                <h2 className="text-xl md:text-2xl font-bold mb-6 text-yellow-300">
                   {data.introduction.title}
                 </h2>
                 <p className="text-base md:text-lg mb-6">
                   {data.introduction.description}
                 </p>
 
-                <h3 className="text-lg md:text-xl font-semibold mb-3 text-yellow-300">
+                <h3 className="text-lg md:text-xl font-semibold mb-4 text-yellow-300">
                   ¿Cómo participar?
                 </h3>
                 <p className="text-base mb-5">
@@ -104,11 +104,8 @@ export default async function CityPage({ params }) {
 
       {/* Registro Section */}
       <section id="registro" className="container-py">
-        <FeatureGuard featureName="registration">
-          <h2 className="section-title">Regístrate</h2>
-          <div className="max-w-xl mx-auto px-13">
+        <FeatureGuard featureName="registration"cityData={data}>
             <RegistrationForm />
-          </div>
         </FeatureGuard>
       </section>
 
