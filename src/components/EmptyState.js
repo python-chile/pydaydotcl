@@ -24,7 +24,7 @@ export default function EmptyState({ cityId, context = "city" }) {
         links: city.talkProposalLink
           ? [
               {
-                name: `Proponer en ${city.name}`,
+                name: `Proponer una charla para PyDay ${city.name}`,
                 link: city.talkProposalLink,
               },
             ]
