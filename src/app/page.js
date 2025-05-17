@@ -8,6 +8,7 @@ import HeroSection from "@/components/HeroSection";
 import SponsorList from "./sponsors/components/SponsorList";
 import featuredTalks from "@/data/featuredTalks";
 import { FeatureGuard } from "@/components/FeatureManagement/FeatureGuard";
+import RegistrationState from "@/components/RegistrationState";
 import EmptyState from "@/components/EmptyState";
 import cityData from "@/data/cities";
 
@@ -67,13 +68,9 @@ export default function Home() {
       </section>
 
       {/* Registro Section */}
-      <section id="registro" className="container-py">
-        <FeatureGuard featureName="registration">
-          <h2 className="section-title">Regístrate</h2>
-          <div className="max-w-xl mx-auto px-13">
-            <RegistrationForm />
-          </div>
-        </FeatureGuard>
+      <section className="container-py">
+          <h2 className="section-title">Registro PyDay 2025</h2>
+          <RegistrationState context="global" />
       </section>
 
       {/* Acerca de PyDay */}
