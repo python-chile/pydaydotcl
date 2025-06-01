@@ -3,11 +3,10 @@ import Image from "next/image";
 import CountdownTimer from "@/components/CountdownTimer";
 import ChileMap from "@/components/ChileMap";
 import TalkCard from "@/components/TalkCard";
-import RegistrationForm from "@/components/RegistrationForm";
 import HeroSection from "@/components/HeroSection";
 import SponsorList from "./sponsors/components/SponsorList";
 import featuredTalks from "@/data/featuredTalks";
-import { FeatureGuard } from "@/components/FeatureManagement/FeatureGuard";
+import allTalks from "@/data/talks";
 import RegistrationState from "@/components/RegistrationState";
 import EmptyState from "@/components/EmptyState";
 import cityData from "@/data/cities";
@@ -49,28 +48,38 @@ export default function Home() {
       {/* Agenda / Charlas Section */}
       <section className="container-py">
         <h2 className="section-title">Charlas Destacadas</h2>
+
         {featuredTalks && featuredTalks.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-2 gap-6 mt-8 max-w-5xl mx-auto">
-            {featuredTalks.map((talk, index) => (
-              <TalkCard key={index} talk={talk} />
-            ))}
+          <>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-2 gap-6 mt-8 max-w-5xl mx-auto">
+              {featuredTalks.map((talk, index) => (
+                <TalkCard key={index} talk={talk} />
+              ))}
+            </div>
+            <div className="flex justify-center mt-8">
+              <Link href="/talks" className="btn-primary">
+                Ver todas las charlas
+              </Link>
+            </div>
+          </>
+        ) : allTalks && allTalks.length > 0 ? (
+          <div className="text-center mt-8 max-w-xl mx-auto">
+            <p className="mb-4 text-lg font-semibold">
+              Ya puedes revisar la agenda del evento PyDay 2025
+            </p>
+            <Link href="/talks" className="btn-primary">
+              Ver agenda completa
+            </Link>
           </div>
         ) : (
           <EmptyState context="global" />
-        )}
-        {featuredTalks && featuredTalks.length > 0 && (
-          <div className="flex justify-center mt-8">
-            <Link href="/talks" className="btn-primary">
-              Ver todas las charlas
-            </Link>
-          </div>
         )}
       </section>
 
       {/* Registro Section */}
       <section className="container-py">
-          <h2 className="section-title">Registro PyDay 2025</h2>
-          <RegistrationState context="global" />
+        <h2 className="section-title">Registro PyDay 2025</h2>
+        <RegistrationState context="global" />
       </section>
 
       {/* Acerca de PyDay */}
@@ -93,63 +102,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Patrocinadores Section - Versión Simplificada */}
+      {/* Patrocinadores Section */}
       <section id="patrocinadores" className="container-py">
-        <h2
-          className="section-title font-bold 
-  tracking-wider text-4xl mb-0"
-        >
+        <h2 className="section-title font-bold tracking-wider text-4xl mb-0">
           Nuestros Patrocinadores
         </h2>
-        {/* FIXME: Escoger formato de Patrocinadores */}
         <SponsorList />
-        {/* Patrocinadores Premium */}
-        {/* <div className="mt-8">
-          <h3 className="text-2xl font-bold text-center mb-6 text-yellow-400">
-            Patrocinadores Premium
-          </h3>
-          <div className="flex justify-center">
-            <Link>
-              href="https://www.python.org/psf-landing/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white/10 backdrop-blur p-6 rounded-lg hover:bg-white/20 transition-all duration-300 flex items-center justify-center"
-            >
-              <div className="relative h-32 w-64">
-                <Image
-                  src="/images/logos/logos/psf-logo.webp"
-                  alt="Python Software Foundation"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-            </Link>
-          </div>
-        </div> */}
-
-        {/* Patrocinadores Básico */}
-        {/* <div className="mt-12">
-          <h3 className="text-2xl font-bold text-center mb-6 text-gray-300">
-            Patrocinadores Básico
-          </h3>
-          <div className="flex justify-center">
-            <Link>
-              href="https://aws.amazon.com/es/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white/10 backdrop-blur p-6 rounded-lg hover:bg-white/20 transition-all duration-300 flex items-center justify-center"
-            >
-              <div className="relative h-24 w-48">
-                <Image
-                  src="/images/logos/logos/aws.webp"
-                  alt="Amazon Web Services"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-            </Link>
-          </div>
-        </div> */}
 
         {/* CTA para patrocinadores */}
         <div className="mt-16 max-w-3xl mx-auto text-center">
@@ -174,3 +132,4 @@ export default function Home() {
     </>
   );
 }
+
