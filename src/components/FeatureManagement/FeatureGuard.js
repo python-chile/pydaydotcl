@@ -5,13 +5,18 @@ export const FeatureGuard = ({ children, featureName, cityData }) => {
     registration: {
       enabled: process.env.NEXT_PUBLIC_FEATURE_REGISTRATION === "true",
       title: `Registro PyDay ${cityData?.name || "2025"}`,
-      subtitle: cityData?.registrationLink 
-        ? "¡Regístrate ahora para asegurar tu lugar en el PyDay 2025!" 
-        : "El registro abrirá próximamente. Mantente atento a nuestras redes sociales",
-      showCTA: !!cityData?.registrationLink,
-      buttonText: "Registrarme ahora",
-      href: cityData?.registrationLink || "",
-    },
+      subtitle:
+          cityData?.registrationStatus === "soldout"
+          ? "Los cupos se han agotado. ¡Gracias por tu interés!"
+            : cityData?.registrationLink
+            ? "¡Regístrate ahora para asegurar tu lugar en el PyDay 2025!"
+            : "El registro abrirá próximamente. Mantente atento a nuestras redes sociales",
+      showCTA:
+        cityData?.registrationStatus !== "soldout" &&
+        !!cityData?.registrationLink,
+          buttonText: "Registrarme ahora",
+          href: cityData?.registrationLink || "",
+        },
     sponsors: {
       enabled: process.env.NEXT_PUBLIC_FEATURE_SPONSORS === "true",
       title: "Patrocinadores PyDay",
