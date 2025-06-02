@@ -134,8 +134,8 @@ export default function TalkCard({ talk, showRoom = false }) {
                           className="flex items-center mt-1 text-xs opacity-70 hover:opacity-100 transition-opacity"
                           title="Perfil de LinkedIn"
                         >
-                          <LuLinkedin size={12} className="mr-1 flex-shrink-0" />
-                          <span className="hidden sm:inline truncate">LinkedIn</span>
+                          <LuLinkedin size={14} className="mr-1 flex-shrink-0" />
+                          <span className="hidden sm:inline truncate"></span>
                         </a>
                       )}
                     </div>
