@@ -50,7 +50,7 @@ const cityData = {
       campusImage: "/images/campus/utfsm-campus.webp",
     },
     registrationLink:"https://www.eventbrite.com/e/1366605807759",
-    talkProposalLink: "https://sessionize.com/pyday-valparaiso-2025/",
+    talkProposalLink: "",
     schedule: allTalks.filter((talk) => talk.city === "valparaiso"),
   },
   santiago: {
@@ -77,7 +77,8 @@ const cityData = {
       campusImage: "/images/campus/DuocUC__San_Joaquín.webp",
     },
     registrationLink:"https://www.eventbrite.com/e/1366617793609",
-    talkProposalLink: "https://sessionize.com/pyday-santiago-2025/",
+    registrationStatus: "soldout", // <--- agregas esto solo si los cupos están agotados
+    talkProposalLink: "",
     schedule: allTalks.filter((talk) => talk.city === "santiago"),
   },
   

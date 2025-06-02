@@ -39,6 +39,19 @@ export default async function CityPage({ params }) {
     notFound();
   }
 
+  // Función para extraer la hora de inicio
+  const getStartTime = (timeStr) => {
+    if (timeStr.includes(' - ')) {
+      return timeStr.split(' - ')[0];
+    }
+    return timeStr;
+  };
+
+  // Ordenar eventos por hora
+  const sortedSchedule = [...data.schedule].sort((a, b) => {
+    return getStartTime(a.time).localeCompare(getStartTime(b.time));
+  });
+
   return (
     <>
       {/* Hero Section */}
@@ -59,6 +72,7 @@ export default async function CityPage({ params }) {
         <p className="text-xl md:text-2xl opacity-90">{data.date}</p>
         <p className="text-lg opacity-80">{data.venue}</p>
       </HeroSection>
+      
       {/* Sección de introducción - Solo se muestra si existe */}
       {data.introduction && (
         <section className="container-py">
@@ -104,7 +118,7 @@ export default async function CityPage({ params }) {
 
       {/* Registro Section */}
       <section id="registro" className="container-py">
-        <FeatureGuard featureName="registration"cityData={data}>
+        <FeatureGuard featureName="registration" cityData={data}>
             <RegistrationForm />
         </FeatureGuard>
       </section>
@@ -112,10 +126,14 @@ export default async function CityPage({ params }) {
       {/* Agenda*/}
       <section className="container-py">
         <h2 className="section-title">Agenda</h2>
-        {data.length > 0 ? (
+        {sortedSchedule.length > 0 ? (
           <div className="space-y-4 md:space-y-6 mt-6 md:mt-8 max-w-4xl mx-auto">
-            {data.schedule.map((talk, index) => (
-              <TalkCard key={talk.id} talk={talk} />
+            {sortedSchedule.map((talk) => (
+              <TalkCard 
+                key={talk.id} 
+                talk={talk} 
+                showRoom={true}  // Mostrar la sala en la vista de ciudad
+              />
             ))}
           </div>
         ) : (
