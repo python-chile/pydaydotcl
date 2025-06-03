@@ -118,9 +118,11 @@ export default async function CityPage({ params }) {
 
       {/* Registro Section */}
       <section id="registro" className="container-py">
-        <FeatureGuard featureName="registration" cityData={data}>
-            <RegistrationForm />
-        </FeatureGuard>
+        <div className="bg-black/20 backdrop-blur rounded-lg p-6 md:p-8">
+          <FeatureGuard featureName="registration" cityData={data}>
+              <RegistrationForm />
+          </FeatureGuard>
+        </div>
       </section>
 
       {/* Agenda*/}
@@ -214,7 +216,7 @@ export default async function CityPage({ params }) {
       <FAQSection faqs={generalFAQs} />
 
       <CTAFinal
-        title={`¡Únete a la comunidad Python en ${data.name}!`}
+        title={`¡Únete al voluntariado de la comunidad Python Chile!`}
         subtitle="Aprende, comparte y conecta con desarrolladores y entusiastas de Python de toda la región y de Chile."
         buttonText="Registrarme ahora"
         href="https://docs.google.com/forms/d/e/1FAIpQLSdhHlnqwmYffl6JNzbAZ4IRRyM_8fcOB1QH0hyz6Vwi3VFOwg/viewform"
