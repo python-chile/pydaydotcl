@@ -13,7 +13,7 @@ import cityData from "@/data/cities";
 
 export default function Home() {
   // Fecha y hora del próximo evento confirmado de PyDay 2025
-  const firstEventDate = "2025-06-06T14:00:00";
+  const firstEventDate = "2025-06-13T10:00:00";
   const citiesArray = Object.values(cityData);
 
   return (
