@@ -27,6 +27,7 @@
   },
   "license": "MIT",
   "scripts": {
+    "init": "npm run build && npm run start",
     "dev": "next dev --turbopack",
     "build": "next build",
     "export": "next export",
