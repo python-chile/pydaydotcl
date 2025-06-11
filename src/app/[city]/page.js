@@ -187,7 +187,36 @@ export default async function CityPage({ params }) {
             <p className="text-base md:text-lg font-medium mb-2">
               {data.address}
             </p>
-
+          {/* Mostrar solo si hay puntos de acceso definidos en la ciudad */}
+            {data.accessPoints && data.accessPoints.length > 0 && (
+              <>
+                <h3 className="text-lg md:text-xl font-semibold mt-4 mb-2">
+                  Puertas de acceso:
+                </h3>
+                <ul className="space-y-2">
+                  {data.accessPoints.map((entry, index) => (
+                    <li key={index} className="flex items-start space-x-2">
+                      {/* Icono de entrada */}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5 mt-0.5 text-blue-400 flex-shrink-0"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M12 11c0 .5304-.2107 1.0391-.5858 1.4142C11.0391 12.7893 10.5304 13 10 13s-1.0391-.2107-1.4142-.5858C8.2107 12.0391 8 11.5304 8 11s.2107-1.0391.5858-1.4142C9.0391 9.2107 9.5304 9 10 9s1.0391.2107 1.4142.5858C11.7893 9.9609 12 10.4696 12 11z"
+                        />
+                      </svg>
+                      <span className="text-sm md:text-base">{entry}</span>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            )}
             <h3 className="text-lg md:text-xl font-semibold mt-3 md:mt-4 mb-2">
               Opciones de transporte:
             </h3>
