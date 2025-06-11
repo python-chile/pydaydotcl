@@ -177,8 +177,13 @@ export default function DynamicContent() {
       </motion.section>
       {/* Planes de Patrocinio */}
       <SponsorshipPlans plans={plans} />
-      {/* Patrocinadores anteriores */}
-      <SponsorList sponsors={sponsorshipData.sponsors} />
+      {/* Patrocinadores anteriores - Solo mostrar patrocinadores en la página de sponsors */}
+      <SponsorList 
+        showSponsors={true} 
+        showOrganizers={false} 
+        showCommunities={false} 
+        sponsors={sponsorshipData.sponsors} 
+      />
       {/* Formulario de contacto */}
       <FeatureGuard featureName="sponsorForm">
         <section id="contact-form" className="container mx-auto py-16 px-4">
