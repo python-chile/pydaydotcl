@@ -408,20 +408,20 @@ const allTalks = [
     id: 23,
     city: "valparaiso",
     type: "charla",
-    title: "Del caos al orden: cómo usamos Python para sincronizar el ecommerce y sobrevivir el camino",
-    description: "Cómo creamos Omaflow con Python: de planillas caóticas a una plataforma que conecta ecommerce con couriers y automatiza miles de órdenes. Una historia real de errores, aciertos y creatividad para resolver problemas con código.",
+    title: "Rust + Python = Poder Ilimitado: Introducción a PyO3",
+    description: "¿Velocidad de Rust con la flexibilidad de Python? En esta charla veremos cómo unir ambos mundos con PyO3, creando módulos Rust accesibles desde Python. Compartiré mi experiencia optimizando tareas críticas y los aprendizajes de este proceso.",
     time: "14:30 - 15:00",
     room: "Salón A101",
     speaker: {
-      name: "Marcelo Cavieres",
-      image: "/images/speakers/Marcelo_Cavieres.webp",
+      name: "Daniel Hernandez",
+      image: "/images/speakers/Daniel_Hernandez.webp",
       socials: {
-        linkedin: ""
+        linkedin: "https://www.linkedin.com/in/dhernandezmen/"
       }
     },
-    category: "caso-de-exito",
+    category: "tecnica",
     level: "intermedio",
-    tags: ["Python", "Emprendimiento", "Automatización", "Ecommerce", "DevOps"]
+    tags: ["Python", "Rust", "Optimización", "Desarrollo"]
   },
   {
     id: 24,
