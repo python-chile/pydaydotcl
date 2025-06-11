@@ -3,7 +3,7 @@ import allTalks from "./talks";
 const cityData = {
   copiapo: {
     name: "Copiapó",
-    date: "Fecha por confirmar",
+    date: "25 de junio, 2025",
     slug: "copiapo",
     mapCoords: { x: 50, y: 90 },
     venue: "Inacap sede Copiapó",
@@ -50,6 +50,7 @@ const cityData = {
       campusImage: "/images/campus/utfsm-campus.webp",
     },
     registrationLink:"https://www.eventbrite.com/e/1366605807759",
+    registrationStatus: "closing-soon", // <--- agregas esto solo si los cupos están por agotarse
     talkProposalLink: "",
     schedule: allTalks.filter((talk) => talk.city === "valparaiso"),
   },
