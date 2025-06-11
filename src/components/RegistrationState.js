@@ -84,7 +84,7 @@ export default function RegistrationState({ cityId }) {
   // Función para obtener el texto del botón según el estado
   const getButtonText = (cityName, status) => {
     if (status === "closing-soon") {
-      return `⏰ ${cityName} - ¡ÚLTIMAS HORAS!`;
+      return `⏰ ${cityName} - ¡ÚLTIMAS ENTRADAS!`;
     }
     return cityName;
   };
