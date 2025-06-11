@@ -6,19 +6,27 @@ export const FeatureGuard = ({ children, featureName, cityData }) => {
       enabled: process.env.NEXT_PUBLIC_FEATURE_REGISTRATION === "true",
       title: `Registro PyDay ${cityData?.name || "2025"}`,
       subtitle:
-          cityData?.registrationStatus === "soldout"
+        cityData?.registrationStatus === "soldout"
           ? "Los cupos se han agotado. ¡Gracias por tu interés!"
-            : cityData?.registrationLink
-            ? "¡Regístrate ahora para asegurar tu lugar en el PyDay 2025!"
-            : "El registro abrirá próximamente. Mantente atento a nuestras redes sociales",
+          : cityData?.registrationStatus === "closed"
+          ? "El registro ha finalizado. ¡Nos vemos en el evento!"
+          : cityData?.registrationStatus === "closing-soon"
+          ? "⏰ ¡Últimas horas! Quedan pocos cupos disponibles"
+          : cityData?.registrationLink
+          ? "¡Regístrate ahora para asegurar tu lugar en el PyDay 2025!"
+          : "El registro abrirá próximamente. Mantente atento a nuestras redes sociales",
       showCTA:
         cityData?.registrationStatus !== "soldout" &&
+        cityData?.registrationStatus !== "closed" &&
         !!cityData?.registrationLink,
-          buttonText: "Registrarme ahora",
-          href: cityData?.registrationLink || "",
-        },
+      buttonText:
+        cityData?.registrationStatus === "closing-soon"
+          ? "¡Regístrate YA!"
+          : "Registrarme ahora",
+      href: cityData?.registrationLink || "",
+    },
     sponsors: {
-      enabled: process.env.NEXT_PUBLIC_FEATURE_SPONSORS === "true",
+      enabled: process.env.NEXT_PUBLIC_FEATURE_SPONSORS === "false",
       title: "Patrocinadores PyDay",
       subtitle: "Programa de patrocinios en preparación",
       showCTA: true,
@@ -35,43 +43,40 @@ export const FeatureGuard = ({ children, featureName, cityData }) => {
       email: "pyday@pythonchile.cl",
     },
   };
-
+  
   const { enabled, ...ctaProps } = features[featureName];
-
+  
   return enabled ? (
-      <>
-        <h2 className="section-title">Formulario de Registro</h2>
-        {children}
-      </>
-    ) : (
-      <div className="text-center py-12">
-        <h2 className="section-title">{ctaProps.title}</h2>
-        <p className="text-white/80 mb-6">{ctaProps.subtitle}</p>
-        {ctaProps.showCTA && (
-          <a
-            href={ctaProps.href}
-            className="btn-secondary inline-flex items-center justify-center px-4 py-2 text-base"
-            target="_blank"
-            rel="noopener noreferrer"
+    <>
+      <h2 className="section-title">Formulario de Registro</h2>
+      {children}
+    </>
+  ) : (
+    <div className="text-center py-12">
+      <h2 className="section-title">{ctaProps.title}</h2>
+      <p className="text-white/80 mb-6">{ctaProps.subtitle}</p>
+      {ctaProps.showCTA && (
+        <a
+          href={ctaProps.href}
+          className="btn-secondary inline-flex items-center justify-center px-4 py-2 text-base"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {ctaProps.buttonText}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5 ml-2"
+            viewBox="0 0 20 20"
+            fill="currentColor"
           >
-            {ctaProps.buttonText}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 ml-2"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fillRule="evenodd"
-                d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </a>
-        )}
-
-      </div>
-    );
-  };
-
-
+            <path
+              fillRule="evenodd"
+              d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+              clipRule="evenodd"
+            />
+          </svg>
+        </a>
+      )}
+    </div>
+  );
+};
