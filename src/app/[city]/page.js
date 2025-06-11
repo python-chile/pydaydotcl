@@ -9,6 +9,7 @@ import CTAFinal from "@/components/CTAFinal";
 import EmptyState from "@/components/EmptyState";
 import CityLogo from "@/components/CityLogo";
 import RegistrationForm from "@/components/RegistrationForm";
+import CitySponsorList from "@/components/CitySponsorList"; // Nuevo import
 import { FeatureGuard } from "@/components/FeatureManagement/FeatureGuard";
 import cityData from "@/data/cities";
 import { generalFAQs } from "@/data/faqs";
@@ -115,6 +116,9 @@ export default async function CityPage({ params }) {
           </div>
         </section>
       )}
+
+       {/* Patrocinadores específicos de la ciudad */}
+         <CitySponsorList cityName={params.city} />
 
       {/* Registro Section */}
       <section id="registro" className="container-py">
