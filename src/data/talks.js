@@ -427,20 +427,20 @@ const allTalks = [
     id: 24,
     city: "valparaiso",
     type: "charla",
-    title: "Robots comandado vía Web usando Raspberry Pi Pico W y 2W",
-    description: "Diseño de un robot de suelo programado en MicroPython y controlado vía WiFi con Raspberry Pi Pico W. Se mostrará el uso de impresión 3D y tecnologías abiertas, ideal para entusiastas y principiantes.",
+    title: "Hackeando con estilo: scripts, café y Python",
+    description: "En esta charla veremos por qué Python es una herramienta clave en ciberseguridad. Desde automatizar análisis hasta crear scripts para pruebas de penetración, hackeamos (éticamente) con estilo, eficiencia… ¡y mucho café! Descubre librerías esenciales, trucos y buenas prácticas para que tu código sea tan seguro como elegante.",
     time: "15:00 - 15:30",
     room: "Salón A101",
     speaker: {
-      name: "Flavio Espeche",
-      image: "/images/speakers/Flavio_Fabian_Espeche_Nieva.webp",
+      name: "Diego Caceres Solis",
+      image: "/images/speakers/Diego_Caceres.webp",
       socials: {
-        linkedin: "https://www.linkedin.com/in/flavioespechenieva/"
+        linkedin: "https://www.linkedin.com/in/dcaceresso/"
       }
     },
     category: "tecnica",
-    level: "intermedio",
-    tags: ["Python", "MicroPython", "Robótica", "IoT", "Raspberry Pi", "Impresión 3D"]
+    level: "avanzado",
+    tags: ["Python", "Ciberseguridad", "HackingÉtico","Pentesting", "Automatización"]
   },
   {
     id: 25,
