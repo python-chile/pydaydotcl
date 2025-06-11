@@ -3,37 +3,137 @@
 // 2. Data: Seguir el formato de objetos JSON como en los ejemplos
 // 3. Para comenzar, DEJA EL ARRAY VACÍO (sponsors = [])
 
-const sponsors = [
-  /*
-  // ▼▼▼ EJEMPLOS (BORRAR ESTO AL IMPLEMENTAR) ▼▼▼
+// ORGANIZADORES (sedes locales)
+const organizers = [
   {
-    _id: 1, // ID único (usar números consecutivos)
-    name: "Python Software Foundation",
-    url: "https://www.python.org/psf/", // Enlace opcional
-    logo: { 
-      asset: { 
-        url: "/images/sponsors/psf.webp" // Ruta desde /public
-      } 
-    }
+    _id: 1,
+    name: "Duoc UC",
+    url: "https://www.duoc.cl",
+    logo: {
+      asset: {
+        url: "/images/sponsors/duoc_logo.webp"
+      }
+    },
+    type: "organizer",
+    cities: ["santiago"]
   },
   {
     _id: 2,
-    name: "Microsoft",
-    url: "https://microsoft.com",
-    logo: { 
-      asset: { 
-        url: "/images/sponsors/microsoft.webp" 
-      } 
-    }
+    name: "Inacap",
+    url: "https://inacap.cl",
+    logo: {
+      asset: {
+        url: "/images/sponsors/inacap_logo.webp"
+      }
+    },
+    type: "organizer",
+    cities: ["copiapo"]
   },
-  // ▲▲▲ EJEMPLOS ▲▲▲
-  */
+  {
+    _id: 3,
+    name: "UTFSM",
+    url: "https://usm.cl",
+    logo: {
+      asset: {
+        url: "/images/sponsors/utfsm_logo.webp"
+      }
+    },
+    type: "organizer",
+    cities: ["valparaiso"]
+  },
+  {
+    _id: 4,
+    name: "Python Chile",
+    url: "https://www.pythonchile.cl",
+    logo: {
+      asset: {
+        url: "/images/sponsors/python_chile_logo.webp"
+      }
+    },
+    type: "organizer",
+    cities: ["santiago", "valparaiso", "copiapo"]
+  }
 ];
 
-// ▼▼▼ IMPLEMENTACIÓN REAL (DESBLOQUEAR CUANDO HAYA PATROCINADORES) ▼▼▼
-// const sponsors = [
-//   // Añadir patrocinadores reales aquí
-// ];
-// ▲▲▲ IMPLEMENTACIÓN REAL ▲▲▲
+// PATROCINADORES (financieros)
+const sponsors = [
+  {
+    _id: 5,
+    name: "UTFSM",
+    url: "https://usm.cl",
+    logo: {
+      asset: {
+        url: "/images/sponsors/utfsm_logo.webp"
+      }
+    },
+    type: "sponsor",
+    cities: ["valparaiso"]
+  },
+  {
+    _id: 6,
+    name: "AC3E",
+    url: "https://ac3e.usm.cl/language/es/",
+    logo: {
+      asset: {
+        url: "/images/sponsors/ac3e_logo.webp"
+      }
+    },
+    type: "sponsor",
+    cities: ["valparaiso"]
+  },
+  {
+    _id: 7,
+    name: "CCTVAL",
+    url: "https://cctval.cl/",
+    logo: {
+      asset: {
+        url: "/images/sponsors/cctval_logo.webp"
+      }
+    },
+    type: "sponsor",
+    cities: ["valparaiso"]
+  }
+];
 
-export default sponsors;
+// COMUNIDADES AMIGAS
+const communities = [
+  {
+    _id: 8,
+    name: "Pyladies Chile",
+    url: "https://pyladies.cl/",
+    logo: {
+      asset: {
+        url: "/images/sponsors/pyladies_logo.webp"
+      }
+    },
+    type: "community",
+    cities: ["santiago"]
+  },
+  {
+    _id: 9,
+    name: "Niñas PRO",
+    url: "https://wwww.ninaspro.cl",
+    logo: {
+      asset: {
+        url: "/images/sponsors/ninaspro_logo.webp"
+      }
+    },
+    type: "community",
+    cities: ["santiago"]
+  },
+  {
+    _id: 10,
+    name: "Latinas in cloud",
+    url: "https://www.instagram.com/latinasincloud/",
+    logo: {
+      asset: {
+        url: "/images/sponsors/latinas_incloud_logo.webp"
+      }
+    },
+    type: "community",
+    cities: ["santiago"]
+  }
+];
+
+// Exportar todos juntos
+export default [...organizers, ...sponsors, ...communities];
