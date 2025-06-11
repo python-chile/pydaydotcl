@@ -112,7 +112,7 @@ const communities = [
   {
     _id: 9,
     name: "Niñas PRO",
-    url: "https://wwww.ninaspro.cl",
+    url: "https://www.ninaspro.cl",
     logo: {
       asset: {
         url: "/images/sponsors/ninaspro_logo.webp"
