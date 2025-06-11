@@ -119,15 +119,8 @@ body {
 
   .select-theme option {
     background-color: var(--primary-green);
-    color: var(--primary-green) !important;
-    border: var(--primary-green) !important;
-    transition: background-color 0.2s ease, color 0.2s ease;
-  }
-
-  .select-theme option:hover,
-  .select-theme option:checked {
-    background-color: rgba(var(--accent-yellow) 0.3) !important;
     color: var(--text-white) !important;
+    border: var(--primary-green) !important;
   }
 
   /* Tarjetas de sponsors con colores de marca */
