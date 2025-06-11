@@ -105,7 +105,7 @@ export default function Home() {
       {/* Patrocinadores Section */}
       <section id="patrocinadores" className="container-py">
         <h2 className="section-title font-bold tracking-wider text-4xl mb-0">
-          Nuestros Patrocinadores
+          Apoyan este evento:
         </h2>
         <SponsorList />
 
