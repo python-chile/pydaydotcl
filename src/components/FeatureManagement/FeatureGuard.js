@@ -11,7 +11,7 @@ export const FeatureGuard = ({ children, featureName, cityData }) => {
           : cityData?.registrationStatus === "closed"
           ? "El registro ha finalizado. ¡Nos vemos en el evento!"
           : cityData?.registrationStatus === "closing-soon"
-          ? "⏰ ¡Últimas horas! Quedan pocos cupos disponibles"
+          ? "⏰ ¡Últimas entradas! Quedan pocos cupos disponibles"
           : cityData?.registrationLink
           ? "¡Regístrate ahora para asegurar tu lugar en el PyDay 2025!"
           : "El registro abrirá próximamente. Mantente atento a nuestras redes sociales",
