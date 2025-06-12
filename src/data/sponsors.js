@@ -59,6 +59,18 @@ const organizers = [
 const sponsors = [
   {
     _id: 5,
+    name: "Python Software Foundation",
+    url: "https://www.python.org/psf-landing/",
+    logo: {
+      asset: {
+        url: "/images/sponsors/psf_logo.webp"
+      }
+    },
+    type: "sponsor",
+    cities: ["santiago", "valparaiso", "copiapo"]
+  },
+  {
+    _id: 6,
     name: "UTFSM",
     url: "https://usm.cl",
     logo: {
@@ -70,7 +82,7 @@ const sponsors = [
     cities: ["valparaiso"]
   },
   {
-    _id: 6,
+    _id: 7,
     name: "AC3E",
     url: "https://ac3e.usm.cl/language/es/",
     logo: {
@@ -82,7 +94,7 @@ const sponsors = [
     cities: ["valparaiso"]
   },
   {
-    _id: 7,
+    _id: 8,
     name: "CCTVAL",
     url: "https://cctval.cl/",
     logo: {
@@ -98,7 +110,7 @@ const sponsors = [
 // COMUNIDADES AMIGAS
 const communities = [
   {
-    _id: 8,
+    _id: 9,
     name: "Pyladies Chile",
     url: "https://pyladies.cl/",
     logo: {
@@ -110,7 +122,7 @@ const communities = [
     cities: ["santiago"]
   },
   {
-    _id: 9,
+    _id: 10,
     name: "Niñas PRO",
     url: "https://www.ninaspro.cl",
     logo: {
@@ -122,7 +134,7 @@ const communities = [
     cities: ["santiago"]
   },
   {
-    _id: 10,
+    _id: 11,
     name: "Latinas in cloud",
     url: "https://www.instagram.com/latinasincloud/",
     logo: {

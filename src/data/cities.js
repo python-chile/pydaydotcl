@@ -43,6 +43,11 @@ const cityData = {
       "Metro Valparaíso: Estación Portales (10 min caminando)",
       "Micros 105, 106, 202, 215, 216",
     ],
+    accessPoints: [
+    "Entrada superior: Avenida Placeres",
+    "Entrada inferior: Avenida España",
+    "Entrada lateral: Calle Valdés"
+    ],
     introduction: {
       title: "¡Aventúrate en el Mundo de Python en PyDay Valparaíso!",
       description: "Únete a la cuarta edición de este emocionante evento en la Casa Central de la Universidad Técnica Federico Santa María. Disfruta de talleres interactivos y charlas inspiradoras en un ambiente creativo y colaborativo. PyDay Valparaíso 2025 es tu oportunidad para conectar con otros entusiastas, expandir conocimientos y explorar las posibilidades de este poderoso lenguaje de programación.",
@@ -50,7 +55,7 @@ const cityData = {
       campusImage: "/images/campus/utfsm-campus.webp",
     },
     registrationLink:"https://www.eventbrite.com/e/1366605807759",
-    registrationStatus: "closed", // <--- agregas esto solo si los cupos están por agotarse
+    registrationStatus: "closing-soon", // <--- agregas esto solo si los cupos están por agotarse
     talkProposalLink: "",
     schedule: allTalks.filter((talk) => talk.city === "valparaiso"),
   },

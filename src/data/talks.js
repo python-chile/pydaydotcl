@@ -402,7 +402,7 @@ const allTalks = [
     },
     category: "tecnica",
     level: "intermedio",
-    tags: ["Python", "IA", "Automatización", "Open Source", "MCP", "n8n"]
+    tags: ["Python", "IA", "Automatización", "Open Source", "MCP", "N8N"]
   },
   {
     id: 23,
@@ -466,7 +466,7 @@ const allTalks = [
     id: 27,
     city: "valparaiso",
     type: "break",
-    title: "Coffee Break",
+    title: "Coffee Break - Cierre",
     description: "Espacio para compartir y despedirse de los asistentes.",
     time: "16:15 - 17:00",
     room: "Hall principal",
