@@ -207,7 +207,7 @@ export default async function CityPage({ params }) {
                         <path
                           strokeLinecap="round"
                           strokeLinejoin="round"
-                          strokeWidth={2}
+                          strokeWidth={4}
                           d="M12 11c0 .5304-.2107 1.0391-.5858 1.4142C11.0391 12.7893 10.5304 13 10 13s-1.0391-.2107-1.4142-.5858C8.2107 12.0391 8 11.5304 8 11s.2107-1.0391.5858-1.4142C9.0391 9.2107 9.5304 9 10 9s1.0391.2107 1.4142.5858C11.7893 9.9609 12 10.4696 12 11z"
                         />
                       </svg>
