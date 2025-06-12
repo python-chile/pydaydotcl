@@ -55,7 +55,7 @@ const cityData = {
       campusImage: "/images/campus/utfsm-campus.webp",
     },
     registrationLink:"https://www.eventbrite.com/e/1366605807759",
-    registrationStatus: "closing-soon", // <--- agregas esto solo si los cupos están por agotarse
+    registrationStatus: "closed", // <--- agregas esto solo si los cupos están por agotarse
     talkProposalLink: "",
     schedule: allTalks.filter((talk) => talk.city === "valparaiso"),
   },
