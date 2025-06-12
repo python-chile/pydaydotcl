@@ -277,7 +277,7 @@ const allTalks = [
     title: "Registro",
     description: "Recepción y acreditación de participantes",
     time: "10:00 - 10:15",
-    room: "Hall principal",
+    room: "Hall Principal Edificio A",
     speaker: null
   },
   {
@@ -287,7 +287,7 @@ const allTalks = [
     title: "Bienvenida",
     description: "Inicio de actividades y palabras de apertura",
     time: "10:15 - 10:30",
-    room: "Salón A101",
+    room: "Salón A3",
     speaker: null
   },
   {
@@ -297,7 +297,7 @@ const allTalks = [
     title: "Educación Abierta y Comunidad: Democratizando el Aprendizaje en Python",
     description: "Exploración de cómo la educación abierta y la comunidad pueden democratizar el aprendizaje en Python, incluyendo una demo en vivo con Quarto, GitHub y el rol de las comunidades open source con énfasis en Python Chile.",
     time: "10:30 - 11:00",
-    room: "Salón A101",
+    room: "Salón A3",
     speakers: [
       {
         name: "Francisco Alfaro",
@@ -325,7 +325,7 @@ const allTalks = [
     title: "Coffee Break",
     description: "Espacio para descansar, socializar y compartir ideas con otros asistentes.",
     time: "11:00 - 11:30",
-    room: "Hall principal",
+    room: "Hall Principal Edificio A",
     speaker: null
   },
   {
@@ -335,7 +335,7 @@ const allTalks = [
     title: "Ciudades Pendientes: datos para la planificación urbana",
     description: "Presentamos una plataforma con Django y pydeck para clasificar y visualizar flujos de viajes en bicicleta, apoyando a organizaciones sociales en propuestas de movilidad urbana a escala humana. ¡Tecnología para mejorar la calidad de vida!",
     time: "11:30 - 12:00",
-    room: "Salón A101",
+    room: "Salón A3",
     speaker: {
       name: "Francisco Vergara",
       image: "/images/speakers/Francisco_Vergara_Vallejos.webp",
@@ -354,7 +354,7 @@ const allTalks = [
     title: "Clasificación del Impacto Hidrometeorológico de Ríos Atmosféricos mediante Aprendizaje Automático",
     description: "Aplicación de aprendizaje automático para clasificar el impacto hidrometeorológico de ríos atmosféricos, usando datos del reanálisis CFSR y técnicas de IA explicable para mejorar el pronóstico y prevención de eventos extremos.",
     time: "12:00 - 12:30",
-    room: "Salón A101",
+    room: "Salón A3",
     speakers: [
       {
         name: "Pía Aedo",
@@ -382,7 +382,7 @@ const allTalks = [
     title: "Pausa Almuerzo",
     description: "Tiempo libre para almorzar y compartir con otros asistentes.",
     time: "12:30 - 14:00",
-    room: "Hall principal",
+    room: "Hall Principal Edificio A",
     speaker: null
   },
   {
@@ -392,7 +392,7 @@ const allTalks = [
     title: "Potenciando la IA con Python: Descubre la Magia de MCP y N8N",
     description: "Exploramos cómo integrar Python con MCP (Model Context Protocol) de Anthropic y la plataforma open source n8n para crear soluciones de IA personalizadas y automatizar flujos de trabajo, optimizando procesos y maximizando la eficiencia.",
     time: "14:00 - 14:30",
-    room: "Salón A101",
+    room: "Salón A3",
     speaker: {
       name: "Gabriel Grobier",
       image: "/images/speakers/Gabriel_Grobier_Romo.webp",
@@ -411,7 +411,7 @@ const allTalks = [
     title: "Rust + Python = Poder Ilimitado: Introducción a PyO3",
     description: "¿Velocidad de Rust con la flexibilidad de Python? En esta charla veremos cómo unir ambos mundos con PyO3, creando módulos Rust accesibles desde Python. Compartiré mi experiencia optimizando tareas críticas y los aprendizajes de este proceso.",
     time: "14:30 - 15:00",
-    room: "Salón A101",
+    room: "Salón A3",
     speaker: {
       name: "Daniel Hernandez",
       image: "/images/speakers/Daniel_Hernandez.webp",
@@ -430,7 +430,7 @@ const allTalks = [
     title: "Hackeando con estilo: scripts, café y Python",
     description: "En esta charla veremos por qué Python es una herramienta clave en ciberseguridad. Desde automatizar análisis hasta crear scripts para pruebas de penetración, hackeamos (éticamente) con estilo, eficiencia… ¡y mucho café! Descubre librerías esenciales, trucos y buenas prácticas para que tu código sea tan seguro como elegante.",
     time: "15:00 - 15:30",
-    room: "Salón A101",
+    room: "Salón A3",
     speaker: {
       name: "Diego Caceres Solis",
       image: "/images/speakers/Diego_Caceres.webp",
@@ -449,7 +449,7 @@ const allTalks = [
     title: "Charlas Relámpago",
     description: "Sesión de charlas cortas de 5 minutos cada una sobre diversos temas.",
     time: "15:30 - 16:00",
-    room: "Salón A101",
+    room: "Salón A3",
     speaker: null
   },
   {
@@ -459,7 +459,7 @@ const allTalks = [
     title: "Cierre",
     description: "Palabras finales y agradecimientos por parte de los organizadores.",
     time: "16:00 - 16:15",
-    room: "Salón A101",
+    room: "Salón A3",
     speaker: null
   },
   {
@@ -469,7 +469,7 @@ const allTalks = [
     title: "Coffee Break - Cierre",
     description: "Espacio para compartir y despedirse de los asistentes.",
     time: "16:15 - 17:00",
-    room: "Hall principal",
+    room: "Hall Principal Edificio A",
     speaker: null
   },
   {
@@ -479,7 +479,7 @@ const allTalks = [
     title: "LLM + LLMs Seguros",
     description: "Tipos de ataques que pueden ocurrir en ambientes que utilizan agentes (como ChatGPT) y algunas formas de protección ofrecidas en el paquete agentsdk.",
     time: "11:30 - 12:30",
-    room: "Salón A102",
+    room: "Salón A12",
     speaker: {
       name: "Ariane Carvajal",
       image: "/images/speakers/Ariane_Carvajal.webp",
@@ -500,7 +500,7 @@ const allTalks = [
     title: "Streamlit, Axidraw y aprendiendo a aprender",
     description:  "Taller práctico sobre Streamlit, Axidraw e intentos de arte con Python.",
     time: "14:00 - 15:00",
-    room: "Salón A102",
+    room: "Salón A12",
     speaker: {
       name: "Sebastian Flores",
       image: "/images/speakers/Sebastian_flores.webp",
