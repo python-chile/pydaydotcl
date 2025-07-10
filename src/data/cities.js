@@ -3,7 +3,7 @@ import allTalks from "./talks";
 const cityData = {
   copiapo: {
     name: "Copiapó",
-    date: "25 de junio, 2025",
+    date: "25 de junio, 2025, 10:00 - 16:00.",
     slug: "copiapo",
     mapCoords: { x: 50, y: 90 },
     venue: "Inacap sede Copiapó",
@@ -24,6 +24,7 @@ const cityData = {
       campusImage: "/images/campus/Inacap_Copiapo.webp",
     },
     registrationLink:"",
+    registrationStatus: "closed",
     talkProposalLink: "",
     schedule: allTalks.filter((talk) => talk.city === "copiapo"),
   },
