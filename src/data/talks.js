@@ -513,7 +513,474 @@ const allTalks = [
     tags: ["Python", "Web", "Educación"],
     duration: 60,
     requirements: ["Laptop", "Python 3.11+ instalado"]
-  }
+  },
+  {
+    id: 30,
+    city: "copiapo",
+    type: "recepcion",
+    title: "Registro",
+    description: "Recepción y acreditación de participantes",
+    time: "09:45 - 10:00",
+    room: "Hall del Auditorio Edificio B",
+    speaker: null
+  },
+  {
+    id: 31,
+    city: "valparaiso",
+    type: "recepcion",
+    title: "Bienvenida",
+    description: "Inicio de actividades y palabras de apertura",
+    time: "10:00 - 10:10",
+    room: "Auditorio",
+    speaker: null
+  },
+  {
+    id: 32,
+    city: "copiapo",
+    type: "charla",
+    title: "El poder de la simplicidad con Python",
+    description: "Explora cómo la simplicidad en Python puede resolver problemas complejos de manera eficiente y clara.",
+    time: "10:10 - 10:20",
+    room: "Auditorio",
+    speaker: {
+      name: "Felipe Neyra",
+      image: "/images/speakers/Felipe_Neyra.webp",
+      socials: {}
+    },
+    category: "tecnica",
+    level: "introductorio",
+    tags: ["Python", "Best Practices", "Educación"]
+  },
+  {
+    id: 33,
+    city: "copiapo",
+    type: "charla",
+    title: "HTML al frente, SQL al fondo … y Django sosteniendo el caos",
+    description: "Introducción a la combinación de frontend, bases de datos y Django para crear aplicaciones web robustas.",
+    time: "10:20 - 10:30",
+    room: "Auditorio",
+    speaker: {
+      name: "Matias Farias",
+      image: "/images/speakers/Matias_Farias.webp",
+      socials: {}
+    },
+    category: "tecnica",
+    level: "intermedio",
+    tags: ["Python", "Web", "Django", "SQL"]
+  },
+  {
+    id: 34,
+    city: "copiapo",
+    type: "charla",
+    title: "Identificando patrones en la música con Python",
+    description: "Análisis de patrones musicales usando Python y técnicas de ciencia de datos.",
+    time: "10:30 - 10:40",
+    room: "Auditorio",
+    speaker: {
+      name: "Pedro Cayunao",
+      image: "/images/speakers/Pedro_Cayunao.webp",
+      socials: {}
+    },
+    category: "tecnica",
+    level: "intermedio",
+    tags: ["Python", "Data Science", "Música"]
+  },
+  {
+    id: 35,
+    city: "copiapo",
+    type: "charla",
+    title: "Dinámicamente Ilógico",
+    description: "Charla sobre lógica y programación dinámica para resolver problemas complejos.",
+    time: "10:40 - 10:50",
+    room: "Auditorio",
+    speaker: {
+      name: "Sondra Guerra",
+      image: "/images/speakers/Sondra_Guerra.webp",
+      socials: {}
+    },
+    category: "tecnica",
+    level: "avanzado",
+    tags: ["Python", "Algoritmos", "Lógica"]
+  },
+  {
+    id: 36,
+    city: "copiapo",
+    type: "charla",
+    title: "Sobreviviendo a mi primer Syntax Error: Desde 0 a encontrar una pasión",
+    description: "Experiencia personal sobre superar errores iniciales para encontrar pasión en la programación.",
+    time: "10:50 - 11:00",
+    room: "Auditorio",
+    speaker: {
+      name: "Ricardo Lira",
+      image: "/images/speakers/Ricardo_Lira.webp",
+      socials: {}
+    },
+    category: "comunidad",
+    level: "introductorio",
+    tags: ["Educación", "Motivación", "Experiencia"]
+  },
+  {
+    id: 37,
+    city: "copiapo",
+    type: "charla",
+    title: "Python y su aplicación en el mundo de los videojuegos",
+    description: "Uso de Python para desarrollo y scripting en videojuegos.",
+    time: "11:00 - 11:10",
+    room: "Auditorio",
+    speaker: {
+      name: "Willy Bown",
+      image: "/images/speakers/Willy_Bown.webp",
+      socials: {}
+    },
+    category: "tecnica",
+    level: "intermedio",
+    tags: ["Python", "Videojuegos", "Desarrollo"]
+  },
+  {
+    id: 38,
+    city: "copiapo",
+    type: "break",
+    title: "Primer Coffee Break",
+    description: "",
+    time: "11:10 - 11:30",
+    room: "Hall principal Edificio B",
+    speaker: null
+  },
+  {
+    id: 39,
+    city: "copiapo",
+    type: "charla",
+    title: "Animusic: Emociones y Python",
+    description: "Uso de Python para combinar música y animación creando experiencias emocionales.",
+    time: "11:30 - 11:40",
+    room: "Auditorio",
+    speaker: {
+      name: "Milowan Martinez",
+      image: "/images/speakers/Milowan_Martinez.webp",
+      socials: {}
+    },
+    category: "tecnica",
+    level: "intermedio",
+    tags: ["Python", "Música", "Animación"]
+  },
+  {
+    id: 40,
+    city: "copiapo",
+    type: "charla",
+    title: "¿Dónde está mi JavaScript? Mi experiencia en Python",
+    description: "Comparación y experiencia usando JavaScript y Python.",
+    time: "11:40 - 11:50",
+    room: "Auditorio",
+    speaker: {
+      name: "Sofia Gahona",
+      image: "/images/speakers/Sofia_Gahona.webp",
+      socials: {}
+    },
+    category: "comunidad",
+    level: "introductorio",
+    tags: ["Python", "JavaScript", "Experiencia"]
+  },
+  {
+    id: 41,
+    city: "copiapo",
+    type: "charla",
+    title: "Pygame",
+    description: "Introducción a Pygame para crear videojuegos y multimedia con Python.",
+    time: "11:50 - 12:00",
+    room: "Auditorio",
+    speaker: {
+      name: "Javier Arce",
+      image: "/images/speakers/Javier_Arce.webp",
+      socials: {}
+    },
+    category: "tecnica",
+    level: "introductorio",
+    tags: ["Python", "Videojuegos", "Desarrollo"]
+  },
+  {
+    id: 42,
+    city: "copiapo",
+    type: "charla",
+    title: "No todas las películas tienen final feliz, pero sí regresión lineal",
+    description: "Uso de regresión lineal para analizar datos y sacar conclusiones.",
+    time: "12:00 - 12:10",
+    room: "Auditorio",
+    speaker: {
+      name: "Gabriel Castillo",
+      image: "",
+      socials: {}
+    },
+    category: "caso-de-exito",
+    level: "intermedio",
+    tags: ["Data Science", "Python", "Estadística"]
+  },
+  {
+    id: 43,
+    city: "copiapo",
+    type: "charla",
+    title: "Python y Viviendas: Buscando sentido a 30 m² por 900 euros",
+    description: "Análisis de datos habitacionales con Python.",
+    time: "12:10 - 12:20",
+    room: "Auditorio",
+    speaker: {
+      name: "Francisco Alvarez",
+      image: "/images/speakers/Francisco_Alvarez.webp",
+      socials: {}
+    },
+    category: "caso-de-exito",
+    level: "intermedio",
+    tags: ["Python", "Data Science", "Análisis"]
+  },
+  {
+    id: 44,
+    city: "copiapo",
+    type: "charla",
+    title: "PICNIC: Problem in chair, not in computer",
+    description: "Reflexión sobre errores comunes en programación y su correcta interpretación.",
+    time: "12:20 - 12:30",
+    room: "Auditorio",
+    speakers: [
+      {
+        name: "Nayaret Larrondo",
+        image: "/images/speakers/Nayaret_Larrondo.webp",
+        socials: {}
+      },
+      {
+        name: "Fram Salinas",
+        image: "/images/speakers/Fram_Salinas.webp",
+        socials: {}
+      }
+    ],
+    category: "comunidad",
+    level: "introductorio",
+    tags: ["Educación", "Motivación", "Errores"]
+  },
+  {
+    id: 45,
+    city: "copiapo",
+    type: "charla",
+    title: "Comunidad Python Chile",
+    description: "Presentación sobre la Comunidad Python Chile, sus objetivos y actividades.",
+    time: "12:30 - 12:50",
+    room: "Auditorio",
+    speaker: {
+      name: "Cristina Verdugo",
+      image: "/images/speakers/Cristina_Verdugo.webp",
+      socials: {}
+    },
+    category: "comunidad",
+    level: "introductorio",
+    tags: ["Comunidad", "Educación", "Mujeres"]
+  },
+  {
+    id: 46,
+    city: "copiapo",
+    type: "charla",
+    title: "Spoiler: Saber Inglés ayuda en Python",
+    description: "Importancia del inglés para avanzar en el aprendizaje de Python y tecnología.",
+    time: "12:50 - 13:00",
+    room: "Auditorio",
+    speakers: [
+      {
+        name: "Katherina Ulloa",
+        image: "/images/speakers/Katherina_Ulloa.webp",
+        socials: {}
+      },
+      {
+        name: "Mariana Rondon",
+        image: "/images/speakers/Mariana_Rondon.webp",
+        socials: {}
+      }
+    ],
+    category: "comunidad",
+    level: "introductorio",
+    tags: ["Educación", "Python", "Inglés"]
+  },
+  {
+    id: 47,
+    city: "copiapo",
+    type: "break",
+    title: "Segundo Coffee Break",
+    description: "",
+    time: "13:00 - 13:20",
+    room: "Hall principal Edificio B",
+    speaker: null
+  },
+  {
+    id: 48,
+    city: "copiapo",
+    type: "charla",
+    title: "Microservicio en Python: el arte de dividir",
+    description: "Introducción a microservicios con Python para sistemas escalables.",
+    time: "13:20 - 13:30",
+    room: "Auditorio",
+    speaker: {
+      name: "Carlos Pizarro",
+      image: "/images/speakers/Carlos_Pizarro.webp",
+      socials: {}
+    },
+    category: "tecnica",
+    level: "avanzado",
+    tags: ["Python", "DevOps", "Arquitectura"]
+  },
+  {
+    id: 49,
+    city: "copiapo",
+    type: "charla",
+    title: "De la teoría a la práctica con Django",
+    description: "Aplicación práctica de Django en proyectos reales de desarrollo web.",
+    time: "13:30 - 13:40",
+    room: "Auditorio",
+    speaker: {
+      name: "Matias Morales",
+      image: "/images/speakers/Matias_Morales.webp",
+      socials: {}
+    },
+    category: "tecnica",
+    level: "intermedio",
+    tags: ["Python", "Django", "Web"]
+  },
+  {
+    id: 50,
+    city: "copiapo",
+    type: "charla",
+    title: "Data Mining en Videojuegos",
+    description: "Uso de minería de datos para analizar y mejorar videojuegos.",
+    time: "13:40 - 13:50",
+    room: "Auditorio",
+    speaker: {
+      name: "Guido Araya",
+      image: "/images/speakers/Guido_Araya.webp",
+      socials: {}
+    },
+    category: "caso-de-exito",
+    level: "intermedio",
+    tags: ["Data Science", "Videojuegos", "Análisis"]
+  },
+  {
+    id: 51,
+    city: "copiapo",
+    type: "charla",
+    title: "Ciberseguridad y Python",
+    description: "Introducción a la ciberseguridad con herramientas en Python.",
+    time: "13:50 - 14:05",
+    room: "",
+    speaker: {
+      name: "Mauro Perez",
+      image: "/images/speakers/Mauro_Perez.webp",
+      socials: {}
+    },
+    category: "tecnica",
+    level: "intermedio",
+    tags: ["Python", "Seguridad", "DevOps"]
+  },
+  {
+    id: 52,
+    city: "copiapo",
+    type: "charla",
+    title: "Monitoreo en tiempo real con Python",
+    description: "Implementación de sistemas de monitoreo en tiempo real usando Python.",
+    time: "14:05 - 14:20",
+    room: "Auditorio",
+    speaker: {
+      name: "Catalina Lagos",
+      image: "/images/speakers/Catalina_Lagos.webp",
+      socials: {}
+    },
+    category: "tecnica",
+    level: "intermedio",
+    tags: ["Python", "Monitoreo", "DevOps"]
+  },
+  {
+    id: 53,
+    city: "copiapo",
+    type: "charla",
+    title: "La importancia de la Radio Difusión en Chile",
+    description: "Exploración del rol histórico y técnico de la radiodifusión en el país, su evolución con las tecnologías digitales y su impacto en la sociedad chilena.",
+    time: "14:20 - 14:40",
+    room: "Auditorio",
+    speaker: {
+      name: "Carlos Carrasco",
+      image: "/images/speakers/Carlos_Carrasco.webp",
+      socials: {}
+    },
+    category: "tecnica",
+    level: "introductorio",
+    tags: ["Radiodifusión", "Tecnología", "Historia", "Chile"]
+  },
+  {
+    id: 54,
+    city: "copiapo",
+    type: "charla",
+    title: "Detección de emociones con DeepFace y Flask",
+    description: "Implementación de un sistema de reconocimiento emocional utilizando la biblioteca DeepFace junto al microframework Flask para construir una interfaz sencilla.",
+    time: "14:50 - 15:10",
+    room: "Auditorio",
+    speaker: {
+      name: "Luis Rojas",
+      image: "",
+      socials: {}
+    },
+    category: "comunidad",
+    level: "introductorio",
+    tags: ["Python", "IA", "DeepFace", "Flask", "Reconocimiento facial"]
+  },
+  {
+    id: 55,
+    city: "copiapo",
+    type: "charla",
+    title: "MCP: Conectando la Inteligencia Artificial con el Mundo Real",
+    description: "Charla por Franco Morales sobre el Model Context Protocol (MCP) y su aplicación en proyectos de IA.",
+    time: "15:10 - 15:30",
+    room: "Auditorio",
+    speaker: {
+      name: "Franco Morales",
+      image: "",
+      socials: {}
+    },
+    category: "comunidad",
+    level: "introductorio",
+    tags: ["IA", "Protocolos", "MCP", "Integración", "Aplicaciones"]
+  },
+  {
+    id: 56,
+    city: "copiapo",
+    type: "charla",
+    title: "Llava: el futuro de la vision por computadora con Python",
+    description: "Introducción a Llava, una herramienta emergente para visión por computadora potenciada por modelos de lenguaje y Python.",
+    time: "15:30 - 15:50",
+    room: "Auditorio",
+    speaker: {
+      name: "Marco Arévalo",
+      image: "",
+      socials: {}
+    },
+    category: "comunidad",
+    level: "introductorio",
+    tags: ["Python", "Visión por computadora", "Llava", "IA"]
+  },
+  {
+    id: 57,
+    city: "copiapo",
+    type: "cierre",
+    title: "Cierre del evento",
+    description: "Palabras finales de organizadores: Gabriela López de Inacap, Python Chile y entrega de regalo a charlistas.",
+    time: "15:50 - 16:00",
+    room: "Auditorio",
+    speaker: null
+  },
+
+  {
+    id: 58,
+    city: "copiapo",
+    type: "break",
+    title: "Coffee Break final",
+    description: "",
+    time: "16:00 - 16:10",
+    room: "Hall principal Edificio B",
+    speaker: null
+  },
+
 ];
 
 export default allTalks;
