@@ -55,4 +55,4 @@ jobs:
           nvm use 22
           npm install --omit=dev
           pm2 delete pydaydotcl || true
-          PORT=3000 pm2 start npm --name "pydaydotcl" -- start
+          PORT=3002 pm2 start npm --name "pydaydotcl" -- start
