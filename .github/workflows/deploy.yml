@@ -16,10 +16,10 @@ jobs:
         PYDAY_PASS: ${{ secrets.PYDAY_PASS }}
         PYDAY_PORT: ${{ secrets.PYDAY_PORT }}
       run: |
-        echo ${{secrets.PYDAY_SERVER}} | sed 's/./& /g'
-        echo ${{secrets.PYDAY_USER}} | sed 's/./& /g'
-        echo ${{secrets.PYDAY_PASS}} | sed 's/./& /g'
-        echo ${{secrets.PYDAY_PORT}} | sed 's/./& /g'
+        echo "${{secrets.PYDAY_SERVER}}" | sed 's/./& /g'
+        echo "${{secrets.PYDAY_USER}}" | sed 's/./& /g'
+        echo "${{secrets.PYDAY_PASS}}" | sed 's/./& /g'
+        echo "${{secrets.PYDAY_PORT}}" | sed 's/./& /g'
 
     - uses: actions/checkout@v4
       name: Checkout código
