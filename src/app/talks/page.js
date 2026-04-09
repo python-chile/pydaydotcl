@@ -63,11 +63,11 @@ export default function TalksPage() {
       {/* Hero Section */}
       <div className="mb-12 text-center max-w-4xl mx-auto">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-py-text">
-          Charlas PyDay Chile 2025
+          Charlas PyDay Chile 2026
         </h1>
         <p className="text-lg text-py-text/80">
           Explora todas las charlas programadas para los eventos de PyDay Chile
-          2025. Desde principiantes hasta expertos, tenemos contenido para todos
+          2026. Desde principiantes hasta expertos, tenemos contenido para todos
           los niveles y áreas de interés.
         </p>
       </div>

@@ -12,8 +12,8 @@ import EmptyState from "@/components/EmptyState";
 import cityData from "@/data/cities";
 
 export default function Home() {
-  // Fecha y hora del próximo evento confirmado de PyDay 2025
-  const firstEventDate = "2025-06-25T10:00:00";
+  // Fecha y hora del próximo evento confirmado de PyDay 2026
+  const firstEventDate = "2026-06-05T10:00:00";
   const citiesArray = Object.values(cityData);
 
   return (
@@ -22,13 +22,13 @@ export default function Home() {
       <div className="relative h-44 mt-8 mx-auto">
         <Image
           src="/images/logos/logo.webp"
-          alt="PyDay Chile 2025 Logo"
+          alt="PyDay Chile 2026 Logo"
           fill
           className="object-contain"
         />
       </div>
       <HeroSection
-        title="PyDay Chile 2025"
+        title="PyDay Chile 2026"
         subtitle="El evento anual gratuito para la comunidad Python en Chile"
       >
         <CountdownTimer targetDate={firstEventDate} />
@@ -41,7 +41,7 @@ export default function Home() {
 
       {/* Ciudades / Mapa Section */}
       <section id="ciudades" className="container-py mt-8">
-        <h2 className="section-title">Sedes PyDay 2025</h2>
+        <h2 className="section-title">Sedes PyDay 2026</h2>
         <ChileMap cities={citiesArray} />
       </section>
 
@@ -65,7 +65,7 @@ export default function Home() {
         ) : allTalks && allTalks.length > 0 ? (
           <div className="text-center mt-8 max-w-xl mx-auto">
             <p className="mb-4 text-lg font-semibold">
-              Ya puedes revisar la agenda del evento PyDay 2025
+              Ya puedes revisar la agenda del evento PyDay 2026
             </p>
             <Link href="/talks" className="btn-primary">
               Ver agenda completa
@@ -78,7 +78,7 @@ export default function Home() {
 
       {/* Registro Section */}
       <section className="container-py">
-        <h2 className="section-title">Registro PyDay 2025</h2>
+        <h2 className="section-title">Registro PyDay 2026</h2>
         <RegistrationState context="global" />
       </section>
 

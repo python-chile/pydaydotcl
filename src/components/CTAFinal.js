@@ -12,7 +12,7 @@ export default function CTAFinal({
 }) {
   // Si se proporciona un email, crear un mailto link
   const linkHref = email
-    ? `mailto:${email}?subject=Interés en patrocinar PyDay Chile 2025`
+    ? `mailto:${email}?subject=Interés en patrocinar PyDay Chile 2026`
     : href;
 
   const renderSubtitle = () => {

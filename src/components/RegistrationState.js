@@ -6,8 +6,7 @@ export default function RegistrationState({ cityId }) {
   const citiesWithRegistration = Object.entries(cityData)
     .filter(([_, city]) => 
       city.registrationLink && 
-      city.registrationStatus !== "soldout" && 
-      city.registrationStatus !== "closed"
+      ["soldout", "closed", "upcoming"].indexOf(city.registrationStatus) < 0
     )
     .map(([_, city]) => ({
       name: city.name,
@@ -54,18 +53,16 @@ export default function RegistrationState({ cityId }) {
 
     // Para vista general (sin cityId específico)
     const hasClosingSoon = citiesWithRegistration.some(city => city.status === "closing-soon");
+    const upComingSoon = Object.entries(cityData).some(([_, city]) => city.registrationStatus === "upcoming");
     const totalCitiesWithRegistration = citiesWithRegistration.length;
     
     return {
-      title: hasClosingSoon
-        ? "⏰ ¡Últimas horas para algunas ciudades!"
-        : totalCitiesWithRegistration > 0
-        ? "¡Registro abierto! Cupos limitados"
+      title: hasClosingSoon ? "⏰ ¡Últimas horas para algunas ciudades!"
+        : totalCitiesWithRegistration > 0 ? "¡Registro abierto! Cupos limitados"
         : "Registro cerrado",
-      message: hasClosingSoon
-        ? "Algunas ciudades están por cerrar su registro. ¡No te quedes fuera!"
-        : totalCitiesWithRegistration > 0
-        ? "Elige tu ciudad y asegura tu lugar hoy"
+      message: hasClosingSoon ? "Algunas ciudades están por cerrar su registro. ¡No te quedes fuera!"
+        : totalCitiesWithRegistration > 0 ? "Elige tu ciudad y asegura tu lugar hoy."
+        : upComingSoon ? "Próximamente se abrirán las inscripciones."
         : "El registro ha finalizado para todas las ciudades. ¡Nos vemos en el evento!",
       links: citiesWithRegistration,
     };

@@ -301,5 +301,11 @@ body {
       margin-bottom: 0.5rem;
     }
   }
+
+  .legible {
+    border-radius: 16px;
+    padding: 16px;
+    background: #000;
+  }
   
 }

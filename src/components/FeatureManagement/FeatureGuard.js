@@ -4,7 +4,7 @@ export const FeatureGuard = ({ children, featureName, cityData }) => {
   const features = {
     registration: {
       enabled: process.env.NEXT_PUBLIC_FEATURE_REGISTRATION === "true",
-      title: `Registro PyDay ${cityData?.name || "2025"}`,
+      title: `Registro PyDay ${cityData?.name || "2026"}`,
       subtitle:
         cityData?.registrationStatus === "soldout"
           ? "Los cupos se han agotado. ¡Gracias por tu interés!"
@@ -13,7 +13,7 @@ export const FeatureGuard = ({ children, featureName, cityData }) => {
           : cityData?.registrationStatus === "closing-soon"
           ? "⏰ ¡Últimas entradas! Quedan pocos cupos disponibles"
           : cityData?.registrationLink
-          ? "¡Regístrate ahora para asegurar tu lugar en el PyDay 2025!"
+          ? "¡Regístrate ahora para asegurar tu lugar en el PyDay 2026!"
           : "El registro abrirá próximamente. Mantente atento a nuestras redes sociales",
       showCTA:
         cityData?.registrationStatus !== "soldout" &&

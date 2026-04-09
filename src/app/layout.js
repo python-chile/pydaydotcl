@@ -13,7 +13,7 @@ export const viewport = {
 };
 
 export const metadata = {
-  title: "PyDay Chile 2025",
+  title: "PyDay Chile 2026",
   description:
     "Evento anual gratuito que reúne a la comunidad Python en distintas ciudades de Chile con charlas, talleres y networking para todos los niveles",
   keywords: [
@@ -28,8 +28,8 @@ export const metadata = {
     "Charlas",
     "Hackathon",
   ],
-  authors: [{ name: "MariferVL", url: "https://github.com/MariferVL" }],
-  creator: "María-Fernanda Villalobos López",
+  authors: [{ name: "Python Chile"}],
+  creator: "Python Chile",
   publisher: "Python Chile",
   robots: {
     index: true,
@@ -69,7 +69,7 @@ export const metadata = {
   applicationName: "PyDay Chile",
   appleWebApp: {
     capable: true,
-    title: "PyDay Chile 2025",
+    title: "PyDay Chile 2026",
     statusBarStyle: "black-translucent",
   },
   category: "technology",
@@ -85,7 +85,7 @@ export const metadata = {
     type: "website",
     locale: "es_CL",
     alternateLocale: ["en_US"],
-    title: "PyDay Chile 2025",
+    title: "PyDay Chile 2026",
     description:
       "PyDay Chile es un evento anual gratuito que reúne a entusiastas, desarrolladores y académicos en un día lleno de Python con charlas inspiradoras, talleres prácticos y networking en diversas ciudades de Chile.",
     siteName: "PyDay Chile",
@@ -95,7 +95,7 @@ export const metadata = {
         url: "https://pyday.cl/images/banner-og.jpg",
         width: 1200,
         height: 630,
-        alt: "PyDay Chile 2025 - Un día de Python en tu ciudad",
+        alt: "PyDay Chile 2026 - Un día de Python en tu ciudad",
       },
       // {
       //   url: "https://pyday.cl/images/logos/logo_bg.png",
@@ -107,7 +107,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "PyDay Chile 2025 - Evento anual de Python en tu ciudad",
+    title: "PyDay Chile 2026 - Evento anual de Python en tu ciudad",
     description:
       "Sumérgete en un día lleno de Python con charlas, talleres y networking en distintas ciudades de Chile. ¡Un evento gratuito impulsado por la comunidad!",
     siteId: "@pythonchile",
@@ -116,7 +116,7 @@ export const metadata = {
     images: [
       {
         url: "https://pyday.cl/images/banner-og.jpg",
-        alt: "PyDay Chile 2025",
+        alt: "PyDay Chile 2026",
         width: 1200,
         height: 628,
       },

@@ -15,7 +15,7 @@ export default function Error({ error, reset }) {
       <div className="relative w-48 h-48 mb-8">
         <Image
                 src="/images/logos/logo.webp"
-                alt="PyDay Chile 2025 Logo"
+                alt="PyDay Chile 2026 Logo"
                 fill
                 className="object-contain"
               />
@@ -66,7 +66,7 @@ export default function Error({ error, reset }) {
         
         {/* Footer específico */}
         <p className="text-center text-sm mt-8 text-py-text/70">
-          ¿Quieres volver a la página principal de PyDay 2025?
+          ¿Quieres volver a la página principal de PyDay 2026?
           <Link href="/" className="text-py-yellow hover:underline ml-1">
             Haz clic aquí
           </Link>

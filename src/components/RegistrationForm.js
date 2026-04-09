@@ -132,7 +132,7 @@ export default function RegistrationForm() {
         // FIXME: Corregir lo de este link:
         if (formData.sendCFP) {
           window.open(
-            "https://sessionize.com/pyday-valparaiso-2025/",
+            "https://sessionize.com/pyday-valparaiso-2026/",
             "_blank"
           );
         }
@@ -148,7 +148,7 @@ export default function RegistrationForm() {
   return (
     <div className="max-w-md mx-auto bg-white/5 p-6 rounded-lg shadow-md">
       <h2 className="text-2xl font-bold mb-6 text-center">
-        Regístrate para PyDay 2025
+        Regístrate para PyDay 2026
       </h2>
       {submitResult.success === null ? (
         <form onSubmit={handleSubmit} className="space-y-4">

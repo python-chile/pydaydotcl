@@ -111,7 +111,7 @@ export default function CitySponsorList({ cityName }) {
               </span>
             </h2>
             <p className="text-white/90 text-xl md:text-2xl font-semibold tracking-wide">
-              PyDay {displayCityName} 2025
+              PyDay {displayCityName} 2026
             </p>
           </div>
 
