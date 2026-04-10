@@ -9,39 +9,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-      name: Checkout código
-      
-    - uses: actions/setup-node@v4
-      name: Setup Node.js 22.x
-      with:
-        node-version: '22'
-        cache: 'npm'
-        
-    - name: Creacion variables de entorno
-      run: |
-        touch .env.local
-        echo "NEXT_PUBLIC_FEATURE_REGISTRATION=${{ vars.NEXT_PUBLIC_FEATURE_REGISTRATION }}" >> .env.local
-        echo "NEXT_PUBLIC_FEATURE_SPONSORS=${{ vars.NEXT_PUBLIC_FEATURE_SPONSORS }}" >> .env.local
-        echo "NEXT_PUBLIC_FEATURE_SPONSOR_FORM=${{ vars.NEXT_PUBLIC_FEATURE_SPONSOR_FORM }}" >> .env.local
-        echo "NEXT_PUBLIC_SITE_URL=${{ vars.NEXT_PUBLIC_SITE_URL }}" >> .env.local
-    
-    - name: Instalar dependencias y build
-      run: |
-        npm ci
-        npm run build
-        
-    - name: Copia archivos hacia servidor
-      uses: appleboy/scp-action@v1
-      with:
-        host: ${{ secrets.PYDAY_SERVER }}
-        username: ${{ secrets.PYDAY_USER }}
-        password: ${{ secrets.PYDAY_PASS }}
-        port: ${{ secrets.PYDAY_PORT }}
-        source: ".next,public,next.config.mjs,package.json,package-lock.json,.env.local"
-        target: "pydaydotcl"
-        
-    - name: Iniciar app con PM2 en el servidor
+    - name: Push to server
       uses: appleboy/ssh-action@v1
       with:
         host: ${{ secrets.PYDAY_SERVER }}
@@ -50,9 +18,5 @@ jobs:
         port: ${{ secrets.PYDAY_PORT }}
         script: |
           cd pydaydotcl
-          export NVM_DIR="/opt/nvm"
-          source "$NVM_DIR/nvm.sh"
-          nvm use 22
-          npm install --omit=dev
-          pm2 delete pydaydotcl || true
-          PORT=3002 pm2 start npm --name "pydaydotcl" -- start
+          ls -l
+          sh deploy.sh
