@@ -53,7 +53,7 @@ export default function Header() {
               />
             </div>
             <span className="text-py-text font-bold text-xl tracking-tight">
-              PyDay Chile 2025
+              PyDay Chile 2026
             </span>
           </Link>
 

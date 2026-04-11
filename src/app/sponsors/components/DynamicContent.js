@@ -26,7 +26,7 @@ export default function DynamicContent() {
           <p className="text-lg md:text-2xl leading-relaxed text-text-white font-medium px-2 sm:px-0">
             {intro}
             <span className="block mt-4 md:mt-6 text-[var(--accent-yellow)] font-semibold text-base md:text-lg">
-              ¡Sé parte de la revolución Python 2025!
+              ¡Sé parte de la revolución Python 2026!
             </span>
           </p>
           <div className="mt-6 md:mt-8 flex justify-center space-x-3 md:space-x-4">

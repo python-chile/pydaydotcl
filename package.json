@@ -1,12 +1,10 @@
 {
   "name": "pydaydotcl",
   "version": "2.0.1",
-  "description": "PyDay Chile 2025 - Evento anual gratuito que reúne a la comunidad Python en distintas ciudades de Chile.",
+  "description": "PyDay Chile 2026 - Evento anual gratuito que reúne a la comunidad Python en distintas ciudades de Chile.",
   "private": true,
-  "author": "María-Fernanda marifer.villalobos@pythonchile.cl",
-  "contributors": [
-    "Liliana Garmendia liliana.garmendia@pythonchile.cl"
-  ],
+  "author": "Python Chile desarrollo@pythonchile.cl",
+  "contributors": [],
   "keywords": [
     "Python",
     "Chile",

@@ -70,9 +70,12 @@ export default async function CityPage({ params }) {
             size="md"
           />
         </div>
-        <p className="text-xl md:text-2xl opacity-90">{data.date}</p>
-        <p className="text-lg opacity-80">{data.venue}</p>
+        <div className="legible">
+          <p className="text-xl md:text-2xl opacity-90">{data.date}</p>
+          <p className="text-lg opacity-80">{data.venue}</p>
+        </div>
       </HeroSection>
+      {data.imgCourtesy}
       
       {/* Sección de introducción - Solo se muestra si existe */}
       {data.introduction && (

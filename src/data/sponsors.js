@@ -7,30 +7,18 @@
 const organizers = [
   {
     _id: 1,
-    name: "Duoc UC",
-    url: "https://www.duoc.cl",
-    logo: {
-      asset: {
-        url: "/images/sponsors/duoc_logo.webp"
-      }
-    },
-    type: "organizer",
-    cities: ["santiago"]
-  },
-  {
-    _id: 2,
     name: "Inacap",
-    url: "https://inacap.cl",
+    url: "https://portal.inacap.cl/",
     logo: {
       asset: {
         url: "/images/sponsors/inacap_logo.webp"
       }
     },
     type: "organizer",
-    cities: ["copiapo"]
+    cities: ["santiago", "copiapo"]
   },
   {
-    _id: 3,
+    _id: 2,
     name: "UTFSM",
     url: "https://usm.cl",
     logo: {
@@ -42,7 +30,31 @@ const organizers = [
     cities: ["valparaiso"]
   },
   {
+    _id: 3,
+    name: "Universidad de O'Higgins",
+    url: "https://usm.cl",
+    logo: {
+      asset: {
+        url: "/images/sponsors/uoh.webp"
+      }
+    },
+    type: "organizer",
+    cities: ["rancagua"]
+  },
+  {
     _id: 4,
+    name: "Universidad de Talca",
+    url: "https://www.utalca.cl/",
+    logo: {
+      asset: {
+        url: "/images/sponsors/utalca.webp"
+      }
+    },
+    type: "organizer",
+    cities: ["curico"]
+  },
+  {
+    _id: 5,
     name: "Python Chile",
     url: "https://www.pythonchile.cl",
     logo: {
@@ -58,7 +70,7 @@ const organizers = [
 // PATROCINADORES (financieros)
 const sponsors = [
   {
-    _id: 5,
+    _id: 6,
     name: "Python Software Foundation",
     url: "https://www.python.org/psf-landing/",
     logo: {
@@ -69,48 +81,12 @@ const sponsors = [
     type: "sponsor",
     cities: ["santiago", "valparaiso", "copiapo"]
   },
-  {
-    _id: 6,
-    name: "UTFSM",
-    url: "https://usm.cl",
-    logo: {
-      asset: {
-        url: "/images/sponsors/utfsm_logo.webp"
-      }
-    },
-    type: "sponsor",
-    cities: ["valparaiso"]
-  },
-  {
-    _id: 7,
-    name: "AC3E",
-    url: "https://ac3e.usm.cl/language/es/",
-    logo: {
-      asset: {
-        url: "/images/sponsors/ac3e_logo.webp"
-      }
-    },
-    type: "sponsor",
-    cities: ["valparaiso"]
-  },
-  {
-    _id: 8,
-    name: "CCTVAL",
-    url: "https://cctval.cl/",
-    logo: {
-      asset: {
-        url: "/images/sponsors/cctval_logo.webp"
-      }
-    },
-    type: "sponsor",
-    cities: ["valparaiso"]
-  }
 ];
 
 // COMUNIDADES AMIGAS
 const communities = [
   {
-    _id: 9,
+    _id: 7,
     name: "Pyladies Chile",
     url: "https://pyladies.cl/",
     logo: {
@@ -121,30 +97,6 @@ const communities = [
     type: "community",
     cities: ["santiago"]
   },
-  {
-    _id: 10,
-    name: "Niñas PRO",
-    url: "https://www.ninaspro.cl",
-    logo: {
-      asset: {
-        url: "/images/sponsors/ninaspro_logo.webp"
-      }
-    },
-    type: "community",
-    cities: ["santiago"]
-  },
-  {
-    _id: 11,
-    name: "Latinas in cloud",
-    url: "https://www.instagram.com/latinasincloud/",
-    logo: {
-      asset: {
-        url: "/images/sponsors/latinas_incloud_logo.webp"
-      }
-    },
-    type: "community",
-    cities: ["santiago"]
-  }
 ];
 
 // Exportar todos juntos

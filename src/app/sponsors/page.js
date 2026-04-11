@@ -7,18 +7,18 @@ export default function Patrocinadores() {
     <>
       <Head>
         <title>
-          Patrocina PyDay Chile 2025 - Conecta con la comunidad Python
+          Patrocina PyDay Chile 2026 - Conecta con la comunidad Python
         </title>
         <meta
           name="description"
-          content="Conviértete en patrocinador de PyDay Chile 2025 y conecta tu marca con la comunidad Python en Chile"
+          content="Conviértete en patrocinador de PyDay Chile 2026 y conecta tu marca con la comunidad Python en Chile"
         />
       </Head>
       <HeroSection
         title={
           <>
             <span className="bg-gradient-to-r from-[var(--primary-green)] to-[var(--accent-yellow)] bg-clip-text text-transparent text-4xl md:text-6xl">
-              Patrocina PyDay Chile 2025
+              Patrocina PyDay Chile 2026
             </span>
             <div className="mt-3 md:mt-4 h-1 w-16 md:w-24 bg-[var(--primary-green)] mx-auto rounded-full" />
           </>

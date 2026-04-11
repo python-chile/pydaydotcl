@@ -126,7 +126,7 @@ export default function SponsorList({
           {sponsorsOnly.length > 0 && (
             <SponsorSection
               title="Patrocinadores"
-              year="2025"
+              year="2026"
               items={sponsorsOnly}
               importance="large"
             />
@@ -135,7 +135,7 @@ export default function SponsorList({
           {organizers.length > 0 && (
             <SponsorSection
               title="Organizadores"
-              year="2025"
+              year="2026"
               items={organizers}
               importance="medium"
             />
@@ -144,7 +144,7 @@ export default function SponsorList({
           {communities.length > 0 && (
             <SponsorSection
               title="Comunidades Amigas"
-              year="2025"
+              year="2026"
               items={communities}
               importance="small"
             />
