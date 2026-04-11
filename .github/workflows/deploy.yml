@@ -38,8 +38,8 @@ jobs:
         username: ${{ secrets.PYDAY_USER }}
         password: ${{ secrets.PYDAY_PASS }}
         port: ${{ secrets.PYDAY_PORT }}
-        source: ".out"
-        target: "pydaydotcl"
+        source: "out"
+        target: ""
 
     - name: Copia out a public
       uses: appleboy/ssh-action@v1
@@ -49,5 +49,4 @@ jobs:
         password: ${{ secrets.PYDAY_PASS }}
         port: ${{ secrets.PYDAY_PORT }}
         script: |
-          cd pydaydotcl
           sh deploy.sh

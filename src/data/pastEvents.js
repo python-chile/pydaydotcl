@@ -1,6 +1,21 @@
 // FIXME: Agregar los respectivos links a "webpageLink"
 const pastEvents = [
   {
+    year: "2025",
+    cities: ["Copiapó", "Valparaíso", "Santiago"],
+    mainImage: "/images/gallery/cpo/PYDAY_2024_CPO_02.webp",
+    attendees: "+50",
+    viewers: "+800",
+    talks: 39,
+    workshops: 2,
+    date: "06 de Junio (Santiago), 13 de Junio (Valparaíso) y 25 de Junio (Copiapó)",
+    highlights:
+      "En la edición 2025 de PyDay Chile, la comunidad organizó con éxito un evento en Copiapó en conjunto con Inacap. Con actividades presenciales y participación online, el PyDay Copiapó 2025 reforzó el compromiso de Python Chile de expandir el alcance del lenguaje a más regiones del país.",
+    photosLink: "/multimedia?year=2025",
+    videosLink: "/multimedia?videos=2025",
+    webpageLink: "https://pyday.cl/2025",
+  },
+  {
     year: "2024",
     cities: ["Copiapó", "Valparaíso"],
     mainImage: "/images/gallery/cpo/PYDAY_2024_CPO_02.webp",
