@@ -19,7 +19,7 @@ const cityData = {
     ],
     introduction: {
       title: "¡Un Día de Python y Mucha Diversión en PyDay Copiapó 2026!",
-      description: "Únete a la segunda edición de este emocionante evento en INACAP sede Copiapó. Disfruta de charlas inspiradoras y un workshop interactivo donde estudiantes, docentes y entusiastas de la región compartirán conocimientos en un ambiente colaborativo y lleno de energía. PyDay Copiapó 2026 es tu oportunidad para aprender, conectar e inspirarte con el poder de Python.",
+      description: "Únete a la tercera edición de este emocionante evento en INACAP sede Copiapó. Disfruta de charlas inspiradoras y un workshop interactivo donde estudiantes, docentes y entusiastas de la región compartirán conocimientos en un ambiente colaborativo y lleno de energía. PyDay Copiapó 2026 es tu oportunidad para aprender, conectar e inspirarte con el poder de Python.",
       participationInfo: "Participar te permitirá: adquirir nuevas habilidades, conectar con la comunidad tecnológica y descubrir cómo Python puede transformar tu futuro. ¡Te esperamos!",
       campusImage: "/images/campus/Inacap_Copiapo.webp",
     },
@@ -51,7 +51,7 @@ const cityData = {
     ],
     introduction: {
       title: "¡Aventúrate en el Mundo de Python en PyDay Valparaíso!",
-      description: "Únete a la cuarta edición de este emocionante evento en la Casa Central de la Universidad Técnica Federico Santa María. Disfruta de talleres interactivos y charlas inspiradoras en un ambiente creativo y colaborativo. PyDay Valparaíso 2026 es tu oportunidad para conectar con otros entusiastas, expandir conocimientos y explorar las posibilidades de este poderoso lenguaje de programación.",
+      description: "Únete a la quinta edición de este emocionante evento en la Casa Central de la Universidad Técnica Federico Santa María. Disfruta de talleres interactivos y charlas inspiradoras en un ambiente creativo y colaborativo. PyDay Valparaíso 2026 es tu oportunidad para conectar con otros entusiastas, expandir conocimientos y explorar las posibilidades de este poderoso lenguaje de programación.",
       participationInfo: "Participar te permitirá: adquirir nuevas habilidades, conectar con la comunidad tecnológica y descubrir cómo Python puede transformar tu futuro.  ¡No te lo pierdas!",
       campusImage: "/images/campus/utfsm-campus.webp",
     },
@@ -77,10 +77,10 @@ const cityData = {
       "Buses del Transantiago: 401, 406, 407, 426, 518"
     ],
     introduction: {
-      title: "¡Bienvenido a la Primera Edición de PyDay Santiago 2026!",
-      description: "Únete a la primera edición de PyDay Santiago 2026, un evento lleno de aprendizaje, innovación y colaboración en el vibrante mundo de Python. Después de las exitosas Hackatones y PyCon en Santiago, este evento es tu oportunidad para ser parte de una nueva tradición en la ciudad. Disfruta de charlas inspiradoras, talleres interactivos y oportunidades para conectar con otros apasionados por la tecnología.",
+      title: "¡Bienvenido a la Segunda Edición de PyDay Santiago 2026!",
+      description: "Únete a la segunda edición de PyDay Santiago 2026, un evento lleno de aprendizaje, innovación y colaboración en el vibrante mundo de Python. Después de las exitosas Hackatones y PyCon en Santiago, este evento es tu oportunidad para ser parte de una nueva tradición en la ciudad. Disfruta de charlas inspiradoras, talleres interactivos y oportunidades para conectar con otros apasionados por la tecnología.",
       participationInfo: "Participar te permitirá: adquirir nuevas habilidades, conectar con la comunidad tecnológica local y descubrir cómo Python puede transformar tu futuro. ¡No te lo puedes perder!",
-      campusImage: "/images/campus/inacap-stgo.webp",
+      campusImage: "/images/campus/inacap-santiago.webp",
     },
     registrationLink:"",
     registrationStatus: "upcoming", // <--- agregas esto solo si los cupos están agotados
@@ -94,7 +94,7 @@ const cityData = {
     mapCoords: { x: 62, y: 220 },
     venue: "Universidad de O'Higgins, Campus Rancagua",
     address: "Avenida Libertador Bernardo O'Higgins 611, Rancagua, Chile.",
-    image: "/images/cities/rgua.webp",
+    image: "/images/cities/rancagua.webp",
     imgCourtesy: "Imagen de Tripadvisor. Publicada por ramiro614",
     logo: "/images/logos/logo_pyday.webp",
     mapUrl: "https://maps.app.goo.gl/UcDreyKJpimSxCh29",
@@ -112,7 +112,7 @@ const cityData = {
       title: "¡Aventúrate en el Mundo de Python en PyDay Rancagua!",
       description: "Únete a la primera edición PyDay Rancagua. Disfruta de charlas inspiradoras en un ambiente creativo y colaborativo. PyDay Rancagua 2026 es tu oportunidad para conectar con otros entusiastas, expandir conocimientos y explorar las posibilidades de este poderoso lenguaje de programación.",
       participationInfo: "Participar te permitirá: adquirir nuevas habilidades, conectar con la comunidad tecnológica y descubrir cómo Python puede transformar tu futuro.  ¡No te lo pierdas!",
-      campusImage: "/images/campus/rgua.webp",
+      campusImage: "/images/campus/rancagua.webp",
     },
     registrationLink:"",
     registrationStatus: "upcoming", // <--- agregas esto solo si los cupos están por agotarse
@@ -140,7 +140,7 @@ const cityData = {
       title: "¡Aventúrate en el Mundo de Python en PyDay Curicó!",
       description: "Únete a la primera PyDay en Curicó. Disfruta de talleres interactivos y charlas inspiradoras en un ambiente creativo y colaborativo. PyDay Curicó 2026 es tu oportunidad para conectar con otros entusiastas, expandir conocimientos y explorar las posibilidades de este poderoso lenguaje de programación.",
       participationInfo: "Participar te permitirá: adquirir nuevas habilidades, conectar con la comunidad tecnológica y descubrir cómo Python puede transformar tu futuro.  ¡No te lo pierdas!",
-      campusImage: "/images/campus/utfsm-campus.webp",
+      campusImage: "/images/campus/curico.webp",
     },
     registrationLink:"",
     registrationStatus: "upcoming", // <--- agregas esto solo si los cupos están por agotarse
