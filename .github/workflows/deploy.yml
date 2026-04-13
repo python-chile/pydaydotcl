@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - fix-36-copy-project
 
 jobs:
   deploy:
