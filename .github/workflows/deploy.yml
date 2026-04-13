@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - fix-36-copy-project
 
 jobs:
   deploy:
@@ -39,7 +40,7 @@ jobs:
         password: ${{ secrets.PYDAY_PASS }}
         port: ${{ secrets.PYDAY_PORT }}
         source: "out"
-        target: ""
+        target: "out"
 
     - name: Copia out a public
       uses: appleboy/ssh-action@v1
