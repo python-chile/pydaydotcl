@@ -40,7 +40,7 @@ jobs:
         password: ${{ secrets.PYDAY_PASS }}
         port: ${{ secrets.PYDAY_PORT }}
         source: "out"
-        target: "out"
+        target: "."
 
     - name: Copia out a public
       uses: appleboy/ssh-action@v1
