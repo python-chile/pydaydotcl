@@ -35,7 +35,7 @@ export default function EmptyState({ cityId, context = "city" }) {
     return {
       title:
         activeProposals.length > 0
-          ? "Propuestas de Charlas Abiertas"
+          ? "Propuestas de Charlas/Talleres Abiertas"
           : "Convocatorias Cerradas",
       message:
         activeProposals.length > 0
