@@ -62,7 +62,7 @@ const cityData = {
   },
   santiago: {
     name: "Santiago",
-    date: "6 de junio, 2026, 14:00 - 19:00.",
+    date: "6 de junio, 2026, 10:00 - 17:00.",
     slug: "santiago",
     mapCoords: { x: 59, y: 200 },
     venue: "Inacap, sede Santiago Centro",
