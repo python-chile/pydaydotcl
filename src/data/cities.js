@@ -1,33 +1,6 @@
 import allTalks from "./talks";
 
 const cityData = {
-  copiapo: {
-    name: "Copiapó",
-    date: "Por definir",
-    slug: "copiapo",
-    mapCoords: { x: 55, y: 90 },
-    venue: "Inacap sede Copiapó",
-    address: "Yumbel 650, Auditorio Edificio B, Copiapó, Chile",
-    image: "/images/cities/copiapo.webp",
-    logo: "/images/logos/pyday_copiapo.webp",
-    mapUrl: "https://maps.app.goo.gl/gYxNT6EVaSFsDBT99",
-    embedMap:
-      "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2579.0365694907086!2d-70.33317677653373!3d-27.360827873691527!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9698047547c01749%3A0xb972b1fd182ecc29!2sINACAP%20Sede%20B!5e0!3m2!1ses!2scl!4v1746042745132!5m2!1ses!2scl",
-    transportation: [
-      "Microbuses: Líneas 1, 12, 2, 4, 5 desde el centro",
-      "Estacionamiento gratuito disponible en el campus",
-    ],
-    introduction: {
-      title: "¡Un Día de Python y Mucha Diversión en PyDay Copiapó 2026!",
-      description: "Únete a la tercera edición de este emocionante evento en INACAP sede Copiapó. Disfruta de charlas inspiradoras y un workshop interactivo donde estudiantes, docentes y entusiastas de la región compartirán conocimientos en un ambiente colaborativo y lleno de energía. PyDay Copiapó 2026 es tu oportunidad para aprender, conectar e inspirarte con el poder de Python.",
-      participationInfo: "Participar te permitirá: adquirir nuevas habilidades, conectar con la comunidad tecnológica y descubrir cómo Python puede transformar tu futuro. ¡Te esperamos!",
-      campusImage: "/images/campus/Inacap_Copiapo.webp",
-    },
-    registrationLink:"",
-    registrationStatus: "",
-    talkProposalLink: "",
-    schedule: allTalks.filter((talk) => talk.city === "copiapo"),
-  },
   valparaiso: {
     name: "Valparaíso",
     date: "5 de junio, 2026, 10:00 - 17:00.",
@@ -55,8 +28,8 @@ const cityData = {
       participationInfo: "Participar te permitirá: adquirir nuevas habilidades, conectar con la comunidad tecnológica y descubrir cómo Python puede transformar tu futuro.  ¡No te lo pierdas!",
       campusImage: "/images/campus/utfsm-campus.webp",
     },
-    registrationLink:"",
-    registrationStatus: "upcoming", // <--- agregas esto solo si los cupos están por agotarse
+    registrationLink:"https://www.eventbrite.com/e/1987656829082",
+    registrationStatus: "open",
     talkProposalLink: "https://sessionize.com/pyday-valparaiso-2026/",
     schedule: allTalks.filter((talk) => talk.city === "valparaiso"),
   },
@@ -82,8 +55,8 @@ const cityData = {
       participationInfo: "Participar te permitirá: adquirir nuevas habilidades, conectar con la comunidad tecnológica local y descubrir cómo Python puede transformar tu futuro. ¡No te lo puedes perder!",
       campusImage: "/images/campus/inacap-santiago.webp",
     },
-    registrationLink:"",
-    registrationStatus: "upcoming", // <--- agregas esto solo si los cupos están agotados
+    registrationLink:"https://www.eventbrite.com/e/1987656787959",
+    registrationStatus: "open",
     talkProposalLink: "https://sessionize.com/pyday-santiago-2026/",
     schedule: allTalks.filter((talk) => talk.city === "santiago"),
   },
@@ -115,7 +88,7 @@ const cityData = {
       campusImage: "/images/campus/rancagua.webp",
     },
     registrationLink:"",
-    registrationStatus: "upcoming", // <--- agregas esto solo si los cupos están por agotarse
+    registrationStatus: "upcoming",
     talkProposalLink: "https://sessionize.com/pyday-rancagua-2026/",
     schedule: allTalks.filter((talk) => talk.city === "rancagua"),
   },
@@ -143,7 +116,7 @@ const cityData = {
       campusImage: "/images/campus/curico.webp",
     },
     registrationLink:"",
-    registrationStatus: "upcoming", // <--- agregas esto solo si los cupos están por agotarse
+    registrationStatus: "upcoming",
     talkProposalLink: "https://sessionize.com/pyday-curico-2026/",
     schedule: allTalks.filter((talk) => talk.city === "curico"),
   },

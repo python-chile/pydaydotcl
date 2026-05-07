@@ -26,7 +26,7 @@ export default function SponsorLogo({ src, alt, className, url, importance = "me
       />
       
       {/* Contenedor de imagen - sin padding adicional */}
-      <div className="relative z-10 flex items-center justify-center h-full">
+      <div className="relative z-10 flex items-center justify-center h-full sponsor-logo">
         <Image
           src={src}
           alt={alt}

@@ -169,6 +169,7 @@ body {
   .sponsor-logo {
     filter: brightness(115%) contrast(105%) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
     transition: all 0.3s ease;
+    aspect-ratio: 1;
   }
 
   .sponsor-logo:hover {
@@ -307,5 +308,4 @@ body {
     padding: 16px;
     background: #000;
   }
-  
 }
