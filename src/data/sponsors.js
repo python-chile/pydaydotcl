@@ -32,7 +32,7 @@ const organizers = [
   {
     _id: 3,
     name: "Universidad de O'Higgins",
-    url: "https://usm.cl",
+    url: "https://uoh.cl",
     logo: {
       asset: {
         url: "/images/sponsors/uoh.webp"
