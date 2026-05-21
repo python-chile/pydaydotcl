@@ -81,6 +81,18 @@ const sponsors = [
     type: "sponsor",
     cities: ["santiago", "valparaiso", "copiapo"]
   },
+  {
+    _id: 8,
+    name: "Solotodo",
+    url: "https://www.solotodo.cl/",
+    logo: {
+      asset: {
+        url: "/images/sponsors/solotodo.webp"
+      }
+    },
+    type: "sponsor",
+    cities: ["santiago", "valparaiso", "copiapo"]
+  },
 ];
 
 // COMUNIDADES AMIGAS
