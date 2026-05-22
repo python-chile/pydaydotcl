@@ -70,18 +70,6 @@ const organizers = [
 // PATROCINADORES (financieros)
 const sponsors = [
   {
-    _id: 6,
-    name: "Python Software Foundation",
-    url: "https://www.python.org/psf-landing/",
-    logo: {
-      asset: {
-        url: "/images/sponsors/psf_logo.webp"
-      }
-    },
-    type: "sponsor",
-    cities: ["santiago", "valparaiso", "copiapo"]
-  },
-  {
     _id: 8,
     name: "Solotodo",
     url: "https://www.solotodo.cl/",
@@ -91,7 +79,7 @@ const sponsors = [
       }
     },
     type: "sponsor",
-    cities: ["santiago", "valparaiso", "copiapo"]
+    cities: ["santiago"]
   },
 ];
 
