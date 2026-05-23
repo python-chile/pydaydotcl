@@ -79,6 +79,7 @@ const sponsors = [
       }
     },
     type: "sponsor",
+    tier: "gold",
     cities: ["santiago"]
   },
 ];
