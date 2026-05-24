@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import SponsorLogo from "@/app/sponsors/components/SponsorLogo";
 import sponsorsData from "@/data/sponsors";
 
-function SponsorGrid({ items, importance }) {
+function SponsorGrid({ items, type, importance }) {
   // Reducimos significativamente el padding
   const paddingByImportance = {
     large: "p-3 md:p-4",   // Patrocinadores: padding reducido
@@ -26,7 +26,6 @@ function SponsorGrid({ items, importance }) {
       return "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 place-items-center";
     }
   };
-
   return (
     <div
       className={`
@@ -47,7 +46,8 @@ function SponsorGrid({ items, importance }) {
             bg-gradient-to-br from-[var(--primary-green)]/8 via-[var(--accent-yellow)]/5 to-[var(--primary-green)]/8
             backdrop-blur-lg rounded-xl transition-all duration-500 hover:duration-300
             hover:shadow-[0_0_40px_-10px_rgba(61,139,55,0.4)]
-            border-2 border-[var(--primary-green)]/20 hover:border-[var(--accent-yellow)]/40
+            border-2
+            ${type ? `sponsor-${type}-border sponsor-${type}-border-hover` : "border-[var(--primary-green)]/20 hover:border-[var(--accent-yellow)]/40"}  
             transform-gpu hover:-translate-y-2 cursor-pointer w-full max-w-[200px]`}
         />
       ))}
@@ -55,7 +55,10 @@ function SponsorGrid({ items, importance }) {
   );
 }
 
-function SponsorSection({ title, year, items, importance = "medium" }) {
+function SponsorSection({ title, year, items, type, importance = "medium"}) {
+  if (items.length == 0) {
+    return null;
+  }
   const titleSizes = {
     large: "text-4xl md:text-4xl",
     medium: "text-3xl md:text-4xl",
@@ -88,7 +91,7 @@ function SponsorSection({ title, year, items, importance = "medium" }) {
       </div>
 
       {/* Grid de logos con padding dinámico */}
-      <SponsorGrid items={items} importance={importance} />
+      <SponsorGrid items={items} type={type} importance={importance} />
     </motion.div>
   );
 }
@@ -109,6 +112,10 @@ export default function SponsorList({
   // Filtrar según las props
   const organizers = showOrganizers ? sponsors.filter((s) => s.type === "organizer") : [];
   const sponsorsOnly = showSponsors ? sponsors.filter((s) => s.type === "sponsor") : [];
+  const goldSponsors = sponsorsOnly.filter(s => s.tier == "gold");
+  const silverSponsors = sponsorsOnly.filter(s => s.tier == "silver");
+  const bronzeSponsors = sponsorsOnly.filter(s => s.tier == "bronze");
+
   const communities = showCommunities ? sponsors.filter((s) => s.type === "community") : [];
 
   // Verificar si hay al menos una sección para mostrar
@@ -123,15 +130,27 @@ export default function SponsorList({
     >
       {hasAnySponsors ? (
         <div className="space-y-16">
-          {sponsorsOnly.length > 0 && (
-            <SponsorSection
-              title="Patrocinadores"
-              year="2026"
-              items={sponsorsOnly}
-              importance="large"
-            />
-          )}
-
+          <SponsorSection
+            title="Patrocinadores Gold"
+            year="2026"
+            items={goldSponsors}
+            type="gold"
+            importance="large"
+          />
+          <SponsorSection
+            title="Patrocinadores Silver"
+            year="2026"
+            items={silverSponsors}
+            type="silver"
+            importance="large"
+          />
+          <SponsorSection
+            title="Patrocinadores Bronze"
+            year="2026"
+            items={bronzeSponsors}
+            type="bronze"
+            importance="large"
+          />
           {organizers.length > 0 && (
             <SponsorSection
               title="Organizadores"
@@ -140,7 +159,6 @@ export default function SponsorList({
               importance="medium"
             />
           )}
-
           {communities.length > 0 && (
             <SponsorSection
               title="Comunidades Amigas"

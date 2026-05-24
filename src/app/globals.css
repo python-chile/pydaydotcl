@@ -7,6 +7,12 @@
 
 :root {
   --primary-green: #3D8B37;
+  --py-sponsor-gold: #F59E0B; /* Naranja */
+  --py-sponsor-gold-rgb: 245,158,11;
+  --py-sponsor-silver: silver; /* Plata */
+  --py-sponsor-silver-rgb: 192,192,192;
+  --py-sponsor-bronze: darkred; /* Rojo */
+  --py-sponsor-bronze-rgb: 139,0,0;
   /* Cuerpo de la serpiente */
   --accent-yellow: #FFE141;
   /* Panza en tono intermedio */
@@ -149,6 +155,61 @@ body {
   .sponsors-container:hover {
     box-shadow: 0 0 80px -20px rgba(var(--primary-green-rgb), 0.45);
   }
+  /* Estilos específicos para patrocinadores gold */
+  .sponsor-gold-container {
+    border-color: rgba(var(--py-sponsor-gold-rgb), 0.3) !important;
+    box-shadow: 0 0 80px -15px rgba(var(--py-sponsor-gold-rgb), 0.25) !important;
+  }
+  .sponsor-gold-title {
+    color: var(--py-sponsor-gold) !important;
+  }
+  .sponsor-gold-underline {
+    border-bottom-color: var(--py-sponsor-gold) !important;
+  }
+  .sponsor-gold-border {
+    border-color: rgba(var(--py-sponsor-gold-rgb), 0.2) !important;
+  }
+  .sponsor-gold-border-hover:hover {
+    border-color: rgba(var(--py-sponsor-gold-rgb), 0.4) !important;
+    box-shadow: 0 0 40px -10px rgba(var(--py-sponsor-gold-rgb), 0.35) !important;
+  }
+  /* Estilos específicos para patrocinadores silver */
+  .sponsor-silver-container {
+    border-color: rgba(var(--py-sponsor-silver-rgb), 0.3) !important;
+    box-shadow: 0 0 80px -15px rgba(var(--py-sponsor-silver-rgb), 0.25) !important;
+  }
+  .sponsor-silver-title {
+    color: var(--py-sponsor-silver) !important;
+  }
+  .sponsor-silver-underline {
+    border-bottom-color: var(--py-sponsor-silver) !important;
+  }
+  .sponsor-silver-border {
+    border-color: rgba(var(--py-sponsor-silver-rgb), 0.2) !important;
+  }
+  .sponsor-silver-border-hover:hover {
+    border-color: rgba(var(--py-sponsor-silver-rgb), 0.4) !important;
+    box-shadow: 0 0 40px -10px rgba(var(--py-sponsor-silver-rgb), 0.35) !important;
+  }
+  /* Estilos específicos para patrocinadores bronze */
+  .sponsor-bronze-container {
+    border-color: rgba(var(--py-sponsor-bronze-rgb), 0.3) !important;
+    box-shadow: 0 0 80px -15px rgba(var(--py-sponsor-bronze-rgb), 0.25) !important;
+  }
+  .sponsor-bronze-title {
+    color: var(--py-sponsor-bronze) !important;
+  }
+  .sponsor-bronze-underline {
+    border-bottom-color: var(--py-sponsor-bronze) !important;
+  }
+  .sponsor-bronze-border {
+    border-color: rgba(var(--py-sponsor-bronze-rgb), 0.2) !important;
+  }
+  .sponsor-bronze-border-hover:hover {
+    border-color: rgba(var(--py-sponsor-bronze-rgb), 0.4) !important;
+    box-shadow: 0 0 40px -10px rgba(var(--py-sponsor-bronze-rgb), 0.35) !important;
+  }
+
 
   /* Efectos para los logos de sponsors */
   .sponsor-logo-effect {
