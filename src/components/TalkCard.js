@@ -1,12 +1,11 @@
 import Image from "next/image";
 import { 
   LuCoffee, LuPartyPopper, LuHandshake, LuMic, 
-  LuWrench, LuMapPin, LuLinkedin 
+  LuWrench, LuMapPin, LuLinkedin, LuInstagram, LuGithub, LuTwitter, LuFacebook, LuYoutube
 } from "react-icons/lu";
 
 export default function TalkCard({ talk, showRoom = false }) {
-  const { title, time, speaker, speakers, description, tags, type, room } = talk;
-
+  const { title, time, speaker, speakers, description, tags, type, room, location } = talk;
   // Normalizar speakers a un array
   const normalizedSpeakers = speakers 
     ? speakers 
@@ -60,6 +59,9 @@ export default function TalkCard({ talk, showRoom = false }) {
 
   const isGeneral = !normalizedSpeakers.length && 
     (type === 'recepcion' || type === 'break' || type === 'cierre');
+  if (isGeneral){
+    return null;
+  }
   
   const style = typeStyles[type] || typeStyles.charla; // Default a charla si no se reconoce
   
@@ -77,7 +79,7 @@ export default function TalkCard({ talk, showRoom = false }) {
               {showRoom && room && (
                 <div className="flex items-center mt-1 text-xs opacity-70">
                   <LuMapPin size={12} className="mr-1" />
-                  <span>{room}</span>
+                  <span>{`${room} - ${location}`}</span>
                 </div>
               )}
             </div>
@@ -124,20 +126,80 @@ export default function TalkCard({ talk, showRoom = false }) {
                     </div>
                     <div className="ml-2 min-w-0">
                       <p className="text-xs md:text-sm font-medium truncate">{spkr.name}</p>
-                      
-                      {/* Solo LinkedIn */}
-                      {spkr.socials?.linkedin && (
-                        <a 
-                          href={spkr.socials.linkedin} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="flex items-center mt-1 text-xs opacity-70 hover:opacity-100 transition-opacity"
-                          title="Perfil de LinkedIn"
-                        >
-                          <LuLinkedin size={14} className="mr-1 flex-shrink-0" />
-                          <span className="hidden sm:inline truncate"></span>
-                        </a>
-                      )}
+                      <div className="flex">
+                        {spkr.socials?.linkedin && (
+                          <a 
+                            href={spkr.socials.linkedin} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="flex items-center mt-1 text-xs opacity-70 hover:opacity-100 transition-opacity"
+                            title="Perfil de LinkedIn"
+                          >
+                            <LuLinkedin size={14} className="mr-1 flex-shrink-0" />
+                            <span className="hidden sm:inline truncate"></span>
+                          </a>
+                        )}
+                        {spkr.socials?.instagram && (
+                          <a 
+                            href={spkr.socials.instagram} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="flex items-center mt-1 text-xs opacity-70 hover:opacity-100 transition-opacity"
+                            title="Perfil de Instagram"
+                          >
+                            <LuInstagram size={14} className="mr-1 flex-shrink-0" />
+                            <span className="hidden sm:inline truncate"></span>
+                          </a>
+                        )}
+                        {spkr.socials?.github && (
+                          <a 
+                            href={spkr.socials.github} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="flex items-center mt-1 text-xs opacity-70 hover:opacity-100 transition-opacity"
+                            title="Perfil de Github"
+                          >
+                            <LuGithub size={14} className="mr-1 flex-shrink-0" />
+                            <span className="hidden sm:inline truncate"></span>
+                          </a>
+                        )}
+                        {spkr.socials?.twitter && (
+                          <a 
+                            href={spkr.socials.twitter} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="flex items-center mt-1 text-xs opacity-70 hover:opacity-100 transition-opacity"
+                            title="Cuenta de X"
+                          >
+                            <LuTwitter size={14} className="mr-1 flex-shrink-0" />
+                            <span className="hidden sm:inline truncate"></span>
+                          </a>
+                        )}
+                        {spkr.socials?.facebook && (
+                          <a 
+                            href={spkr.socials.facebook} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="flex items-center mt-1 text-xs opacity-70 hover:opacity-100 transition-opacity"
+                            title="Perfil de Facebook"
+                          >
+                            <LuFacebook size={14} className="mr-1 flex-shrink-0" />
+                            <span className="hidden sm:inline truncate"></span>
+                          </a>
+                        )}
+                        {spkr.socials?.youtube && (
+                          <a 
+                            href={spkr.socials.youtube} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="flex items-center mt-1 text-xs opacity-70 hover:opacity-100 transition-opacity"
+                            title="Canal de Youtube"
+                          >
+                            <LuYoutube size={14} className="mr-1 flex-shrink-0" />
+                            <span className="hidden sm:inline truncate"></span>
+                          </a>
+                        )}
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -148,7 +210,7 @@ export default function TalkCard({ talk, showRoom = false }) {
             {showRoom && room && (
               <div className="flex items-center mb-2 text-xs opacity-70">
                 <LuMapPin size={12} className="mr-1" />
-                <span>{room}</span>
+                <span>{`${room} - ${location}`}</span>
               </div>
             )}
           </div>
@@ -156,8 +218,8 @@ export default function TalkCard({ talk, showRoom = false }) {
 
         {/* Descripción */}
         {description && (
-          <p className="text-xs md:text-sm opacity-80 mb-3 flex-grow">
-            {description}
+          <p className="text-xs md:text-sm opacity-80 mb-3 flex-grow"
+            dangerouslySetInnerHTML={{__html: description}}>
           </p>
         )}
 

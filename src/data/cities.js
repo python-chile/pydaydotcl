@@ -62,7 +62,7 @@ const cityData = {
   },
   rancagua: {
     name: "Rancagua",
-    date: "Por definir",
+    date: "19 de agosto 2026, 09:00 a 13:00",
     slug: "rancagua",
     mapCoords: { x: 62, y: 220 },
     venue: "Universidad de O'Higgins, Campus Rancagua",

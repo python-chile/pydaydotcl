@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import TalkCard from "@/components/TalkCard";
+import TalksTable from "@/components/TalksTable";
 import Link from "next/link";
 import allTalks from "@/data/talks";
 import cityData from "@/data/cities";
@@ -87,7 +88,7 @@ export default function TalksPage() {
           </button>
           {cityDates.map((city) => (
             <button
-              key={city.date}
+              key={`${city.name} ${city.date}`}
               onClick={() => setSelectedDay(city.date)}
               className={`px-4 py-2 rounded-lg text-sm md:text-base font-medium whitespace-nowrap ${
                 selectedDay === city.date
@@ -141,12 +142,12 @@ export default function TalksPage() {
           </div>
         </div>
       </div>
-
+      {selectedDay && filteredTalks.length > 0 ? <TalksTable talks={filteredTalks}/>: null}
       {/* Renderizado agrupado por sala */}
       {filteredTalks.length > 0 ? (
         Object.entries(
           filteredTalks.reduce((acc, talk) => {
-            const room = talk.room || "Sala no asignada";
+            const room = `${talk.room} - ${cityData[talk.city].name}` || "Sala no asignada";
             if (!acc[room]) acc[room] = [];
             acc[room].push(talk);
             return acc;
