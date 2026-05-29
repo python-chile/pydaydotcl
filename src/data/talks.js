@@ -69,7 +69,7 @@ const allTalks = [
     type: "break",
     title: "Cofee Break",
     time: "11:00 - 11:30",
-    room: "",
+    room: "Salón A1",
     speaker: null,
   },
   {
@@ -140,7 +140,7 @@ const allTalks = [
     type: "break",
     title: "Almuerzo",
     time: "12:45 - 14:00",
-    room: null,
+    room: "Salón A1",
     speaker: null,
   },
   {
@@ -183,6 +183,83 @@ const allTalks = [
     id: 9,
     city: "valparaiso",
     type: "charla",
+    title: "Crea tu DJ con IA: Agentes en Python y Open Source.",
+    description: `¿Qué pasa cuando un modelo de lenguaje deja de solo hablar de música
+    y empieza a curar playlists con tus canciones reales?
+    En esta charla construimos un agente de IA que funciona como tu DJ personal — usando Python,
+    herramientas 100% open source, y conectado directamente a Spotify. Capa por capa: desde un agente que solo conversa, hasta uno que busca canciones, arma playlists reales, y recuerda tus gustos. Todo local, todo open source, todo en Python.`,
+    time: "14:30 - 15:00",
+    room: "Salón A1",
+    speakers: [{
+      name: "Hazel Saenz",
+      image: "/images/speakers/hazel-saenz.webp",
+      socials: {
+          linkedin: "https://www.linkedin.com/in/hazelsaenz/",
+          instagram: "https://www.instagram.com/hazelsaenz.tech/"
+        }
+    }],
+    category: "IA",
+    level: "Principiante",
+    tags: ["Inteligencia Artificial", "Agentes de IA", "Python"],
+  },
+  {
+    id: 10,
+    city: "valparaiso",
+    type: "charla",
+    title: "Cómo construí un plugin nativo de Polars en Rust para enmascarar PII - y lo que nadie te cuenta.",
+    description: `maskops es una librería open source que extiende Polars
+    con expresiones nativas en Rust para detectar
+    y enmascarar datos personales: IBAN, VAT, email, teléfono, IP, RUT, CPF y CURP;
+    con validación de dígito verificador incluido para todos los datos.<br/><br/>
+    En esta charla cuento el proceso real:
+    por qué elegí Rust sobre Python puro,
+    cómo funciona la integración con el motor de expresiones de Polars via pyo3-polars,
+    los desafíos técnicos concretos (compilación cruzada, dlopen en macOS CI, wildcards en Cargo.toml),
+    y la parte que nadie te va a mencionar:
+    publicar algo en PyPI con 7 estrellas en GitHub y tratar de que alguien lo use.<br/><br/>
+    Una charla honesta sobre construir herramientas de datos de nicho,
+    el valor de contribuir al mundo open source, y qué viene después.`,
+    time: "15:00 - 15:30",
+    room: "Salón A1",
+    speakers: [{
+      name: "Felipe Carvajal Brown",
+      image: "/images/speakers/felipe-carvajal-brown.webp",
+      socials: {
+          linkedin: "https://www.linkedin.com/in/fcarvajalbrown/",
+          github: "https://github.com/fcarvajalbrown",
+          instagram: "https://www.instagram.com/fcarvajalbrown/"
+        }
+    }],
+    category: "IA",
+    level: "Principiante",
+    tags: ["Librerías", "IA"],
+  },
+  {
+    id: 11,
+    city: "valparaiso",
+    type: "charla",
+    title: "Charlas relámpago.",
+    description: ``,
+    time: "15:30 - 16:00",
+    room: "Salón A1",
+    speakers: [],
+    category: "",
+    level: "",
+    tags: [],
+  },
+  {
+    id: 12,
+    city: "valparaiso",
+    type: "cierre",
+    title: "Cierre",
+    time: "16:00 - 16:15",
+    room: "Salón A1",
+    speaker: null,
+  },
+  {
+    id: 13,
+    city: "valparaiso",
+    type: "taller",
     title: "Lo que nadie te dice sobre la IA generativa: límites, técnicas y lo que viene.",
     description: `Hay mucho ruido alrededor de la IA generativa:
     promesas exageradas, demos impresionantes y también miedos poco fundamentados.
@@ -237,8 +314,8 @@ const allTalks = [
     El objetivo no es predecir el futuro,
     sino entender qué tendencias ya están en marcha
     y cómo afectan las decisiones que tomamos hoy cuando construimos con Python sobre estos sistemas.`,
-    time: "14:30 - 15:00",
-    room: "Salón A1",
+    time: "11:30 - 12:30",
+    room: "Salón A2",
     speakers: [{
       name: "Francisco Alfaro",
       image: "/images/speakers/francisco-alfaro.webp",
@@ -253,63 +330,9 @@ const allTalks = [
           linkedin: "https://www.linkedin.com/in/vcanalesp/",
         }
     }],
-    category: "UI",
-    level: "Avanzado",
-    tags: ["UI"],
-  },
-  {
-    id: 10,
-    city: "valparaiso",
-    type: "charla",
-    title: "Cómo construí un plugin nativo de Polars en Rust para enmascarar PII - y lo que nadie te cuenta.",
-    description: `maskops es una librería open source que extiende Polars
-    con expresiones nativas en Rust para detectar
-    y enmascarar datos personales: IBAN, VAT, email, teléfono, IP, RUT, CPF y CURP;
-    con validación de dígito verificador incluido para todos los datos.<br/><br/>
-    En esta charla cuento el proceso real:
-    por qué elegí Rust sobre Python puro,
-    cómo funciona la integración con el motor de expresiones de Polars via pyo3-polars,
-    los desafíos técnicos concretos (compilación cruzada, dlopen en macOS CI, wildcards en Cargo.toml),
-    y la parte que nadie te va a mencionar:
-    publicar algo en PyPI con 7 estrellas en GitHub y tratar de que alguien lo use.<br/><br/>
-    Una charla honesta sobre construir herramientas de datos de nicho,
-    el valor de contribuir al mundo open source, y qué viene después.`,
-    time: "15:00 - 15:30",
-    room: "Salón A1",
-    speakers: [{
-      name: "Felipe Carvajal Brown",
-      image: "/images/speakers/felipe-carvajal-brown.webp",
-      socials: {
-          linkedin: "https://www.linkedin.com/in/fcarvajalbrown/",
-          github: "https://github.com/fcarvajalbrown",
-          instagram: "https://www.instagram.com/fcarvajalbrown/"
-        }
-    }],
     category: "IA",
-    level: "Principiante",
-    tags: ["Librerías", "IA"],
-  },
-  {
-    id: 11,
-    city: "valparaiso",
-    type: "charla",
-    title: "Charlas relámpago.",
-    description: ``,
-    time: "15:30 - 16:00",
-    room: "Salón A1",
-    speakers: [],
-    category: "",
-    level: "",
-    tags: [],
-  },
-  {
-    id: 12,
-    city: "valparaiso",
-    type: "cierre",
-    title: "Cierre",
-    time: "16:00 - 16:15",
-    room: null,
-    speaker: null,
+    level: "Intermedio",
+    tags: ["IA", "Machine Learning"],
   },
   {
     id: 14,
@@ -322,7 +345,7 @@ const allTalks = [
     y modelos como Gemini pueden generar código funcional,
     tests y documentación casi instantáneamente,
     permitiendo que el foco vuelva a ser la resolución del problema y no la sintaxis.`,
-    time: "11:30 - 12:30",
+    time: "14:30 - 15:00",
     room: "Salón A2",
     speakers: [{
       name: "Lesly Zerna",
@@ -338,36 +361,13 @@ const allTalks = [
     tags: ["Software"],
   },
   {
-    id: 15,
-    city: "valparaiso",
-    type: "taller",
-    title: "Crea tu DJ con IA: Agentes en Python y Open Source.",
-    description: `¿Qué pasa cuando un modelo de lenguaje deja de solo hablar de música
-    y empieza a curar playlists con tus canciones reales?
-    En esta charla construimos un agente de IA que funciona como tu DJ personal — usando Python,
-    herramientas 100% open source, y conectado directamente a Spotify. Capa por capa: desde un agente que solo conversa, hasta uno que busca canciones, arma playlists reales, y recuerda tus gustos. Todo local, todo open source, todo en Python.`,
-    time: "14:00 - 15:00",
-    room: "Salón A2",
-    speakers: [{
-      name: "Hazel Saenz",
-      image: "/images/speakers/hazel-saenz.webp",
-      socials: {
-          linkedin: "https://www.linkedin.com/in/hazelsaenz/",
-          instagram: "https://www.instagram.com/hazelsaenz.tech/"
-        }
-    }],
-    category: "IA",
-    level: "Principiante",
-    tags: ["Inteligencia Artificial", "Agentes de IA", "Python"],
-  },
-  {
     id: 16,
     city: "santiago",
     type: "recepcion",
     title: "Bienvenida",
     description: "Inicio de actividades y acreditación de participantes",
     time: "10:15 - 10:30",
-    room: "Salón A1",
+    room: "Auditorio",
     speaker: null,
   },
   {
@@ -447,7 +447,7 @@ const allTalks = [
     title: "Coffee Break",
     description: "",
     time: "11:30 - 12:00",
-    room: null,
+    room: "Auditorio",
     speaker: null,
   },
   {
@@ -496,7 +496,7 @@ const allTalks = [
     title: "Almuerzo",
     description: "",
     time: "12:45 - 14:00",
-    room: null,
+    room: "Auditorio",
     speaker: null,
   },
   {
@@ -520,24 +520,24 @@ const allTalks = [
     id: 24,
     city: "santiago",
     type: "charla",
-    title: "Python y LLMs Open‑Source para Educación Inclusiva: de la Arquitectura a un Demo en Vivo.",
-    description: `En esta sesión mostraremos cómo usamos Python para construir EvaluaAI,
-    una plataforma de IA especializada que automatiza hasta un 80% de la documentación
-    en Programas de Integración Escolar (PIE),
-    respetando la normativa chilena (Decretos 170 y 83).
-    Explicaremos por qué un RAG genérico no es suficiente en educación regulada
-    y cómo orquestamos LLMs livianos open‑source (Llama, DeepSeek) con Ollama,
-    bases de datos NoSQL e integraciones vía API.`,
+    title: "Crea tu DJ con IA: Agentes en Python y Open Source.",
+    description: `¿Qué pasa cuando un modelo de lenguaje deja de solo hablar de música
+    y empieza a curar playlists con tus canciones reales?
+    En esta charla construimos un agente de IA que funciona como tu DJ personal — usando Python,
+    herramientas 100% open source, y conectado directamente a Spotify. Capa por capa: desde un agente que solo conversa, hasta uno que busca canciones, arma playlists reales, y recuerda tus gustos. Todo local, todo open source, todo en Python.`,
     time: "14:30 - 15:00",
     room: "Auditorio",
     speakers: [{
-      name: "Alexander Moore",
-      image: "/images/speakers/alexander-moore.webp",
-      socials: {}
+      name: "Hazel Saenz",
+      image: "/images/speakers/hazel-saenz.webp",
+      socials: {
+          linkedin: "https://www.linkedin.com/in/hazelsaenz/",
+          instagram: "https://www.instagram.com/hazelsaenz.tech/"
+        }
     }],
-    category: "DevOps",
-    level: "Intermedio",
-    tags: ["DevOps"],
+    category: "IA",
+    level: "Principiante",
+    tags: ["Inteligencia Artificial", "Agentes de IA", "Python"],
   },
   {
     id: 25,
@@ -590,7 +590,7 @@ const allTalks = [
     title: "Cierre",
     description: "",
     time: "16:00 - 16:15",
-    room: null,
+    room: "Auditorio",
     speaker: null,
   },
   {
