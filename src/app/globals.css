@@ -369,4 +369,9 @@ body {
     padding: 16px;
     background: #000;
   }
+  .talks-table th,td{
+    border: solid 1px gray;
+    padding: 8px;
+    text-align: center;
+  }
 }
