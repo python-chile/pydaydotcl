@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   LuCoffee, LuPartyPopper, LuHandshake, LuMic,
   LuWrench, LuMapPin, LuLinkedin
@@ -64,22 +65,26 @@ export default function TalksTable({talks}) {
             </div>
           </td>;
         } else {
-          sessions = row.map((subrow,ix) => {
+          sessions = row.map((subrow, ix1) => {
             if (!Array.isArray(subrow)){
               if(subrow)
                 return null;
-              return <td key={ix} style={{background: 'gray'}}></td>;
+              return <td key={ix1} style={{background: 'gray'}}></td>;
             }
-            return (<td key={ix} rowSpan={subrow[0]}>
+            return (<td key={ix1} rowSpan={subrow[0]}>
               <div className="text-xs"><b>{subrow[1].title}</b></div>
               <div className="flex" style={{justifyContent: "center"}}>
-                {subrow[1].speakers.map(speaker =>
-                  <div className="text-xs" style={{textAlign: 'center'}}>
+                {subrow[1].speakers.map((speaker, ix2) =>
+                  <div key={`${ix1}-${ix2}`} className="text-xs" style={{textAlign: 'center'}}>
                     <div
                       className="relative w-14 h-14 md:w-16 md:h-16 rounded-full overflow-hidden bg-purple-700 flex-shrink-0"
                       style={{display: 'inline-block'}}
                     >
-                      <img src={speaker.image}/>
+                      <Image
+                        src={speaker.image}
+                        height={64}
+                        width={64}
+                        alt={speaker.name}/>
                     </div>
                     <p>{speaker.name}</p>
                   </div>)}
