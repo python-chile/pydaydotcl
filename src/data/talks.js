@@ -345,7 +345,7 @@ const allTalks = [
     y modelos como Gemini pueden generar código funcional,
     tests y documentación casi instantáneamente,
     permitiendo que el foco vuelva a ser la resolución del problema y no la sintaxis.`,
-    time: "14:30 - 15:00",
+    time: "14:00 - 15:00",
     room: "Salón A2",
     speakers: [{
       name: "Lesly Zerna",

@@ -68,12 +68,13 @@ export default function Home() {
               Ya puedes revisar la agenda del evento PyDay 2026
             </p>
             <Link href="/talks" className="btn-primary">
-              Ver agenda completa
+              Ver agenda
             </Link>
           </div>
-        ) : (
-          <EmptyState context="global" />
-        )}
+        ) : null
+        }
+        <br/>
+        <EmptyState context="global" />
       </section>
 
       {/* Registro Section */}

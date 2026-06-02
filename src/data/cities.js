@@ -30,7 +30,7 @@ const cityData = {
     },
     registrationLink:"https://www.eventbrite.com/e/1987656829082",
     registrationStatus: "open",
-    talkProposalLink: "https://sessionize.com/pyday-valparaiso-2026/",
+    talkProposalLink: "",
     schedule: allTalks.filter((talk) => talk.city === "valparaiso"),
   },
   santiago: {
@@ -57,7 +57,7 @@ const cityData = {
     },
     registrationLink:"https://www.eventbrite.com/e/1987656787959",
     registrationStatus: "open",
-    talkProposalLink: "https://sessionize.com/pyday-santiago-2026/",
+    talkProposalLink: "",
     schedule: allTalks.filter((talk) => talk.city === "santiago"),
   },
   rancagua: {
@@ -92,7 +92,7 @@ const cityData = {
     talkProposalLink: "https://sessionize.com/pyday-rancagua-2026/",
     schedule: allTalks.filter((talk) => talk.city === "rancagua"),
   },
-  curico: {
+  /*curico: {
     name: "Curicó",
     date: "Por definir",
     slug: "curico",
@@ -119,7 +119,7 @@ const cityData = {
     registrationStatus: "upcoming",
     talkProposalLink: "https://sessionize.com/pyday-curico-2026/",
     schedule: allTalks.filter((talk) => talk.city === "curico"),
-  },
+  },*/
   
 };
 
