@@ -69,7 +69,7 @@ export default function TalksTable({talks}) {
             if (!Array.isArray(subrow)){
               if(subrow)
                 return null;
-              return <td key={ix1}></td>;
+              return <td key={ix1} className="empty-spot"></td>;
             }
             return (<td key={ix1} rowSpan={subrow[0]}>
               <div className="text-xs"><b>{subrow[1].title}</b></div>
