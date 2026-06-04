@@ -69,7 +69,7 @@ export default function TalksTable({talks}) {
             if (!Array.isArray(subrow)){
               if(subrow)
                 return null;
-              return <td key={ix1} style={{background: 'gray'}}></td>;
+              return <td key={ix1} className="empty-spot"></td>;
             }
             return (<td key={ix1} rowSpan={subrow[0]}>
               <div className="text-xs"><b>{subrow[1].title}</b></div>
@@ -77,7 +77,7 @@ export default function TalksTable({talks}) {
                 {subrow[1].speakers.map((speaker, ix2) =>
                   <div key={`${ix1}-${ix2}`} className="text-xs" style={{textAlign: 'center'}}>
                     <div
-                      className="relative w-14 h-14 md:w-16 md:h-16 rounded-full overflow-hidden bg-purple-700 flex-shrink-0"
+                      className="relative w-14 h-14 md:w-16 md:h-16 rounded-full overflow-hidden bg-white flex-shrink-0"
                       style={{display: 'inline-block'}}
                     >
                       <Image

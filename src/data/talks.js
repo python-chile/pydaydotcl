@@ -345,7 +345,7 @@ const allTalks = [
     y modelos como Gemini pueden generar código funcional,
     tests y documentación casi instantáneamente,
     permitiendo que el foco vuelva a ser la resolución del problema y no la sintaxis.`,
-    time: "14:30 - 15:00",
+    time: "14:00 - 15:00",
     room: "Salón A2",
     speakers: [{
       name: "Lesly Zerna",
@@ -650,6 +650,23 @@ const allTalks = [
     category: "IA",
     level: "Intermedio",
     tags: ["IA"],
+  },
+  {
+    id: 30,
+    city: "santiago",
+    type: "taller",
+    title: ` PySchool: Escape Room – Misión Estación Espacial`,
+    description: `En este taller del PyDay Santiago, el equipo de Python Chile te desafía a entrar a la Estación Espacial de PySchool: 
+    un juego de escape interactivo donde aprenderás las bases de Python desde cero, resolviendo enigmas habitación por habitación escribiendo código real por primera vez.`,
+    time: "10:30 - 11:30",
+    room: "Laboratorio Computación 2",
+    speakers: [{
+      name: "Python Chile",
+      image: "/images/speakers/pyschool-logo.webp",
+    }],
+    category: "Educación",
+    level: "Principiante",
+    tags: ["Educación"],
   },
 ];
 

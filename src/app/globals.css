@@ -374,4 +374,7 @@ body {
     padding: 8px;
     text-align: center;
   }
+  .empty-spot {
+    background: gray;
+  }
 }
