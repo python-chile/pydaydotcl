@@ -29,7 +29,7 @@ const cityData = {
       campusImage: "/images/campus/utfsm-campus.webp",
     },
     registrationLink:"https://www.eventbrite.com/e/1987656829082",
-    registrationStatus: "open",
+    registrationStatus: "closed",
     talkProposalLink: "",
     schedule: allTalks.filter((talk) => talk.city === "valparaiso"),
   },
@@ -56,7 +56,7 @@ const cityData = {
       campusImage: "/images/campus/inacap-santiago.webp",
     },
     registrationLink:"https://www.eventbrite.com/e/1987656787959",
-    registrationStatus: "open",
+    registrationStatus: "closed",
     talkProposalLink: "",
     schedule: allTalks.filter((talk) => talk.city === "santiago"),
   },
@@ -87,40 +87,11 @@ const cityData = {
       participationInfo: "Participar te permitirá: adquirir nuevas habilidades, conectar con la comunidad tecnológica y descubrir cómo Python puede transformar tu futuro.  ¡No te lo pierdas!",
       campusImage: "/images/campus/rancagua.webp",
     },
-    registrationLink:"",
-    registrationStatus: "upcoming",
+    registrationLink:"https://www.eventbrite.com/e/pyday-2026-rancagua-tickets-1991239301353",
+    registrationStatus: "open",
     talkProposalLink: "https://sessionize.com/pyday-rancagua-2026/",
     schedule: allTalks.filter((talk) => talk.city === "rancagua"),
   },
-  /*curico: {
-    name: "Curicó",
-    date: "Por definir",
-    slug: "curico",
-    mapCoords: { x: 62, y: 240 },
-    venue: "Universidad de Talca, campus Curicó",
-    address: "Camino Los Niches Km. 1, Curicó, Chile",
-    image: "/images/cities/curico.webp",
-    imgCourtesy: "Imagen de Qwerty242, CC BY-SA 3.0",
-    logo: "/images/logos/logo_pyday.webp",
-    mapUrl: "https://maps.app.goo.gl/45rGaV2pja7xSvEg7",
-    embedMap:
-      "https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d1634.0868046211303!2d-71.229417!3d-35.002359!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzXCsDAwJzA4LjUiUyA3McKwMTMnNDUuOSJX!5e0!3m2!1sen!2sus!4v1775769555324!5m2!1sen!2sus",
-    transportation: [
-    ],
-    accessPoints: [,
-    ],
-    introduction: {
-      title: "¡Aventúrate en el Mundo de Python en PyDay Curicó!",
-      description: "Únete a la primera PyDay en Curicó. Disfruta de talleres interactivos y charlas inspiradoras en un ambiente creativo y colaborativo. PyDay Curicó 2026 es tu oportunidad para conectar con otros entusiastas, expandir conocimientos y explorar las posibilidades de este poderoso lenguaje de programación.",
-      participationInfo: "Participar te permitirá: adquirir nuevas habilidades, conectar con la comunidad tecnológica y descubrir cómo Python puede transformar tu futuro.  ¡No te lo pierdas!",
-      campusImage: "/images/campus/curico.webp",
-    },
-    registrationLink:"",
-    registrationStatus: "upcoming",
-    talkProposalLink: "https://sessionize.com/pyday-curico-2026/",
-    schedule: allTalks.filter((talk) => talk.city === "curico"),
-  },*/
-  
 };
 
 export default cityData;

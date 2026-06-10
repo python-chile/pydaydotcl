@@ -42,18 +42,6 @@ const organizers = [
     cities: ["rancagua"]
   },
   {
-    _id: 4,
-    name: "Universidad de Talca",
-    url: "https://www.utalca.cl/",
-    logo: {
-      asset: {
-        url: "/images/sponsors/utalca.webp"
-      }
-    },
-    type: "organizer",
-    cities: ["curico"]
-  },
-  {
     _id: 5,
     name: "Python Chile",
     url: "https://www.pythonchile.cl",
