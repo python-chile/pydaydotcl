@@ -3,6 +3,8 @@ import {
   LuCoffee, LuPartyPopper, LuHandshake, LuMic, 
   LuWrench, LuMapPin, LuLinkedin, LuInstagram, LuGithub, LuTwitter, LuFacebook, LuYoutube
 } from "react-icons/lu";
+import { MdElectricBolt } from "react-icons/md";
+
 
 export default function TalkCard({ talk, showRoom = false }) {
   const { title, time, speaker, speakers, description, tags, type, room, location } = talk;
@@ -55,10 +57,25 @@ export default function TalkCard({ talk, showRoom = false }) {
         icon: <LuWrench size={16} className="mr-1" />,
       }
     },
+    relampago: {
+      border: "border-l-yellow-400",
+      badge: {
+        label: "Charla relámpagos",
+        color: "bg-yellow-500/30 text-yellow-100",
+        icon: <MdElectricBolt size={16} className="mr-1" />,
+      }
+    },
+    none: {
+      border: "border-l-white-400",
+      badge: {
+        label: "",
+        color: "bg-white-500/30 text-white-100",
+        icon: <></>,
+      }
+    }
   };
 
-  const isGeneral = !normalizedSpeakers.length && 
-    (type === 'recepcion' || type === 'break' || type === 'cierre');
+  const isGeneral = !normalizedSpeakers.length && ['recepcion', 'break', 'cierre', 'relampago', 'none'].includes(type);
   if (isGeneral){
     return null;
   }

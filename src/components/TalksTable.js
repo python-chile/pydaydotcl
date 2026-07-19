@@ -3,6 +3,7 @@ import {
   LuCoffee, LuPartyPopper, LuHandshake, LuMic,
   LuWrench, LuMapPin, LuLinkedin
 } from "react-icons/lu";
+import { MdElectricBolt } from "react-icons/md";
 
 export default function TalksTable({talks}) {
   const ICONS = {
@@ -10,13 +11,16 @@ export default function TalksTable({talks}) {
     break: <LuCoffee size={16} className="mr-1" />,
     cierre: <LuPartyPopper size={16} className="mr-1" />,
     charla: <LuMic size={16} className="mr-1" />,
-    taller: <LuWrench size={16} className="mr-1" />
+    taller: <LuWrench size={16} className="mr-1" />,
+    relampago: <MdElectricBolt size={16} className="mr-1" />,
+    none: <></>,
   }
+  const GENERAL_TYPES = ['recepcion', 'break', 'cierre', 'relampago', 'none'];
   const rooms = [];
   const times = [];
   let rows = [];
   for (let talk of talks){
-    const isGeneral = ['recepcion', 'break', 'cierre'].includes(talk.type);
+    const isGeneral = GENERAL_TYPES.includes(talk.type);
     if (!isGeneral && !rooms.includes(talk.room)){
       rooms.push(talk.room);
     }
@@ -34,7 +38,7 @@ export default function TalksTable({talks}) {
   for (let talk of talks){
     const [start, end] = talk.time.split(' - ');
     const slot0 = times.indexOf(start);
-    const isGeneral = ['recepcion', 'break', 'cierre'].includes(talk.type);
+    const isGeneral = GENERAL_TYPES.includes(talk.type);
     if (isGeneral){
       rows[slot0] = talk;
     } else {

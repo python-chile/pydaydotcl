@@ -655,7 +655,7 @@ const allTalks = [
     id: 30,
     city: "santiago",
     type: "taller",
-    title: ` PySchool: Escape Room – Misión Estación Espacial`,
+    title: `PySchool: Escape Room – Misión Estación Espacial`,
     description: `En este taller del PyDay Santiago, el equipo de Python Chile te desafía a entrar a la Estación Espacial de PySchool: 
     un juego de escape interactivo donde aprenderás las bases de Python desde cero, resolviendo enigmas habitación por habitación escribiendo código real por primera vez.`,
     time: "10:30 - 11:30",
@@ -667,6 +667,159 @@ const allTalks = [
     category: "Educación",
     level: "Principiante",
     tags: ["Educación"],
+  },
+  {
+    id: 31,
+    city: "rancagua",
+    type: "recepcion",
+    title: "Bienvenida",
+    description: "",
+    time: "09:00 - 09:15",
+    room: "Auditorio",
+    speakers: [],
+  },
+  {
+    id: 32,
+    city: "rancagua",
+    type: "charla",
+    title: `Creando Agentes de Voz Autónomos con AWS, StrandAgent y Pipecat`,
+    description: `En esta charla,
+    exploraremos cómo orquestar agentes de voz que no solo responden,
+    sino que "escuchan" y reflexionan en tiempo real.
+    Analizaremos cómo integrar Pipecat para el manejo asíncrono de audio,
+    StrandAgent para definir razonamiento autónomo (autoatención)
+    y la robustez de AWS para escalar el despliegue.
+    Veremos código Python enfocado en eliminar los cuellos de botella de latencia
+    y cómo la asincronía de nuestro lenguaje favorito es la clave para crear agentes con presencia humana.`,
+    time: "09:15 - 09:45",
+    room: "Auditorio",
+    speakers: [{
+      name: "Juan Irrazabal",
+      image: "/images/speakers/juan-irrazabal.webp",
+      socials: {
+          linkedin: "https://www.linkedin.com/in/jirrazabalt/",
+        }
+    }],
+    category: "Agentes de IA",
+    level: "Intermedio",
+    tags: ["IA"],
+  },
+  {
+    id: 33,
+    city: "rancagua",
+    type: "charla",
+    title: `Tu LLM es un Nodo Bizantino: Consenso para Pipelines con IA`,
+    description: `Los LLMs ya están dentro del pipeline:
+    Generan infraestructura como código, resumen de incidentes, proponen arreglos en PRs.
+    El problema no es que alucinan,
+    es que una alucinación es estructuralmente indistinguible de una respuesta correcta.
+    El modelo no sabe que está mintiendo.
+    Tu pipeline tampoco.<br/>
+    Los sistemas distribuidos resolvieron un problema equivalente hace décadas:
+    No confíes en ningún nodo individual,
+    exige acuerdo entre caminos independientes antes de comprometerte con un resultado.
+    Esa misma lógica se aplica directamente a los outputs de LLMs que usa el mundo hoy para crear código.<br/>
+    Esta charla muestra cómo:
+    Cuándo una segunda llamada contraria es necesaria pese a su latencia,
+    cómo estructurar un prompt que realmente desafíe el primero en lugar de confirmarlo,
+    y dónde en un pipeline tiene sentido agregar verificación sin convertir cada paso en un cuello de botella.<br/>
+    Sin teoría de sistemas distribuidos.
+    Una oración de BFT, la base del framework que publiqué para resolver este problema de adversarios:
+    El resto es arquitectura de pipelines.<br/>
+    Al salir vas a tener:<br/>
+    1. Una regla de decisión para cuándo agregar verificación de confrontación a una llamada del LLM.<br/>
+    2. Una estructura de prompt concreta que hace que un segundo modelo actúe como su oponente.<br/>
+    3. Un framework de tradeoff latencia/confianza para decidir dónde vale el costo.`,
+    time: "09:45 - 10:15",
+    room: "Auditorio",
+    speakers: [{
+      name: "Felipe Carvajal Brown",
+      image: "/images/speakers/felipe-carvajal-brown.webp",
+      socials: {
+          linkedin: "https://www.linkedin.com/in/fcarvajalbrown/",
+          github: "https://github.com/fcarvajalbrown",
+          instagram: "https://www.instagram.com/fcarvajalbrown/"
+        }
+    }],
+    category: "IA",
+    level: "Avanzado",
+    tags: ["IA"],
+  },
+  {
+    id: 34,
+    city: "rancagua",
+    type: "none",
+    title: `Por definir`,
+    description: ``,
+    time: "10:15 - 10:45",
+    room: "Auditorio",
+    speakers: [],
+    category: "Agentes de IA",
+    level: "Intermedio",
+    tags: ["IA"],
+  },
+  {
+    id: 35,
+    city: "rancagua",
+    type: "break",
+    title: "Pausa",
+    description: "",
+    time: "10:45 - 11:15",
+    room: "Auditorio",
+    speaker: null,
+  },
+
+  {
+    id: 36,
+    city: "rancagua",
+    type: "charla",
+    title: `Mover para conectar: movimiento, convivencia y bienestar en comunidades tecnológicas`,
+    description: `En el mundo de la tecnología pasamos muchas horas frente a una pantalla.
+    Este taller propone utilizar el movimiento
+    y elementos de la danza árabe como una herramienta para reducir el estrés,
+    fortalecer la comunicación, fomentar la confianza
+    y promover una convivencia positiva en equipos de estudio y trabajo.
+    No se requiere experiencia previa en danza.`,
+    time: "11:15 - 11:45",
+    room: "Auditorio",
+    speakers: [{
+      name: "Marie Ainmé Laveau Vidal Vargas",
+      image: "/images/speakers/marie-vidal.webp",
+      socials: {}
+    }],
+    category: "Educación y Comunidad.",
+    level: "Principiante",
+    tags: ["Comunidad", "Danza"],
+  },
+  {
+    id: 37,
+    city: "rancagua",
+    type: "none",
+    title: "Por definir",
+    description: "",
+    time: "11:45 - 12:15",
+    room: "Auditorio",
+    speakers: [],
+  },
+  {
+    id: 38,
+    city: "rancagua",
+    type: "relampago",
+    title: "Charlas relámpago",
+    description: "",
+    time: "12:15 - 12:45",
+    room: "Auditorio",
+    speakers: [],
+  },
+  {
+    id: 39,
+    city: "rancagua",
+    type: "cierre",
+    title: "Cierre",
+    description: "",
+    time: "12:45 - 13:00",
+    room: "Auditorio",
+    speaker: null,
   },
 ];
 
