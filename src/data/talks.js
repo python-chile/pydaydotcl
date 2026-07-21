@@ -748,12 +748,22 @@ const allTalks = [
   {
     id: 34,
     city: "rancagua",
-    type: "none",
-    title: `Por definir`,
-    description: ``,
+    type: "charla",
+    title: `Gemma como el cerebro de tu agente: IA local con ADK`,
+    description: `¿Y si tu agente pudiera pensar sin depender de la nube? En esta charla vas a descubrir cómo usar Gemma, el modelo abierto de Google, como el "cerebro" de un agente construido con ADK (Agent Development Kit) corriendo en local.<br/>
+Vamos a armar un agente funcional desde cero, en vivo, y vas a ver de forma práctica cuándo conviene usar un modelo abierto como Gemma en vez de depender siempre de un endpoint en la nube: menor costo, más privacidad y control total sobre tus datos.<br/>
+No necesitas experiencia previa en IA ni en agentes autónomos. Si sabes programar y tenés curiosidad por la era agéntica, esta charla es tu punto de entrada: simple, práctica y pensada para que salgas con un agente propio corriendo en tu máquina.`,
     time: "10:15 - 10:45",
     room: "Auditorio",
-    speakers: [],
+    speakers: [{
+      name: "Lesly Zerna",
+      image: "/images/speakers/lesly-zerna.webp",
+      socials: {
+        instagram: "https://www.instagram.com/leslysandra/",
+        linkedin: "https://www.linkedin.com/in/lesly-zerna/",
+        twitter: "https://twitter.com/leslysandra"
+      }
+    }],
     category: "Agentes de IA",
     level: "Intermedio",
     tags: ["IA"],
@@ -794,12 +804,21 @@ const allTalks = [
   {
     id: 37,
     city: "rancagua",
-    type: "none",
-    title: "Por definir",
-    description: "",
+    type: "charla",
+    title: "Robótica con python: ROS2",
+    description: `La robótica avanza y programar en bajo nivel con firmware específicos
+    e instrucciones propias ha quedado en el pasado.
+    El desarrollo de ROS y en particular de ROS2 impulsa a crear robots
+    con una capa de abstracción mayor a la que ningún framework posee.<br/>
+    En esta charla exploraremos el uso de ROS2 y como podemos utilizar sus propiedades en un entorno de pruebas
+    y como se utiliza en ambientes reales de producción.`,
     time: "11:45 - 12:15",
     room: "Auditorio",
-    speakers: [],
+    speakers: [{
+      name: "Rodrigo Delgado",
+      image: "/images/speakers/rodrigo-delgado.webp",
+      socials: {}
+    }],
   },
   {
     id: 38,
