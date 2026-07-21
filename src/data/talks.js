@@ -702,7 +702,7 @@ const allTalks = [
     }],
     category: "Agentes de IA",
     level: "Intermedio",
-    tags: ["IA"],
+    tags: ["Intermedio", "IA"],
   },
   {
     id: 33,
@@ -743,7 +743,7 @@ const allTalks = [
     }],
     category: "IA",
     level: "Avanzado",
-    tags: ["IA"],
+    tags: ["Avanzado", "IA"],
   },
   {
     id: 34,
@@ -766,7 +766,7 @@ No necesitas experiencia previa en IA ni en agentes autónomos. Si sabes program
     }],
     category: "Agentes de IA",
     level: "Intermedio",
-    tags: ["IA"],
+    tags: ["Intermedio", "IA"],
   },
   {
     id: 35,
@@ -799,7 +799,7 @@ No necesitas experiencia previa en IA ni en agentes autónomos. Si sabes program
     }],
     category: "Educación y Comunidad.",
     level: "Principiante",
-    tags: ["Comunidad", "Danza"],
+    tags: ["Principiante", "Comunidad", "Danza"],
   },
   {
     id: 37,
@@ -819,7 +819,8 @@ No necesitas experiencia previa en IA ni en agentes autónomos. Si sabes program
       image: "/images/speakers/rodrigo-delgado.webp",
       socials: {}
     }],
-    tags: ["Robótica"],
+    level: "Principiante",
+    tags: ["Principiante", "Robótica"],
   },
   {
     id: 38,
