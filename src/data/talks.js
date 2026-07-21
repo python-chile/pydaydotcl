@@ -819,6 +819,7 @@ No necesitas experiencia previa en IA ni en agentes autónomos. Si sabes program
       image: "/images/speakers/rodrigo-delgado.webp",
       socials: {}
     }],
+    tags: ["Robótica"],
   },
   {
     id: 38,
