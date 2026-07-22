@@ -89,7 +89,7 @@ const cityData = {
     },
     registrationLink:"https://www.eventbrite.com/e/pyday-2026-rancagua-tickets-1991239301353",
     registrationStatus: "open",
-    talkProposalLink: "https://sessionize.com/pyday-rancagua-2026/",
+    talkProposalLink: "",
     schedule: allTalks.filter((talk) => talk.city === "rancagua"),
   },
 };
