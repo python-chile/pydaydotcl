@@ -774,32 +774,9 @@ No necesitas experiencia previa en IA ni en agentes autónomos. Si sabes program
     type: "break",
     title: "Pausa",
     description: "",
-    time: "10:45 - 11:15",
+    time: "10:45 - 11:30",
     room: "Auditorio",
     speaker: null,
-  },
-
-  {
-    id: 36,
-    city: "rancagua",
-    type: "charla",
-    title: `Mover para conectar: movimiento, convivencia y bienestar en comunidades tecnológicas`,
-    description: `En el mundo de la tecnología pasamos muchas horas frente a una pantalla.
-    Este taller propone utilizar el movimiento
-    y elementos de la danza árabe como una herramienta para reducir el estrés,
-    fortalecer la comunicación, fomentar la confianza
-    y promover una convivencia positiva en equipos de estudio y trabajo.
-    No se requiere experiencia previa en danza.`,
-    time: "11:15 - 11:45",
-    room: "Auditorio",
-    speakers: [{
-      name: "Marie Ainmé Laveau Vidal Vargas",
-      image: "/images/speakers/marie-vidal.webp",
-      socials: {}
-    }],
-    category: "Educación y Comunidad.",
-    level: "Principiante",
-    tags: ["Principiante", "Comunidad", "Danza"],
   },
   {
     id: 37,
@@ -812,7 +789,7 @@ No necesitas experiencia previa en IA ni en agentes autónomos. Si sabes program
     con una capa de abstracción mayor a la que ningún framework posee.<br/>
     En esta charla exploraremos el uso de ROS2 y como podemos utilizar sus propiedades en un entorno de pruebas
     y como se utiliza en ambientes reales de producción.`,
-    time: "11:45 - 12:15",
+    time: "11:30 - 12:00",
     room: "Auditorio",
     speakers: [{
       name: "Rodrigo Delgado",
@@ -828,7 +805,7 @@ No necesitas experiencia previa en IA ni en agentes autónomos. Si sabes program
     type: "relampago",
     title: "Charlas relámpago",
     description: "",
-    time: "12:15 - 12:45",
+    time: "12:00 - 12:45",
     room: "Auditorio",
     speakers: [],
   },
