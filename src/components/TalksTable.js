@@ -44,6 +44,7 @@ export default function TalksTable({talks}) {
     } else {
       const slots = times.indexOf(end) - slot0;
       const room = rooms.indexOf(talk.room);
+      console.log(rows, slot0, room)
       rows[slot0][room] = [slots, talk];
       for(let i=1;i<slots;i++){
         rows[slot0 + i][room] = 1;
@@ -80,7 +81,7 @@ export default function TalksTable({talks}) {
               <div className="flex" style={{justifyContent: "center"}}>
                 {subrow[1].speakers.map((speaker, ix2) =>
                   <div key={`${ix1}-${ix2}`} className="text-xs" style={{textAlign: 'center'}}>
-                    <div
+                    {speaker.image ? <div
                       className="relative w-14 h-14 md:w-16 md:h-16 rounded-full overflow-hidden bg-white flex-shrink-0"
                       style={{display: 'inline-block'}}
                     >
@@ -89,7 +90,7 @@ export default function TalksTable({talks}) {
                         height={64}
                         width={64}
                         alt={speaker.name}/>
-                    </div>
+                    </div> : null}
                     <p>{speaker.name}</p>
                   </div>)}
               </div>
