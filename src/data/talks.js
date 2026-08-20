@@ -674,7 +674,7 @@ const allTalks = [
     type: "recepcion",
     title: "Bienvenida",
     description: "",
-    time: "09:00 - 09:15",
+    time: "09:30 - 09:45",
     room: "Auditorio",
     speakers: [],
   },
@@ -682,78 +682,11 @@ const allTalks = [
     id: 32,
     city: "rancagua",
     type: "charla",
-    title: `Creando Agentes de Voz Autónomos con AWS, StrandAgent y Pipecat`,
-    description: `En esta charla,
-    exploraremos cómo orquestar agentes de voz que no solo responden,
-    sino que "escuchan" y reflexionan en tiempo real.
-    Analizaremos cómo integrar Pipecat para el manejo asíncrono de audio,
-    StrandAgent para definir razonamiento autónomo (autoatención)
-    y la robustez de AWS para escalar el despliegue.
-    Veremos código Python enfocado en eliminar los cuellos de botella de latencia
-    y cómo la asincronía de nuestro lenguaje favorito es la clave para crear agentes con presencia humana.`,
-    time: "09:15 - 09:45",
-    room: "Auditorio",
-    speakers: [{
-      name: "Juan Irrazabal",
-      image: "/images/speakers/juan-irrazabal.webp",
-      socials: {
-          linkedin: "https://www.linkedin.com/in/jirrazabalt/",
-        }
-    }],
-    category: "Agentes de IA",
-    level: "Intermedio",
-    tags: ["Intermedio", "IA"],
-  },
-  {
-    id: 33,
-    city: "rancagua",
-    type: "charla",
-    title: `Tu LLM es un Nodo Bizantino: Consenso para Pipelines con IA`,
-    description: `Los LLMs ya están dentro del pipeline:
-    Generan infraestructura como código, resumen de incidentes, proponen arreglos en PRs.
-    El problema no es que alucinan,
-    es que una alucinación es estructuralmente indistinguible de una respuesta correcta.
-    El modelo no sabe que está mintiendo.
-    Tu pipeline tampoco.<br/>
-    Los sistemas distribuidos resolvieron un problema equivalente hace décadas:
-    No confíes en ningún nodo individual,
-    exige acuerdo entre caminos independientes antes de comprometerte con un resultado.
-    Esa misma lógica se aplica directamente a los outputs de LLMs que usa el mundo hoy para crear código.<br/>
-    Esta charla muestra cómo:
-    Cuándo una segunda llamada contraria es necesaria pese a su latencia,
-    cómo estructurar un prompt que realmente desafíe el primero en lugar de confirmarlo,
-    y dónde en un pipeline tiene sentido agregar verificación sin convertir cada paso en un cuello de botella.<br/>
-    Sin teoría de sistemas distribuidos.
-    Una oración de BFT, la base del framework que publiqué para resolver este problema de adversarios:
-    El resto es arquitectura de pipelines.<br/>
-    Al salir vas a tener:<br/>
-    1. Una regla de decisión para cuándo agregar verificación de confrontación a una llamada del LLM.<br/>
-    2. Una estructura de prompt concreta que hace que un segundo modelo actúe como su oponente.<br/>
-    3. Un framework de tradeoff latencia/confianza para decidir dónde vale el costo.`,
-    time: "09:45 - 10:15",
-    room: "Auditorio",
-    speakers: [{
-      name: "Felipe Carvajal Brown",
-      image: "/images/speakers/felipe-carvajal-brown.webp",
-      socials: {
-          linkedin: "https://www.linkedin.com/in/fcarvajalbrown/",
-          github: "https://github.com/fcarvajalbrown",
-          instagram: "https://www.instagram.com/fcarvajalbrown/"
-        }
-    }],
-    category: "IA",
-    level: "Avanzado",
-    tags: ["Avanzado", "IA"],
-  },
-  {
-    id: 34,
-    city: "rancagua",
-    type: "charla",
     title: `Gemma como el cerebro de tu agente: IA local con ADK`,
     description: `¿Y si tu agente pudiera pensar sin depender de la nube? En esta charla vas a descubrir cómo usar Gemma, el modelo abierto de Google, como el "cerebro" de un agente construido con ADK (Agent Development Kit) corriendo en local.<br/>
 Vamos a armar un agente funcional desde cero, en vivo, y vas a ver de forma práctica cuándo conviene usar un modelo abierto como Gemma en vez de depender siempre de un endpoint en la nube: menor costo, más privacidad y control total sobre tus datos.<br/>
 No necesitas experiencia previa en IA ni en agentes autónomos. Si sabes programar y tenés curiosidad por la era agéntica, esta charla es tu punto de entrada: simple, práctica y pensada para que salgas con un agente propio corriendo en tu máquina.`,
-    time: "10:15 - 10:45",
+    time: "09:45 - 10:40",
     room: "Auditorio",
     speakers: [{
       name: "Lesly Zerna",
@@ -769,53 +702,78 @@ No necesitas experiencia previa en IA ni en agentes autónomos. Si sabes program
     tags: ["Intermedio", "IA"],
   },
   {
-    id: 35,
+    id: 33,
     city: "rancagua",
-    type: "break",
-    title: "Pausa",
+    type: "none",
+    title: "Trivia",
     description: "",
-    time: "10:45 - 11:30",
+    time: "10:40 - 11:00",
     room: "Auditorio",
     speaker: null,
+  },
+  {
+    id: 34,
+    city: "rancagua",
+    type: "break",
+    title: "Coffee break",
+    description: "",
+    time: "11:00 - 11:30",
+    room: "Auditorio",
+    speaker: null,
+  },
+  {
+    id: 35,
+    city: "rancagua",
+    type: "charla",
+    title: `Voluntariado Python Chile`,
+    description: `Exposición de que se realiza dentro de la coordinación de Python Chile.`,
+    time: "11:30 - 11:45",
+    room: "Auditorio",
+    speakers: [{
+      name: "Aldo Caneo",
+      image: null,
+    }],
+    category: "Comunidad",
+    level: "Principiante",
+    tags: ["Principiante", "Comunidad"],
+  },
+  {
+    id: 36,
+    city: "rancagua",
+    type: "charla",
+    title: "Diagnóstico de imágenes de histologías de cancer basado en deep learning.",
+    description: ``,
+    time: "11:45 - 12:30",
+    room: "Auditorio",
+    speakers: [{
+      name: "Gabriel Cabas",
+      image: null,
+    }],
+    level: "Principiante",
+    tags: ["Principiante", "Imagenología"],
   },
   {
     id: 37,
     city: "rancagua",
     type: "charla",
-    title: "Robótica con python: ROS2",
-    description: `La robótica avanza y programar en bajo nivel con firmware específicos
-    e instrucciones propias ha quedado en el pasado.
-    El desarrollo de ROS y en particular de ROS2 impulsa a crear robots
-    con una capa de abstracción mayor a la que ningún framework posee.<br/>
-    En esta charla exploraremos el uso de ROS2 y como podemos utilizar sus propiedades en un entorno de pruebas
-    y como se utiliza en ambientes reales de producción.`,
-    time: "11:30 - 12:00",
+    title: "¿Qué podemos aprender y enseñar de Python con Factorio?",
+    description: ``,
+    time: "12:30 - 13:00",
     room: "Auditorio",
     speakers: [{
-      name: "Rodrigo Delgado",
-      image: "/images/speakers/rodrigo-delgado.webp",
-      socials: {}
+      name: "Emile Cid",
+      image: null,
     }],
     level: "Principiante",
-    tags: ["Principiante", "Robótica"],
+    tags: ["Principiante", "Imagenología"],
   },
   {
     id: 38,
     city: "rancagua",
-    type: "relampago",
-    title: "Charlas relámpago",
-    description: "",
-    time: "12:00 - 12:45",
-    room: "Auditorio",
-    speakers: [],
-  },
-  {
-    id: 39,
-    city: "rancagua",
     type: "cierre",
     title: "Cierre",
     description: "",
-    time: "12:45 - 13:00",
+    time: "13:00 - 13:05",
     room: "Auditorio",
     speaker: null,
   },
